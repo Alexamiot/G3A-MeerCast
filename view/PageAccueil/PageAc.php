@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../Design/pageAc.css">
+    <title>MeerCast</title>
+    <link rel="icon"  href="favicon/favicon-16x16.png" type="image/png" sizes="any">
+
+</head>
+
+<body>
+
+    <header>
+    	<div class="logo">
+    		<img src="image/meercastest.png">
+    	</div>
+    	<div class="row">
+    		<ul class="mainNav">
+    		<li class="active"><a href="">ACCUEIL</a></li>
+    		<li><a href="">SERVICES</a></li>
+        <li><a href="index.php?action=see_view_2">DEMANDER UN DEVIS</a></li>
+       		<li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
+    		<li><a href="">FAQ</a></li>
+    		<li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
+    		</ul>
+    	</div>
+    	<div id="myNav" class="overlay">
+       				<a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+       			<div class="overlay-content">
+	   				<h2>Nous envoyer un message</h2>
+            <div class="container">
+  <form action="/action_page.php">
+    <label class="form"><br>Prénom<br></label>
+    <input type="text" id="fname" name="firstname" placeholder="Votre Prénom">
+
+    <label class="form"><br>Nom<br></label>
+    <input type="text" id="lname" name="lastname" placeholder="Votre Nom de famille">
+
+   <label class="form"><br>Email<br></label>
+    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" id="email2" required>
+
+
+    <label class="form"><br>Que voulez-vous nous dire ?<br></label>
+    <textarea id="subject" name="subject" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
+
+    <input type="submit" value="Envoyer">
+  </form>
+</div>
+  				</div>
+		</div>
+    	<div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <div class="identification">
+  <p>
+       <h2 class="sidetitle">Votre compte : </h2>
+       <label>
+        Email : <br>
+        <input type="email" name="email" placeholder="Ex: nom-prenom@gmail.com" id="email" required><br>
+    </label>
+    <label>
+        Mot de passe :  <br>
+        <input type="password" name="password" id="mdp" required><br>
+    </label>
+    <input type="submit" id="connexion" value="Se Connecter">
+    <a href=""><p class="compte1" >Créer un Compte</p></a>
+    <a href=""><p class="compte1" >Mot de passe oublié</p></a>
+    </p>
+
+  </div>
+</div>
+    	<div class="hero">
+    		<h1>Entrez dans la Maison du Futur </h1>
+    		<div class="button">
+    			<a href="#inner" class="btn btnOne">Entrer</a>
+    			<a href="http://youtube.com" class="btn btnTwo">Regarder la vidéo</a>
+    		</div>
+    	</div>
+    </header>
+    <section class="wrapper style1">
+				<div id="inner">
+					<article class="article1">
+						<span class="image"><img src="image/MeercastBlack.png" alt="MeerCast" /></span>
+						<div class="content">
+							<h2>Notre Histoire</h2>
+							<p align="justify">MEERCAST, une nouvelle entreprise créée pour répondre à un appel d'offre de DOMISEP, peut-être jeune mais avec une belle page d'accueil. </p>
+							<button class="boutton">Voir Plus</button>
+						</div>
+
+					</article>
+					<article class="article2">
+						<span class="image"><img src="image/nouveautées.jpg" alt="Nouveautés" /></span>
+						<div class="content2">
+							<h2>Nouveautés</h2>
+							<p align="justify">Nous sommes encore dans la conception de notre système, nous écoutons les besoins de nos clients et utilisons la méthode agile.</p>
+							<a href=""><button class="boutton">Voir Plus</button></a>
+						</div>
+					</article>
+				</div>
+			</section>
+	  <footer>
+
+	  		<h3>Designed by Alexandre Amiot</h3>
+	  </footer>
+	  <script>
+function openNav() {
+    document.getElementById("mySidepanel").style.width = "350px";
+}
+function closeNav() {
+    document.getElementById("mySidepanel").style.width = "0";
+}
+
+function openNav2() {
+  document.getElementById("myNav").style.height = "100%";
+}
+
+function closeNav2() {
+  document.getElementById("myNav").style.height = "0%";
+}
+</script>
+</body>
+</html>
