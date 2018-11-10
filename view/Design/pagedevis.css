@@ -5,7 +5,7 @@
 }
 header{
 	background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(background.png);
-	height: 13vh;
+	height: 15vh;
 	background-size: cover;
 }
 .mainNav{
@@ -71,31 +71,89 @@ img{
 .textdev > h1{
 	margin-bottom: 10px;
 }
+
+/*Devis formulaire*/
+.labelcheck {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.labelcheck input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.labelcheck:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.labelcheck input:checked ~ .checkmark {
+  background-color: darkorange;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.labelcheck input:checked ~ .checkmark:after {
+  display: block;
+}
+.labelcheck .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
 #titredevis{
+    margin-top: 1%;
 	text-align: center;
 	margin-bottom: 1%;
 }
 .debutdevis{
-	height: 57vh;
-	font-family:"inherit",sans-serif;
-	margin-top: 1%;
-	padding: 20px;
-}
-.debutdevis input[type="checkbox"] + label {
-      padding:10px;
-      margin:2% ;
-}
-.debutdevis input[type="checkbox"]:checked + label:before {
-	
-}
+    margin-top: 2%;
+    display: flex;
+    margin-bottom: 2%;
 
+}
 #debutgauche{
-	margin-left:5%;
-	float: left;
+	display: flex;
+    margin-left: 30%;
+    flex-direction: column;
+    width: 30%;
 }
 #debutdroit{
-	float: right;
-	margin-right: 0%;
+	display: flex;
+    margin-right: 25%;
+    flex-direction: column;
+    width: 30%;
+}
+#devissubmit{
+    margin-left: 48%;
+    margin-bottom: 4%;
+}
+#titredevis2{
+    text-align: center;
 }
 
 footer{
@@ -234,6 +292,9 @@ footer h3{
     top: 20px;
     right: 45px;
     font-size: 60px;
+}
+#subject{
+    height: 200px;
 }
 input[type=text], select, textarea {
     width: 70%;

@@ -6,19 +6,23 @@ if (isset($_GET["action"])) {
     $action = htmlspecialchars($_GET["action"]); // Petite fonction de sécurité
 
     switch($action) {
-    case "see_view_1":
-        seeView1();
+    case "see_PageAc":
+        seeViewAccueil();
         break;
 
-    case "see_view_2":
-        seeView2();
+    case "see_pagedevis":
+        seeViewDevis();
         break;
+
+    case "see_pageservice":
+        seeViewService();
+        break;    
 
     default:
         echo "Erreur 404";
         break;
     }
 } else {
-    seeView1();
+    seeViewAccueil();
 }
-?>         
+?>        

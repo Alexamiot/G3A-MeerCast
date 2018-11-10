@@ -3,9 +3,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="../Design/pageAc.css">
+    <link rel="stylesheet" type="text/css" href="view/Design/pageAc.css">
     <title>MeerCast</title>
-    <link rel="icon"  href="favicon/favicon-16x16.png" type="image/png" sizes="any">
+    <link rel="icon"  href="view/PageAccueil/favicon/favicon-16x16.png" type="image/png" sizes="any">
 
 </head>
 
@@ -13,13 +13,13 @@
 
     <header>
     	<div class="logo">
-    		<img src="image/meercastest.png">
+    		<img src="view/PageAccueil/image/meercastest.png">
     	</div>
     	<div class="row">
     		<ul class="mainNav">
-    		<li class="active"><a href="">ACCUEIL</a></li>
-    		<li><a href="">SERVICES</a></li>
-        <li><a href="index.php?action=see_view_2">DEMANDER UN DEVIS</a></li>
+    		<li class="active"><a href="#">ACCUEIL</a></li>
+    		<li><a href="index.php?action=see_pageservice">SERVICES</a></li>
+        <li><a href="index.php?action=see_pagedevis">DEMANDER UN DEVIS</a></li>
        		<li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
     		<li><a href="">FAQ</a></li>
     		<li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
@@ -28,7 +28,7 @@
     	<div id="myNav" class="overlay">
        				<a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
        			<div class="overlay-content">
-	   				<h2>Nous envoyer un message</h2>
+	   				<h2>Envoyez-nous un message</h2>
             <div class="container">
   <form action="/action_page.php">
     <label class="form"><br>Prénom<br></label>
@@ -80,7 +80,7 @@
     <section class="wrapper style1">
 				<div id="inner">
 					<article class="article1">
-						<span class="image"><img src="image/MeercastBlack.png" alt="MeerCast" /></span>
+						<span class="image"><img src="view/PageAccueil/image/MeercastBlack.png" alt="MeerCast" /></span>
 						<div class="content">
 							<h2>Notre Histoire</h2>
 							<p align="justify">MEERCAST, une nouvelle entreprise créée pour répondre à un appel d'offre de DOMISEP, peut-être jeune mais avec une belle page d'accueil. </p>
@@ -89,7 +89,7 @@
 
 					</article>
 					<article class="article2">
-						<span class="image"><img src="image/nouveautées.jpg" alt="Nouveautés" /></span>
+						<span class="image"><img src="view/PageAccueil/image/nouveautées.jpg" alt="Nouveautés" /></span>
 						<div class="content2">
 							<h2>Nouveautés</h2>
 							<p align="justify">Nous sommes encore dans la conception de notre système, nous écoutons les besoins de nos clients et utilisons la méthode agile.</p>

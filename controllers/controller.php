@@ -1,9 +1,12 @@
 <?php
-function seeView1() {
-    require "views/view_1.php";
+function seeViewAccueil() {
+    require "view/PageAccueil/PageAc.php";
 }
 
-function seeView2() {
-    require "views/view_2.php";
+function seeViewDevis() {
+    require "view/PageAccueil/Devis/pagedevis.php";
+}
+function seeViewService(){
+	require "view/PageAccueil/Services/pageservice.php";
 }
 ?>
