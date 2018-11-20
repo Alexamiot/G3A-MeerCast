@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="view/Design/pageAc.css">
     <title>MeerCast</title>
     <link rel="icon"  href="view/PageAccueil/favicon/favicon-16x16.png" type="image/png" sizes="any">
@@ -21,7 +22,7 @@
     		<li><a href="index.php?action=see_pageservice">SERVICES</a></li>
         <li><a href="index.php?action=see_pagedevis">DEMANDER UN DEVIS</a></li>
        		<li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
-    		<li><a href="">FAQ</a></li>
+    		<li><a href="index.php?action=see_pagefaq">FAQ / FORUM</a></li>
     		<li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
     		</ul>
     	</div>
@@ -30,19 +31,19 @@
        			<div class="overlay-content">
 	   				<h2>Envoyez-nous un message</h2>
             <div class="container">
-  <form action="/action_page.php">
+  <form method="post" action="index.php?action=add_message">
     <label class="form"><br>Prénom<br></label>
-    <input type="text" id="fname" name="firstname" placeholder="Votre Prénom">
+    <input type="text" name="name" placeholder="Votre Prénom">
 
     <label class="form"><br>Nom<br></label>
-    <input type="text" id="lname" name="lastname" placeholder="Votre Nom de famille">
+    <input type="text" name="last_name" placeholder="Votre Nom de famille">
 
    <label class="form"><br>Email<br></label>
-    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" id="email2" required>
+    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" required>
 
 
     <label class="form"><br>Que voulez-vous nous dire ?<br></label>
-    <textarea id="subject" name="subject" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
+    <textarea name="message" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
 
     <input type="submit" value="Envoyer">
   </form>
@@ -84,7 +85,7 @@
 						<div class="content">
 							<h2>Notre Histoire</h2>
 							<p align="justify">MEERCAST, une nouvelle entreprise créée pour répondre à un appel d'offre de DOMISEP, peut-être jeune mais avec une belle page d'accueil. </p>
-							<button class="boutton">Voir Plus</button>
+							<a href="index.php?action=see_pagehistoire"><button class="boutton">Voir Plus</button></a>
 						</div>
 
 					</article>

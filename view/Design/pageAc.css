@@ -16,7 +16,12 @@ header{
 	float: right;
 	list-style: none;
 	margin-top: 30px;
+}
 
+@media all and (max-width: 1150px) {
+	.mainNav li a{
+		font-size: 0.6em;
+	}
 }
 .mainNav li{
 	display: inline-block;
@@ -54,10 +59,16 @@ header{
 	margin-left: 80px;
 }
 .hero{
-	position: absolute;
+/*	position: absolute;
 	width: 60%;
 	margin-left: 25%;
 	margin-top: 10em;
+	margin: 0;*/
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 h1{
 	color:white;
@@ -277,7 +288,7 @@ footer h3{
     left: 0;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0, 0.9);
-    overflow-x: hidden;
+    overflow: hidden;
     transition: 0.5s;
 }
 
@@ -350,9 +361,9 @@ input[type=submit]:hover {
 }
 @media only screen and (max-width: 768px) {
 	.mainNav{
-		font-size: 12pt
+		font-size: 12pt;
 	}
 	.hero{
-		margin-top: 50%
+		margin-top: 50%;
 	}
 }

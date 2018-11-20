@@ -20,7 +20,7 @@
               <li class="active"><a href="">SERVICES</a></li>
               <li><a href="index.php?action=see_pagedevis" >DEMANDER UN DEVIS</a></li>
                 <li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
-              <li><a href="">FAQ</a></li>
+              <li><a href="index.php?action=see_pagefaq">FAQ / FORUM</a></li>
               <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
               </ul>
             </div>
@@ -30,22 +30,22 @@
                   <div class="overlay-content">
                   <h2>Envoyez-nous un message</h2>
                   <div class="container">
-        <form action="/action_page.php">
-          <label class="form"><br>Prénom<br></label>
-          <input type="text" id="fname" name="firstname" placeholder="Votre Prénom">
+                  <form method="post" action="index.php?action=add_message">
+                    <label class="form"><br>Prénom<br></label>
+                    <input type="text" name="name" placeholder="Votre Prénom">
 
-          <label class="form"><br>Nom<br></label>
-          <input type="text" id="lname" name="lastname" placeholder="Votre Nom de famille">
+                    <label class="form"><br>Nom<br></label>
+                    <input type="text" name="last_name" placeholder="Votre Nom de famille">
 
-         <label class="form"><br>Email<br></label>
-          <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" id="email2" required>
+                   <label class="form"><br>Email<br></label>
+                    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" required>
 
 
-          <label class="form"><br>Que voulez-vous nous dire ?<br></label>
-          <textarea id="subject" name="subject" placeholder="Ce que vous voulez nous dire" style="height: 200px"></textarea><br>
+                    <label class="form"><br>Que voulez-vous nous dire ?<br></label>
+                    <textarea name="message" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
 
-          <input type="submit" value="Envoyer">
-        </form>
+                    <input type="submit" value="Envoyer">
+            </form>
       </div>
                 </div>
           </div>
@@ -73,14 +73,17 @@
   </header>
   <!-- body -->
   <section id="bandeau">
-      <div class="textdev">
-      <h1>Admirez toutes les possibilitées</h1>
-        <p align="justify">Pour obtenir une maison connecté complète et fonctionnelle, il faut de nombreux
-          appareils pouvant être automatisé et géré pas notre site. Vous pouvez voir ici différentes applications
-          que nous proposons.
-       </p>
+      <div class="textfor">
+      <h3>Admirez les possibilitées</h3>
+        <section class="columfor">
+        <p >
+        Vous pouvez regarder les différents services qu'on peut faire pour vous si vous devenez notre client. </p>
+        <span><a href="indexphp"  class= "image_service"><img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="service photo"></a></span>
+        </section>
       </div>
+      <!-- <a href="indexphp"  class= "image_servise"><img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="service photo"></a> -->
     </section>
+
   <section id="cartes">
       <div class="flip-card">
   <div class="flip-card-inner">

@@ -16,8 +16,24 @@ if (isset($_GET["action"])) {
 
     case "see_pageservice":
         seeViewService();
-        break;    
+        break;
 
+    case "see_pagehistoire":
+        seeViewHistoire();       
+        break;
+
+    case "see_pagefaq":
+        seeViewFaq();       
+        break;
+
+    case "add_message":
+    addMessage();
+    break;
+
+    case "add_devis":
+    addDevis();
+    break;
+        
     default:
         echo "Erreur 404";
         break;
