@@ -96,29 +96,38 @@
         <p><br />
           <div class="debuttest">
           <div id="debutgauche">
-       <label class="labelcheck">Alarme <input type="checkbox" name="alarm" id="alarme" /> <span class="checkmark"></span> </label><br />
+            <input type="hidden" name="alarm" value="non"/>
+       <label class="labelcheck">Alarme <input type="checkbox" name="alarm" id="alarme" value="oui" /> <span class="checkmark"></span> </label><br />
 
-       <label class="labelcheck" >Chauffage éléctrique<input type="checkbox" name="elec.heating" id="chauffage.éléctrique" /> <span class="checkmark"></span> </label><br />
+            <input type="hidden" name="elec" value="non"/>
+       <label class="labelcheck" >Chauffage éléctrique<input type="checkbox" name="elec" id="chauffage.éléctrique" value="oui" /> <span class="checkmark"></span> </label><br />
 
-       <label class="labelcheck">Chaudière / Pompe à chaleur <input type="checkbox" name="heater" id="Chaudière/Pompeàchaleur" /> <span class="checkmark"></span> </label><br />
+             <input type="hidden" name="heater" value="non"/>
+       <label class="labelcheck">Chaudière / Pompe à chaleur <input type="checkbox" name="heater" id="Chaudière/Pompeàchaleur" value="oui" /> <span class="checkmark"></span> </label><br />
 
-        <label class="labelcheck">Climatisation <input type="checkbox" name="AC" id="Climatisation" /> <span class="checkmark"></span></label> <br/>
+               <input type="hidden" name="AC" value="non"/>
+        <label class="labelcheck">Climatisation <input type="checkbox" name="AC" id="Climatisation" value="oui" /> <span class="checkmark"></span></label> <br/>
 
-        <label class="labelcheck">Piscine <input type="checkbox" name="pool" id="Piscine" /> <span class="checkmark"></span></label>
+               <input type="hidden" name="pool" value="non"/>
+        <label class="labelcheck">Piscine <input type="checkbox" name="pool" id="Piscine" value="oui" /> <span class="checkmark"></span></label>
 
           </div>
           <div id="debutdroite">
-       <label class="labelcheck">Portail <input type="checkbox" name="gate" id="Portail" /> <span class="checkmark"></span> </label><br />
+             <input type="hidden" name="gate" value="non"/>
+       <label class="labelcheck">Portail <input type="checkbox" name="gate" id="Portail" value="oui" /> <span class="checkmark"></span> </label><br />
 
-       <label class="labelcheck">Eclairage <input type="checkbox" name="lighting" id="Eclairage" /> <span class="checkmark"></span></label>
+               <input type="hidden" name="lighting" value="non"/>
+       <label class="labelcheck">Eclairage <input type="checkbox" name="lighting" id="Eclairage" value="oui" /> <span class="checkmark"></span></label>
        <br />
 
-       <label class="labelcheck">L'électroménager <input type="checkbox" name="devices" id="électroménager" /> <span class="checkmark"></span> </label><br />
+                 <input type="hidden" name="devices" value="non"/>
+       <label class="labelcheck">L'électroménager <input type="checkbox" name="devices" id="électroménager" value="oui" /> <span class="checkmark"></span> </label><br />
 
+                 <input type="hidden" name="shutters" value="non"/>
+       <label class="labelcheck">Volets / Stores <input type="checkbox" name="shutters" id="volets/stores"  value="oui" /> <span class="checkmark"></span></label> <br/>
 
-       <label class="labelcheck">Volets / Stores <input type="checkbox" name="shutters" id="volets/stores" /> <span class="checkmark"></span></label> <br/>
-
-       <label class="labelcheck">Jardin<input type="checkbox" name="garden" id="jardin" /> <span class="checkmark"></span></label>
+             <input type="hidden" name="garden" value="non"/>
+       <label class="labelcheck">Jardin<input type="checkbox" name="garden" id="jardin" value="oui" /> <span class="checkmark"></span></label>
 
        </div>
        </div>
@@ -182,12 +191,12 @@
           <h2 id="fintitre">Vos informations personnels : </h2>
             <p class="radiotitle"> Vous êtes : *
               <label class="radioinner">Un particulier
-                <input type="radio" name="type">
+                <input type="radio" name="type" value="particular">
                 <span class="radiomark"></span>
               </label>
 
               <label class="radioinner">Un professionel
-                <input type="radio" name="type">
+                <input type="radio" name="type" value="professional">
                 <span class="radiomark"></span>
               </label>
             </p>
@@ -208,13 +217,13 @@
                <input type="text" name="name" placeholder="Votre Prénom">
                <input type="text" name="last_name" placeholder="Votre Nom">
                       <select id="rollliste" name="tel">
-                        <option value="france">France (+33)</option>
-                        <option value="belgium">Belgique (+32)</option>
-                        <option value="switzerland">Suisse (+41)</option>
-                        <option value="uk">Royaume Unis (+44)</option>
-                        <option value="italy">Italie (+39)</option>
-                        <option value="germany">Allemagne (+49)</option>
-                        <option value="spain">Espagne (+34)</option>
+                        <option value="+33">France (+33)</option>
+                        <option value="+32">Belgique (+32)</option>
+                        <option value="+41">Suisse (+41)</option>
+                        <option value="+44">Royaume Unis (+44)</option>
+                        <option value="+39">Italie (+39)</option>
+                        <option value="+49">Allemagne (+49)</option>
+                        <option value="+34">Espagne (+34)</option>
                       </select>
                 <input type="text" name="phonenumber" placeholder="Votre téléphone">
                <input type="text" name="email" placeholder="Votre e-mail">
@@ -224,14 +233,14 @@
                <input type="text" name="adress2" placeholder="Complément d'adresse">
                <input type="text" name="areacode" placeholder="Code postal">
                <input type="text" name="city" placeholder="Ville">
-                      <select id="rollliste" name="surface">
-                        <option value="none">France</option>
-                        <option value="50">Belgique</option>
-                        <option value="100">Suisse</option>
-                        <option value="150">Royaume Unis</option>
-                        <option value="200">Italie</option>
-                        <option value="200+">Allemagne</option>
-                        <option value="200+">Espagne</option>
+                      <select id="rollliste" name="country">
+                        <option value="france">France</option>
+                        <option value="belgium">Belgique</option>
+                        <option value="switzerland">Suisse</option>
+                        <option value="uk">Royaume Unis</option>
+                        <option value="italy">Italie</option>
+                        <option value="germany">Allemagne</option>
+                        <option value="spain">Espagne</option>
                       </select>
               </div>
              </div>  
