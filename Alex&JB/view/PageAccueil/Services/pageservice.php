@@ -63,7 +63,7 @@
               Mot de passe :  <br>
               <input type="password" name="password" id="mdp" required><br>
           </label>
-          <input type="submit" id="connexion" value="Se Connecter">
+          <a href="index.php?action=see_choose_house_page"><input type="submit" id="connexion" value="Se Connecter"></a>
           <a href=""><p class="compte1" >Créer un Compte</p></a>
           <a href=""><p class="compte1" >Mot de passe oublié</p></a>
           </p>
@@ -93,7 +93,7 @@
     <div class="flip-card-back">
       <h1>Lumière</h1> 
       <p>N'avez vous jamais rêvé que les lumières s'allument toutes seules quand vous arriver ?</p> 
-      <p>C'est maintenant possible</p>
+      <p>C'est maintenant possible grâce à notre système qui permet de faire de nombreuse choses, que ce soit un accès à distance, une automatisation avec des detecteurs de mouvement.</p>
     </div>
   </div>
 </div>
@@ -104,8 +104,8 @@
     </div>
     <div class="flip-card-back">
       <h1>Chauffage</h1> 
-      <p>Que ce soit un chaffage éléctrique ou </p> 
-      <p>We love that guy</p>
+      <p>Que ce soit un chaffage éléctrique ou une chaudière, on peut s'en occuper</p> 
+      <p>Vous avez accés aux statistiques sur les évolutions de la température et certains automatismes vous permetteront de faire des économies d'énérgie.</p>
     </div>
   </div>
 </div>
@@ -116,8 +116,8 @@
     </div>
     <div class="flip-card-back">
       <h1>Alarme</h1> 
-      <p>Architect & Engineer</p> 
-      <p>We love that guy</p>
+      <p>Votre sécurité est très importante pour nous.</p> 
+      <p>C'est pour cela que notre système va vous permettre d'être en toute séécurité, vous serez prévenue dès que quelqu'un entre chez vous, si vous le désirez, des caméra peut vous montrer en direct les activités devant votre maison</p>
     </div>
   </div>
 </div>
@@ -128,8 +128,8 @@
     </div>
     <div class="flip-card-back">
       <h1>Portail</h1> 
-      <p>Architect & Engineer</p> 
-      <p>We love that guy</p>
+      <p>Il ne laisse entrer que vous, sans que vous l'activer</p> 
+      <p>Il peut lire votre plaque d'imatriculation ou celle de vos invités, et ouvre le portail tout seul. Si ce dernier ne la reconnait, il vous prévient et vos demande une autorisation temporaire.</p>
     </div>
   </div>
 </div>
@@ -152,8 +152,8 @@
     </div>
     <div class="flip-card-back">
       <h1>Jardin</h1> 
-      <p>Le pelouse squi s'arrose automatiquement en fonction de la météo</p> 
-      <p>Vos statistique pour votre potager</p>
+      <p>Le pelouse qui s'arrose automatiquement en fonction de la météo</p> 
+      <p>Vos statistiques pour votre potager</p>
     </div>
   </div>
 </div>
@@ -176,8 +176,8 @@
     </div>
     <div class="flip-card-back">
       <h1>Scénario</h1> 
-      <p>C'est bien d'avoir quelques objets connectés mais si c'est automatisé entre ces derniers, c'est mieux</p> 
-      <p>We love that guy</p>
+      <p>C'est bien d'avoir quelques objets connectés mais s'ils sont automatisés, c'est mieux</p> 
+      <p>On vous en propose mais vous pouvez en créer vous-même.</p>
     </div>
   </div>
 </div>

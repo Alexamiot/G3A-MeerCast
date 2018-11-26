@@ -178,16 +178,19 @@ footer h3{
     padding: 30px;
     font-family: "Raleway", sans-serif;
 }
- .sidepanel  {
+/*Sidepanel de connexion*/
+.sidepanel  {
+    font-family:"Raleway", Helvetica, sans-serif;
     width: 0px;
     position: fixed;
     z-index: 1;
-    height: 350px;
+    height: 450px;
     top: 0;
     right: 0;
     filter: opacity(92%);
     background-color: #111;
     overflow-x: hidden;
+    white-space: nowrap;
     transition: 0.5s;
     padding-top: 60px;
 }
@@ -219,9 +222,8 @@ footer h3{
 #email{
     padding: 10px;
     width: 200px;
-    height: 10px;
+    height: 25px;
     border-radius: 8px;
-    margin:5px;
     margin-bottom: 20px;
 }
 #email:focus{
@@ -232,18 +234,19 @@ footer h3{
     margin-top: 5px;
     border-radius: 8px;
     padding:10px;
-    width: 150px;
-    height: 12px;
+    width: 200px;
+    height: 25px;
 }
 #connexion {
     text-align: center;
     margin-top: 25px;
+    margin-left: -20px;
     padding: 8px;
     border-radius: 10px;
     border: 1px solid grey;
     background-color: darkorange;
     color: white;
-    font-size: 1em;
+    font-size: 20px;
     cursor: pointer;
 }
  #connexion:hover {
@@ -257,7 +260,8 @@ footer h3{
     text-align: center;
     color: darkorange;
     font-size: 15px;
-    margin-left: -25px;
+        margin-left: -20px;
+
 }
 /*Le CSS de "Nous contacter" avec un overlay*/
 .overlay {
