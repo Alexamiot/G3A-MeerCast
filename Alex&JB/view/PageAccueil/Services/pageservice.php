@@ -78,10 +78,9 @@
         <section class="columfor">
         <p >
         Vous pouvez regarder les différents services qu'on peut faire pour vous si vous devenez notre client. </p>
-        <span><a href="indexphp"  class= "image_service"><img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="service photo"></a></span>
+        <span><img src="view/PageAccueil/image/services.png" alt="service photo" title="service photo"></span>
         </section>
       </div>
-      <!-- <a href="indexphp"  class= "image_servise"><img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="service photo"></a> -->
     </section>
 
   <section id="cartes">

@@ -105,7 +105,7 @@
         </section>
       </div>
       <div>
-      <a href="indexphp"  class= "image_forum"><img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="forum photo"></a>
+      <img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="forum photo">
       </div>
     </section>
 

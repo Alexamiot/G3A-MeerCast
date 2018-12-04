@@ -84,7 +84,7 @@
         </section>
       </div>
       <div>
-      <a href="indexphp"  class= "image_forum"><img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="forum photo"></a>
+            <img src="view/PageAccueil/image/devisbandeau.png" alt="devis photo" title="devis photo">
       </div>
     </section>
     <form method="post" action="index.php?action=add_devis">
@@ -245,7 +245,7 @@
               </div>
              </div>  
             <label id="conditions">Accepter les conditions générales d'utilisation
-                <input type="checkbox" name="condition" required></label>
+                <input type="checkbox" name="condition" required style="width: 8%;"></label>
                    <div id="devissubmit">
                      <input type="submit" value="Envoyer">
                    </div>

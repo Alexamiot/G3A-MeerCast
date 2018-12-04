@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="view/Design/CSS Maison/CSS_Page_choix_maison.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/solid.css" integrity="sha384-uKQOWcYZKOuKmpYpvT0xCFAs/wE157X5Ua3H5onoRAOCNkJAMX/6QF0iXGGQV9cP" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/fontawesome.css" integrity="sha384-HU5rcgG/yUrsDGWsVACclYdzdCcn5yU8V/3V84zSrPDHwZEdjykadlgI6RHrxGrJ" crossorigin="anonymous">
+	<link rel="icon"  href="view/PageAccueil/favicon/favicon-16x16.png" type="image/png" sizes="any">
 	<title>Choix maison</title>
 </head>
 
@@ -45,9 +46,7 @@
 				</section>
 			<?php } ?>
 			
-
         	
-
 		</div>
 
 		<!-- Partie avec bouton d'ajout de propriété -->

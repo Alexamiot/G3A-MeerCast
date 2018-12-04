@@ -50,10 +50,10 @@ header{
 	margin-left: 80px;
 }
 
-img{
+/*img{
 	width: 200px;
 	height:140px;
-}
+}*/
 /*Le bandeau*/
 #bandeau{
     display: flex;
@@ -84,11 +84,9 @@ text-align: justify;
 }
 
 img[title="service photo"]{
-    margin-top: -50px;
-   margin-bottom: 0px;
-   margin-right: 0px;
-   margin-left: 100px;
-   width: 50%;
+    margin-top: -60px;
+   margin-left: 200px;
+   width: 45%;
    height: 120%;
 
 }

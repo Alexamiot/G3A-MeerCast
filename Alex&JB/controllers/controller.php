@@ -92,7 +92,7 @@ function displayUserProperties() {
         $it += 1;
     }
 
-    require "View/PageMaison/HTML_Page_choix_maison.php";
+    require "view/PageMaison/HTML_Page_choix_maison.php";
 }
 
 // fonction qui demande l'affichage de la page de choix de maison ( page d'accueil en gros )
@@ -102,7 +102,10 @@ function displayUserProperties() {
 */
 // Affichage de la page pour ajouter une maison
 function seeAddHousePage() {
-    require "View/PageMaison/HTML_Ajout_maison.php";
+    require "view/PageMaison/HTML_Ajout_maison.php";
+}
+function seeAjoutBatiment() {
+    require "view/PageMaison/Ajout_batiment.php";
 }
 
 // Ajout d'une propriété
@@ -114,20 +117,22 @@ function addPropertyMethod() {
 
         insertProperty($name, $property_type);
 
-        require "View/PageMaison/HTML_Ajout_maison_succes.php";
+        require "view/PageMaison/HTML_Ajout_maison_succes.php";
 
     } else {
-        require "View/PageMaison/HTML_Ajout_maison_echec.php";
+        require "view/PageMaison/HTML_Ajout_maison_echec.php";
     }
 }
 
 // Affichage de la page pour consulter les infos relatives à une maison
 function seeInfoHousePage() {
-    require "View/PageMaison/HTML_Page_infos_maison.php";
+    if (isset($_GET['propertyName'])) {
+        $_SESSION['propertyName'] = $_GET['propertyName'];
+    }
+    require "view/PageMaison/HTML_Page_infos_maison.php";
 }
 
 // Affichage de la page où l'on peut programmer un scénario
 function seeScenarioPage() {
-    require "View/PageMaison/HTML_Scenario.php";
+    require "view/PageMaison/HTML_Scenario.php";
 }
-?>

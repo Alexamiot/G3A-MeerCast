@@ -1,6 +1,7 @@
 <?php
 
 require "controllers/controller.php";
+session_start();
 
 if (isset($_GET["action"])) {
     $action = htmlspecialchars($_GET["action"]); // Petite fonction de s�curit�
@@ -52,6 +53,10 @@ if (isset($_GET["action"])) {
         case "see_info_house_page":
             seeInfoHousePage();
             break;
+
+        case 'see_Ajout_batiment':
+            seeAjoutBatiment();
+            break;    
 
         // Page pour programmer un scénario
         case 'see_scenario_page':

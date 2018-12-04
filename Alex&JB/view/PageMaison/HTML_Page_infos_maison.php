@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="view/Design/CSS Maison/CSS_Page_infos_maison.css">
+	<link rel="icon"  href="view/PageAccueil/favicon/favicon-16x16.png" type="image/png" sizes="any">
 	<title>Informations sur la maison</title>
 </head>
 
@@ -36,9 +37,8 @@
 		<div id="mySidepanel" class="sidepanel">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 		  <a href="#">Mon Profil</a>
-		  <a href="#">Mes capteurs</a>
-		  <a href="#">Mes actionneurs</a>
-		  <a href="#">Ajouter un bâtiment</a>
+		  <a href="#">Mes capteurs/ actionneurs</a>
+		  <a href="index.php?action=see_Ajout_batiment">Ajouter un bâtiment</a>
 		  <a href="index.php?action=see_scenario_page" target="blank">Programmer un scénario</a>
 		  <a href="index.php?action=see_choose_house_page">Retour au choix de la maison</a>
 		  <a href="#">Se déconnecter</a>
@@ -47,10 +47,8 @@
 		<div class="logo">
     		<a href="index.php?action=see_PageAc"><img src="view/PageAccueil/image/meercastest.png"></a>
     	</div>
-			
-		<!-- <?php $name = htmlspecialchars($_GET['property_name']); ?> -->
-		<!-- <h1>Maison</h1> -->
-		<h1><?php echo htmlspecialchars($_GET['propertyName']); ?></h1>
+
+		<h1><?php echo htmlspecialchars($_SESSION['propertyName']); ?></h1>
 	</header>
 
 <section id="allrooms">
