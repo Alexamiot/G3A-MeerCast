@@ -63,8 +63,8 @@
               Mot de passe :  <br>
               <input type="password" name="password" id="mdp" required><br>
           </label>
-          <a href="index.php?action=see_choose_house_page"><input type="submit" id="connexion" value="Se Connecter"></a>
-          <a href=""><p class="compte1" >Créer un Compte</p></a>
+          <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
+          <a href="index.php?action=inscription""><p class="compte1" >Créer un Compte</p></a>
           <a href=""><p class="compte1" >Mot de passe oublié</p></a>
           </p>
 

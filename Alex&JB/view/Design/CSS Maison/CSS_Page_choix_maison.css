@@ -13,8 +13,13 @@ body {
    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../background.png");
     height: 18vh;
     background-size: cover;
-
 }
+@media only screen and (max-width: 768px){
+   .pageHead{ 
+   	height:8vh;
+   }
+}
+
 .logo img{
     width: 150px;
     height: auto;

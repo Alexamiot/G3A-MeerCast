@@ -14,9 +14,8 @@
 	<header class="pageHead">
 		<div id="mySidepanel" class="sidepanel">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		  <a href="#">Mon Profil</a>
-		  <a href="#">Mes capteurs</a>
-		  <a href="#">Mes actionneurs</a>
+		  <a href="index.php?action=see_pagecapteur">Mon Profil</a>
+		  <a href="index.php?action=see_pagecapteur">Mes capteurs / Actionneur</a>
 		  <a href="#">Se déconnecter</a>
 		</div>
 <button class="openbtn" onclick="openNav()">☰ </button>

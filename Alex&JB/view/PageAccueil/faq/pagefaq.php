@@ -59,8 +59,8 @@
         Mot de passe :  <br>
         <input type="password" name="password" id="mdp" required><br>
     </label>
-    <a href="index.php?action=see_choose_house_page"><input type="submit" id="connexion" value="Se Connecter"></a>
-    <a href=""><p class="compte1" >Créer un Compte</p></a>
+    <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
+    <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
     <a href=""><p class="compte1" >Mot de passe oublié</p></a>
     </p>
    </div>
@@ -101,7 +101,7 @@
         <section class="columfor">
         <p >
         Si vous avez d'autres questions qui ne sont pas présentes dans la faq, cliquez ici pour acceder au forum où vous pourrez posez vos propres questions. Certains utilisateurs et nous, administrateur pourront y répondre, alors n'hésitez pas.</p>
-        <a href="page1.html" class="button">Forum</a>
+        <a href="index.php?action=see_forum" class="button">Forum</a>
         </section>
       </div>
       <div>

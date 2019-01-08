@@ -55,7 +55,6 @@ header{
 	height:140px;
 }*/
 #bandeau{
-  height: 38vh;
     display: flex;
     flex-direction: row;
     margin-top: 30px;
@@ -65,6 +64,7 @@ header{
     background-color: #0f2e60;
     border-radius: 15px;
     justify-content: space-between;
+    padding-bottom: 50px; 
     color: white;
 
 }
@@ -83,9 +83,9 @@ text-align: justify;
 }
 
 img[title="devis photo"]{
-    margin-left: -100%;
-    height: 90%;
-    width:140%;
+    margin-left: -50%;
+    margin-top: 20px;
+
 
 }
 .columfor{
@@ -93,16 +93,19 @@ img[title="devis photo"]{
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
-    height:85%;
+    height:auto;
     
     align-items: center;
 }
 /*Devis formulaire*/
 .labelcheck {
   display: block;
+
+  width: 45%;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+
+  margin-bottom: 35px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -156,12 +159,16 @@ img[title="devis photo"]{
 	margin-bottom: 1%;
 }
 .debuttest{
+  margin-left: 20%;
     margin-top: 1%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     margin-bottom: 1%;
 
 }
-#debutgauche{
+/*#debutgauche{
 	display: flex;
     margin-left: 30%;
     flex-direction: column;
@@ -172,7 +179,7 @@ img[title="devis photo"]{
     margin-right: 25%;
     flex-direction: column;
     width: 30%;
-}
+}*/
 /*Milieu du devis*/
 /*Les Radio box */
 .radiotitle{
@@ -314,7 +321,7 @@ img[title="devis photo"]{
   border-radius: 50%;
   background: white;
 }
-#rollliste{
+.rollliste{
   width: 70%;
   background-color: #f1f1f1;
   border: none;

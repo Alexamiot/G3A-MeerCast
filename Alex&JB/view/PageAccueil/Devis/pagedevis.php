@@ -1,4 +1,7 @@
  <!DOCTYPE html>
+ <?php $admins =getAdmins();
+  ?>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -63,8 +66,8 @@
               Mot de passe :  <br>
               <input type="password" name="password" id="mdp" required><br>
           </label>
-          <a href="index.php?action=see_choose_house_page"><input type="submit" id="connexion" value="Se Connecter"></a>
-          <a href=""><p class="compte1" >Créer un Compte</p></a>
+          <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
+          <a href="index.php?action=inscription""><p class="compte1" >Créer un Compte</p></a>
           <a href=""><p class="compte1" >Mot de passe oublié</p></a>
           </p>
 
@@ -81,12 +84,22 @@
         <p >
           Détaillez votre projet dans notre formulaire ci-dessous. Notre équipe va récuperer vos informations pour vous créer un compte, auquel vous aurez accés une fois l'installation terminée.
           Nous vous recontacterons dès que votre dossier sera traité et qu'une date d'installation sera disponible.</p>
+          
         </section>
       </div>
       <div>
             <img src="view/PageAccueil/image/devisbandeau.png" alt="devis photo" title="devis photo">
       </div>
     </section>
+    <?php 
+    if( isset($_SESSION["pseudo"])) { 
+      foreach ($admins as $admin) {
+        if($admin['pseudo']==$_SESSION["pseudo"]){ ?>
+
+          <button class="openbtn" style="background-color: darkorange;">Modifier le catalogue</button>
+    <?php } } }   ?>
+
+
     <form method="post" action="index.php?action=add_devis">
     <section class="devis">
       <div class="mySlides fade debutdevis">
@@ -95,41 +108,52 @@
         <h2 id="titredevis">Quelle est la nature de vos besoins ?</h2>
         <p><br />
           <div class="debuttest">
-          <div id="debutgauche">
-            <input type="hidden" name="alarm" value="non"/>
-       <label class="labelcheck">Alarme <input type="checkbox" name="alarm" id="alarme" value="oui" /> <span class="checkmark"></span> </label><br />
 
+<?php  
+
+foreach($catalogue as $donnees){
+
+  ?>
+            <input type="hidden" name="<?php echo $donnees['bddName']?>" value="non"/>
+       <label class="labelcheck"><?php echo $donnees['name']?> <input type="checkbox" name="<?php echo $donnees['bddName']?>" value="oui" /> <span class="checkmark"></span> </label><br />
+
+
+
+<!-- 
             <input type="hidden" name="elec" value="non"/>
-       <label class="labelcheck" >Chauffage éléctrique<input type="checkbox" name="elec" id="chauffage.éléctrique" value="oui" /> <span class="checkmark"></span> </label><br />
+       <label class="labelcheck" >Chauffage éléctrique<input type="checkbox" name="elec"  value="oui" /> <span class="checkmark"></span> </label><br />
 
              <input type="hidden" name="heater" value="non"/>
-       <label class="labelcheck">Chaudière / Pompe à chaleur <input type="checkbox" name="heater" id="Chaudière/Pompeàchaleur" value="oui" /> <span class="checkmark"></span> </label><br />
+       <label class="labelcheck">Chaudière / Pompe à chaleur <input type="checkbox" name="heater" value="oui" /> <span class="checkmark"></span> </label><br />
 
                <input type="hidden" name="AC" value="non"/>
-        <label class="labelcheck">Climatisation <input type="checkbox" name="AC" id="Climatisation" value="oui" /> <span class="checkmark"></span></label> <br/>
+        <label class="labelcheck">Climatisation <input type="checkbox" name="AC" value="oui" /> <span class="checkmark"></span></label> <br/>
 
                <input type="hidden" name="pool" value="non"/>
-        <label class="labelcheck">Piscine <input type="checkbox" name="pool" id="Piscine" value="oui" /> <span class="checkmark"></span></label>
+        <label class="labelcheck">Piscine <input type="checkbox" name="pool" value="oui" /> <span class="checkmark"></span></label>
+ -->
+           <!-- </div> -->
 
-          </div>
-          <div id="debutdroite">
+
+         <!--  <div id="debutdroite">
              <input type="hidden" name="gate" value="non"/>
-       <label class="labelcheck">Portail <input type="checkbox" name="gate" id="Portail" value="oui" /> <span class="checkmark"></span> </label><br />
+       <label class="labelcheck"> <?php echo $donnees['name']?><input type="checkbox" name="gate"  value="oui" /> <span class="checkmark"></span> </label><br /> -->
 
-               <input type="hidden" name="lighting" value="non"/>
-       <label class="labelcheck">Eclairage <input type="checkbox" name="lighting" id="Eclairage" value="oui" /> <span class="checkmark"></span></label>
+              <!--  <input type="hidden" name="lighting" value="non"/>
+       <label class="labelcheck">Eclairage <input type="checkbox" name="lighting" value="oui" /> <span class="checkmark"></span></label>
        <br />
 
                  <input type="hidden" name="devices" value="non"/>
-       <label class="labelcheck">L'électroménager <input type="checkbox" name="devices" id="électroménager" value="oui" /> <span class="checkmark"></span> </label><br />
+       <label class="labelcheck">L'électroménager <input type="checkbox" name="devices"  value="oui" /> <span class="checkmark"></span> </label><br />
 
                  <input type="hidden" name="shutters" value="non"/>
-       <label class="labelcheck">Volets / Stores <input type="checkbox" name="shutters" id="volets/stores"  value="oui" /> <span class="checkmark"></span></label> <br/>
+       <label class="labelcheck">Volets / Stores <input type="checkbox" name="shutters"  value="oui" /> <span class="checkmark"></span></label> <br/>
 
              <input type="hidden" name="garden" value="non"/>
-       <label class="labelcheck">Jardin<input type="checkbox" name="garden" id="jardin" value="oui" /> <span class="checkmark"></span></label>
-
-       </div>
+       <label class="labelcheck">Jardin<input type="checkbox" name="garden" value="oui" /> <span class="checkmark"></span></label>
+ -->
+<!--        </div> -->
+        <?php } ?>
        </div>
      </p>
       </div>
@@ -216,7 +240,7 @@
               <div id="flex1">
                <input type="text" name="name" placeholder="Votre Prénom">
                <input type="text" name="last_name" placeholder="Votre Nom">
-                      <select id="rollliste" name="tel">
+                      <select class="rollliste" name="tel">
                         <option value="+33">France (+33)</option>
                         <option value="+32">Belgique (+32)</option>
                         <option value="+41">Suisse (+41)</option>
@@ -233,7 +257,7 @@
                <input type="text" name="adress2" placeholder="Complément d'adresse">
                <input type="text" name="areacode" placeholder="Code postal">
                <input type="text" name="city" placeholder="Ville">
-                      <select id="rollliste" name="country">
+                      <select class="rollliste" name="country">
                         <option value="france">France</option>
                         <option value="belgium">Belgique</option>
                         <option value="switzerland">Suisse</option>
@@ -247,7 +271,7 @@
             <label id="conditions">Accepter les conditions générales d'utilisation
                 <input type="checkbox" name="condition" required style="width: 8%;"></label>
                    <div id="devissubmit">
-                     <input type="submit" value="Envoyer">
+                     <input type="submit" value="Envoyer" >
                    </div>
         </div>
     </section>

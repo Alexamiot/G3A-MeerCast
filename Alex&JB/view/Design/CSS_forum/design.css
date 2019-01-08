@@ -1,0 +1,96 @@
+
+
+
+
+
+
+#Forum {
+margin: auto;
+color: white;
+/*padding: 20px;
+text-align: center;*/
+background-color: #0f2e60;
+width:80%;
+min-height: 80%;
+border-radius: 30px;
+margin-bottom: 40px;
+}
+#nom{
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-size:2.5em;
+    padding: 20px;
+}
+
+.categories{
+    margin-top: 30px;
+    margin-bottom: 10%;
+    color:white;
+    margin-left:7%;
+
+}
+.categories h1{
+    color:white;
+    text-decoration: none;
+    font-size: 1.7em;
+    
+}
+
+.newSubject{
+    color:white;
+    text-decoration: none;
+    font-size: 1.5em;
+    background-color: darkorange;
+    border-radius: 10px;
+    padding :10px;
+     position: absolute;
+     margin-left:7%;
+  bottom: 10%;
+  
+
+}
+.sousrep{
+    display: flex;
+    
+    
+    align-items: center;
+    justify-content: space-between;
+
+    }
+
+
+.categorie{
+   margin-left:3%;
+    margin-top: 3%;
+    display: flex;
+    width: 30%;
+    
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formulaire{
+    margin-top: 8%;
+    
+    margin-left: 8%
+
+
+}
+.reponse{
+   width:80%;
+   border: 1px solid darkorange;
+   border-radius: 10px;
+   margin-top:15px; 
+   margin-bottom:15px;
+   padding: 10px;
+   word-wrap: break-word;
+}
+
+.categorie a{
+    color:white;
+    text-decoration: none;
+    font-size: 1.3em;
+}
+

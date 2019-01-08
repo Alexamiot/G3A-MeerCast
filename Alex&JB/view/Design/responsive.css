@@ -1,0 +1,37 @@
+/*			Responsive design		*/
+
+@media all and (max-width: 1200px) {
+	.header{
+		height: auto;
+		width: auto;
+	}
+	#forResponsive{
+		display: initial;
+		float: right;
+	}
+	.row{
+		display: none;
+	}
+	.logo img{
+		margin-left: 20px;
+	}
+	.hero{
+		/*position: relative;*/
+		left: 0%
+	}
+	.wrapper img{
+		float: left;
+		width: 12em;
+		height: 12em;
+	}
+
+	#inner{
+		justify-content: space-around;
+		width: auto;
+		font-size: 0.7em;
+	}
+	.content,.content2{
+		margin-top: 2px;
+	}
+
+}

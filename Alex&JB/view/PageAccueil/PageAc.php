@@ -3,8 +3,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <link rel="stylesheet" type="text/css" href="view/Design/pageAc.css">
+    <link rel="stylesheet" type="text/css" href="view/Design/responsive.css">
     <title>MeerCast</title>
     <link rel="icon"  href="view/PageAccueil/favicon/favicon-16x16.png" type="image/png" sizes="any">
 
@@ -13,9 +14,11 @@
 <body>
 
     <header>
+
     	<div class="logo">
     		<img src="view/PageAccueil/image/meercastest.png">
     	</div>
+
     	<div class="row">
     		<ul class="mainNav">
     		<li class="active"><a href="#">ACCUEIL</a></li>
@@ -26,11 +29,24 @@
     		<li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
     		</ul>
     	</div>
+                 <div id="forResponsive">
+                    <div id="respons" class="respon">
+                      <a href="javascript:void(0)" id="closebtnR" onclick="closeNavR()">×</a>
+                      <a class="active" href="#">ACCUEIL</a>
+                      <a href="index.php?action=see_pageservice">SERVICES</a>
+                      <a href="index.php?action=see_pagedevis">DEMANDER UN DEVIS</a>
+                      <button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
+                      <a href="index.php?action=see_pagefaq">FAQ / FORUM</a>
+                      <button class="openbtn" onclick="openNav()">SE CONNECTER</button>
+                    </div>
+                  <button id="openbtnR" onclick="openNavR()">☰ </button>
+                </div>
+
     	<div id="myNav" class="overlay">
-       				<a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
-       			<div class="overlay-content">
-	   				<h2>Envoyez-nous un message</h2>
-            <div class="container">
+       		<a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+       		<div class="overlay-content">
+	   				  <h2>Envoyez-nous un message</h2>
+                <div class="container">
   <form method="post" action="index.php?action=add_message">
     <label class="form"><br>Prénom<br></label>
     <input type="text" name="name" placeholder="Votre Prénom">
@@ -47,8 +63,8 @@
 
     <input type="submit" value="Envoyer">
   </form>
-</div>
-  				</div>
+              </div>
+            </div>
 		</div>
     	<div id="mySidepanel" class="sidepanel">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -63,8 +79,8 @@
         Mot de passe :  <br>
         <input type="password" name="password" id="mdp" required><br>
     </label>
-    <a href="index.php?action=see_choose_house_page"><input type="submit" id="connexion" value="Se Connecter"></a>
-    <a href=""><p class="compte1" >Créer un Compte</p></a>
+    <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
+    <a href="index.php?action=inscription""><p class="compte1" >Créer un Compte</p></a>
     <a href=""><p class="compte1" >Mot de passe oublié</p></a>
     </p>
 
@@ -78,6 +94,7 @@
     		</div>
     	</div>
     </header>
+    <!-- Les petits articles -->
     <section class="wrapper style1">
 				<div id="inner">
 					<article class="article1">
@@ -117,6 +134,13 @@ function openNav2() {
 
 function closeNav2() {
   document.getElementById("myNav").style.height = "0%";
+}
+function openNavR() {
+    document.getElementById("respons").style.width = "200px";
+}
+
+function closeNavR() {
+    document.getElementById("respons").style.width = "0";
 }
 </script>
 </body>

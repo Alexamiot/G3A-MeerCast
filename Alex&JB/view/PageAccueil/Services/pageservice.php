@@ -30,7 +30,7 @@
                   <div class="overlay-content">
                   <h2>Envoyez-nous un message</h2>
                   <div class="container">
-                  <form method="post" action="index.php?action=add_message">
+                <form method="post" action="index.php?action=add_message">
                     <label class="form"><br>Prénom<br></label>
                     <input type="text" name="name" placeholder="Votre Prénom">
 
@@ -63,8 +63,8 @@
               Mot de passe :  <br>
               <input type="password" name="password" id="mdp" required><br>
           </label>
-          <a href="index.php?action=see_choose_house_page"><input type="submit" id="connexion" value="Se Connecter"></a>
-          <a href=""><p class="compte1" >Créer un Compte</p></a>
+          <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
+          <a href="index.php?action=inscription""><p class="compte1" >Créer un Compte</p></a>
           <a href=""><p class="compte1" >Mot de passe oublié</p></a>
           </p>
 

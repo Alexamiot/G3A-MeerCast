@@ -34,6 +34,29 @@ if (isset($_GET["action"])) {
     case "add_devis":
     addDevis();
     break;
+
+    case "see_forum":
+        seeforum();
+        break;
+    case "inscription":
+        inscription();
+        break;
+    case "deconnexion":
+        deconnexion();
+        break;
+    case "connexion":
+        connexion();
+        break;
+    case "addPost":
+        addPost();
+        break;
+    case "addPost2":
+        addPost2();
+        break;
+    case "administrateur":
+        administrateur();
+        break;
+
  /* index des pages une fois que nous sommes connectés.*/
         case "see_choose_house_page":
             displayUserProperties();
@@ -61,6 +84,10 @@ if (isset($_GET["action"])) {
         // Page pour programmer un scénario
         case 'see_scenario_page':
             seeScenarioPage();
+            break;
+
+        case 'see_pagecapteur':
+            seeCapteurPage();
             break;
 
     default:
