@@ -89,10 +89,6 @@
     <input type="submit" value="Se Connecter" id="connexion">
 </form>
 
-
-
-
-   
     <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
     <a href=""><p class="compte1" >Mot de passe oublié</p></a>
     </p>

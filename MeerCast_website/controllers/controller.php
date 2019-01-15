@@ -294,21 +294,22 @@ function connexion(){
         
         $rep= getUser($email, $mdp);
         if ($rep){
+          $bool=true;
             getUsers($email);
             $actionner=true;
             $admins=getAdmin();
             $mdp = hash("sha256", $mdp);
             foreach ($admins as $admin) {
-              echo "hello";
+
               if ($admin["email"]== $email && $admin["mdp"]== $mdp ) {
-                echo "hello2";
+
+                $bool=false;
                 require "view/PageAccueil/forum/administration.php";
               }
 
             }
+            if($bool){require "view/PageAccueil/forum/forum.php";}
 
-            echo "ya dumb";
-           require "view/PageAccueil/forum/forum.php";
         }
 
             

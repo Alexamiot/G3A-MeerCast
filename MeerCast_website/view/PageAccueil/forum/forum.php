@@ -1,8 +1,5 @@
 <?php  
 
-
-
-
   require "view/PageAccueil/forum/template.php";
 ?>
  

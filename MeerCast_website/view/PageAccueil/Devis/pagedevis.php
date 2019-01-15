@@ -24,7 +24,24 @@
               <li class="active"><a href="#" >DEMANDER UN DEVIS</a></li>
                 <li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
               <li><a href="index.php?action=see_pagefaq">FAQ / FORUM</a></li>
-              <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
+              <?php
+
+      if (isset($_SESSION['email'])){?>
+      <li><a href="index.php?action=see_choose_house_page">MES MAISONS</a></li>
+        
+        <?php }  else{?>
+        <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
+
+<?php
+      }
+        
+
+      if (isset($_SESSION['email'])){?>
+       <li><a href="index.php?action=deconnexion">DECONNEXION</a></li>
+      
+    <?php 
+   }
+   ?>
               </ul>
             </div>
             <!--Overlay pour nous conctacter  -->
@@ -53,26 +70,33 @@
                 </div>
           </div>
           <!-- Overlay de connexion -->
-            <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <div class="identification">
-        <p>
-             <h2 class="sidetitle">Votre compte : </h2>
-             <label>
-              Email : <br>
-              <input type="email" name="email" placeholder="Ex: nom-prenom@gmail.com" id="email" required><br>
-          </label>
-          <label>
-              Mot de passe :  <br>
-              <input type="password" name="password" id="mdp" required><br>
-          </label>
-          <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
-          <a href="index.php?action=inscription""><p class="compte1" >Créer un Compte</p></a>
-          <a href=""><p class="compte1" >Mot de passe oublié</p></a>
-          </p>
+                    <div id="mySidepanel" class="sidepanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <div class="identification">
+          <p>
+               <h2 class="sidetitle">Votre compte : </h2>
+              
 
+            <form method="post" action="index.php?action=connexion">
+
+            <label>
+                Email :<br>
+                <input type="email" name="email" placeholder="Email...." id="email" required>
+            </label><br>
+            
+            <label>
+                Mot de Passe :<br>
+                <input type="password" name="mdp" id="mdp" required>
+            </label><br>
+            
+            <input type="submit" value="Se Connecter" id="connexion">
+        </form>
+
+            <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
+            <a href=""><p class="compte1" >Mot de passe oublié</p></a>
+            </p>
+           </div>
         </div>
-      </div>
   </header>
   <p style="text-align: center; border: 2px darkblue; margin:5px; padding: 1px; font-size: 25px;">
   <?php echo $successmessage; ?></p>
