@@ -26,7 +26,7 @@ elseif (!isset($actionner)) { ?>
     	
     <label class="elem">
         Email :<br/>
-        <input type="email" name="pseudo" placeholder="Email...." required>
+        <input type="email" name="email" placeholder="Email...." required>
     </label>
     
     <label class="elem">
