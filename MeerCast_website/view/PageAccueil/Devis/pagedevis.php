@@ -1,6 +1,6 @@
  <!DOCTYPE html>
-<!--  <?php $admins =getAdmins();
-  ?> -->
+<?php $admins =getAdmin();
+?>
 
 <html>
 <head>
