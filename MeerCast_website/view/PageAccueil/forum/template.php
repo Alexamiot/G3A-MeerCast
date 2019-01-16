@@ -11,7 +11,7 @@
 
 <header>
       <div class="logo">
-        <img src="view/PageAccueil/Image/meercastest.png">
+        <a href="index.php?action=see_PageAc"><img src="view/PageAccueil/image/meercastest.png"></a>
       </div>
       <div class="row">
         <ul class="mainNav">

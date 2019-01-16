@@ -366,7 +366,7 @@ function addPropertyMethod() {
 
         insertProperty($property_name, $property_type);
 
-        require "view/PageMaison/HTML_Ajout_maison_succes.php";
+        require "view/PageMaison/HTML_Page_choix_maison.php";
 
     } else {
         require "view/PageMaison/HTML_Ajout_maison_echec.php";
