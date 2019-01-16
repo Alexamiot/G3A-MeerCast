@@ -157,7 +157,7 @@
 
                     </article>
                     <article class="article2">
-                        <span class="image"><img src="view/PageAccueil/image/environnement.jpg" alt="Nouveautés" /></span>
+                        <span class="image"><img src="view/PageAccueil/image/environnement.jpg" alt="environnement"/></span>
                         <div class="content">
                             <h2>Démarches Environnementales
                             </h2>
