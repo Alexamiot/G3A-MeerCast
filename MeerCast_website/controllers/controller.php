@@ -19,6 +19,11 @@ function seeViewHistoire(){
 function seeViewFaq(){
 	require "view/PageAccueil/faq/pagefaq.php";
 }
+
+function seeViewEnvironment(){
+    require "view/PageAccueil/Environnement/PageEnvironnement.php";
+}
+
 function addMessage() {
     if ($_POST["name"] && $_POST["last_name"] && $_POST["email"]&& $_POST["message"]) {
 
@@ -111,9 +116,6 @@ function seeforum() {
     }
    
 }
-
-
-
 
 
 function administrateur() {
