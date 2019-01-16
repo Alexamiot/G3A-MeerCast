@@ -268,7 +268,7 @@ function suppmessage($suppmessage){
 
 function getAdmin(){
         $db = dbConnect();
-        $req = $db->query("SELECT email, mdp FROM administrateurs ");
+        $req = $db->query("SELECT email, pseudo, mdp FROM administrateurs ");
         
         
         return $req;

@@ -115,14 +115,13 @@
             <img src="view/PageAccueil/image/devisbandeau.png" alt="devis photo" title="devis photo">
       </div>
     </section>
-<!-- <?php 
+<?php 
     if( isset($_SESSION["pseudo"])) { 
       foreach ($admins as $admin) {
-        if($admin['pseudo']==$_SESSION["pseudo"]){ ?>
+        if($admin["pseudo"]==$_SESSION["pseudo"]){ ?>
 
           <button class="openbtn" style="background-color: darkorange;">Modifier le catalogue</button>
-    <?php } } }   ?> -->
-
+    <?php } } }   ?>
 
     <form method="post" action="index.php?action=add_devis">
     <section class="devis">
