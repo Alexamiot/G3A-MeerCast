@@ -27,6 +27,10 @@ if (isset($_GET["action"])) {
         seeViewFaq();       
         break;
 
+        case "see_environment_page":
+            seeViewEnvironment();
+            break;
+
     case "add_message":
     addMessage();
     break;

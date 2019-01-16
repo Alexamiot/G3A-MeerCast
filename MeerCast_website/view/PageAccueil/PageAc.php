@@ -154,6 +154,17 @@
 							<a href="index.php?action=see_choose_house_page"><button class="boutton">Voir Plus</button></a>
 						</div>
 					</article>
+
+                    </article>
+                    <article class="article2">
+                        <span class="image"><img src="view/PageAccueil/image/environnement.jpg" alt="Nouveautés" /></span>
+                        <div class="content">
+                            <h2>Démarches Environnementales
+                            </h2>
+                            <p align="justify">Nous sommes encore dans la conception de cette partie. Elle vous donne une idée de comment nous économisons de l'énergie pour l'environnement.</p>
+                            <a href="index.php?action=see_environment_page"><button class="boutton">Voir Plus</button></a>
+                        </div>
+                    </article>
 				</div>
 			</section>
 	  <footer>
