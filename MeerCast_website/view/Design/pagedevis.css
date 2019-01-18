@@ -2,6 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 header{
 	background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(background.png);
@@ -85,9 +86,13 @@ text-align: justify;
 img[title="devis photo"]{
     margin-left: -50%;
     margin-top: 20px;
-
-
 }
+@media all and (max-width: 1200px) {
+    img[title="devis photo"]{
+    margin-left: -20%;
+    margin-top: 50px;
+}
+  }
 .columfor{
     display: flex;
     flex-direction: column;
@@ -366,6 +371,7 @@ img[title="devis photo"]{
   position: relative;
   margin: auto;
 }
+
 .debutdevis{
     padding: 40px;
   margin:15px;
@@ -473,16 +479,6 @@ img[title="devis photo"]{
   .prev, .next,.text {font-size: 11px}
 }
 
-footer{
-	height: 12vh;
-	background-color: #555;
-	color:#e8e9ed;
-}
-footer h3{
-	text-align: center;
-	padding: 30px;
-	font-family: "Raleway", sans-serif;
-}
 /*Sidepanel de connexion*/
 .sidepanel  {
   font-family:"Raleway", Helvetica, sans-serif;
@@ -648,4 +644,15 @@ input[type=submit]:hover {
     margin-top: 6px;
     margin-bottom: 16px;
     resize: vertical;
+}
+
+footer{
+  height: 12vh;
+  background-color: #555;
+  color:#e8e9ed;
+}
+footer h3{
+  text-align: center;
+  padding: 30px;
+  font-family: "Raleway", sans-serif;
 }

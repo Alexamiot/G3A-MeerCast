@@ -75,6 +75,28 @@ function getCatalogue(){
         $req = $db->query("SELECT name,bddName FROM catalogue");
         return $req;
 }
+
+function insertService($newService, $bddService){
+    $db= dbConnect();
+    $req = $db-> prepare("INSERT INTO catalogue(name,bddName) VALUES (:newService, :bddService)");
+    
+    $req->bindParam("newService",$newService);
+    $req->bindParam("bddService",$bddService);
+  
+
+    $req->execute();
+    $req->closeCursor();
+}
+
+function insertServiceIntoDevis($bddService){
+    $db= dbConnect();
+    $req = $db-> prepare("ALTER TABLE devis ADD :bddService VARCHAR(20) NOT NULL DEFAULT 'non' AFTER garden");
+    $req->bindParam("bddService",$bddService);
+
+    $req->execute();
+    $req->closeCursor();
+}
+
 /*                  Model pour les pages une fois que nous sommes connectés
 
  * Cette fonction permet de récupérer la liste des propriétés d'un utilisateur
