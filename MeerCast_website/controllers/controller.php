@@ -93,11 +93,6 @@ function seeViewFaq(){
   $faqs=myFaq();
 	require "view/PageAccueil/faq/pagefaq.php";
 }
-
-function seeViewEnvironment(){
-    require "view/PageAccueil/Environnement/PageEnvironnement.php";
-}
-
 function addMessage() {
     if ($_POST["name"] && $_POST["last_name"] && $_POST["email"]&& $_POST["message"]) {
 
@@ -125,7 +120,7 @@ function addDevis() {
     if (($_POST["alarm"] || $_POST["elec"] || $_POST["heater"]|| $_POST["AC"] || $_POST["pool"]||  $_POST["gate"]||  $_POST["lighting"]||  $_POST["devices"]||  $_POST["shutters"]||  $_POST["garden"])&& ($_POST["building"] && $_POST["construction"] && $_POST["surface"] && $_POST["type"] && $_POST["gender"] && $_POST["name"] && $_POST["last_name"] && $_POST["tel"] && $_POST["phonenumber"] && $_POST["email"] && $_POST["adress"] && $_POST["areacode"] && $_POST["city"] && $_POST["country"] && $_POST["condition"])) {
 
         $comment= htmlspecialchars($_POST["comment"]);
-		    $name = htmlspecialchars($_POST["name"]);
+		$name = htmlspecialchars($_POST["name"]);
         $last_name = htmlspecialchars($_POST["last_name"]);
         $email = htmlspecialchars($_POST["email"]);
         $phonenumber= htmlspecialchars($_POST["phonenumber"]);
@@ -165,21 +160,6 @@ function addDevis() {
         require "view/PageAccueil/Devis/pagedevis.php";
     }
 }
-
-function addService()
-{
-  if ($_POST["newService"]&& $_POST["bddService"]) {
-    $newService= htmlspecialchars($_POST["newService"]);
-    $bddService= htmlspecialchars($_POST["bddService"]);
-
-    insertService($newService, $bddService);
-    insertServiceIntoDevis($bddService);
-    $successmessage=" Le service à bien été ajouté ! ";
-    $catalogue=getCatalogue();
-    require "view/PageAccueil/Devis/pagedevis.php";
-  }
-}
-
 function seeforum() {
     $name="";
     
@@ -205,6 +185,9 @@ function seeforum() {
     }
    
 }
+
+
+
 
 
 function administrateur() {
@@ -529,7 +512,7 @@ function addPropertyMethod() {
 
         insertProperty($property_name, $property_type);
 
-        displayUserProperties();
+        require "view/PageMaison/HTML_Ajout_maison_succes.php";
 
     } else {
         require "view/PageMaison/HTML_Ajout_maison_echec.php";

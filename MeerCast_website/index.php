@@ -20,89 +20,77 @@ if (isset($_GET["action"])) {
         break;
 
     case "see_pagehistoire":
-        seeViewHistoire();
+        seeViewHistoire();       
         break;
 
     case "see_pagefaq":
-        seeViewFaq();
-        break;
-
-    case "see_environment_page":
-        seeViewEnvironment();
+        seeViewFaq();       
         break;
 
     case "add_message":
-        addMessage();
-        break;
+    addMessage();
+    break;
 
     case "add_devis":
-        addDevis();
-        break;
-
-    case "add_service":
-        addService();
-        break;
+    addDevis();
+    break;
 
     case "see_forum":
         seeforum();
         break;
-
     case "inscription":
         inscription();
         break;
 
+    
     case "deconnexion":
         deconnexion();
         break;
-
     case "connexion":
         connexion();
         break;
-
     case "addPost":
         addPost();
         break;
-
     case "addPost2":
         addPost2();
         break;
-
     case "administrateur":
         administrateur();
         break;
 
  /* index des pages une fois que nous sommes connectés.*/
-    case "see_choose_house_page":
-        displayUserProperties();
-        break;
+        case "see_choose_house_page":
+            displayUserProperties();
+            break;
 
-    // Idem pour la page d'ajout de maison
-    case 'see_add_house_page':
-        seeAddHousePage();
-        break;
+        // Idem pour la page d'ajout de maison
+        case 'see_add_house_page':
+            seeAddHousePage();
+            break;
 
-    // méthode pour ajouter une propriété
-    case 'add_property':
-        addPropertyMethod();
-        break;
+        // méthode pour ajouter une propriété
+        case 'add_property':
+            addPropertyMethod();
+            break;
 
-    // Page pour voir les infos sur une maison
-    case "see_info_house_page":
-        seeInfoHousePage();
-        break;
+        // Page pour voir les infos sur une maison
+        case "see_info_house_page":
+            seeInfoHousePage();
+            break;
 
-    case 'see_Ajout_batiment':
-        seeAjoutBatiment();
-        break;
+        case 'see_Ajout_batiment':
+            seeAjoutBatiment();
+            break;    
 
-    // Page pour programmer un scénario
-    case 'see_scenario_page':
-        seeScenarioPage();
-        break;
+        // Page pour programmer un scénario
+        case 'see_scenario_page':
+            seeScenarioPage();
+            break;
 
-    case 'see_pagecapteur':
-        seeCapteurPage();
-        break;
+        case 'see_pagecapteur':
+            seeCapteurPage();
+            break;
 
         case 'see_admin_users':
             seeAdminUers();
@@ -137,4 +125,4 @@ if (isset($_GET["action"])) {
 } else {
     seeViewAccueil();
 }
-?>
+?>        

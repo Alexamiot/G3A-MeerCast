@@ -1,6 +1,6 @@
  <!DOCTYPE html>
   <?php $admins =getAdmin(); ?>
-
+  
 
 <html>
 <head>
@@ -15,7 +15,7 @@
   <header>
     <!-- Barre de navigation -->
             <div class="logo">
-              <a href="index.php?action=see_PageAc"><img src="view/PageAccueil/image/meercastest.png"></a>
+              <img src="view/PageAccueil/image/meercastest.png">
             </div>
             <div class="row">
               <ul class="mainNav">
@@ -84,7 +84,7 @@
         <p >
           Détaillez votre projet dans notre formulaire ci-dessous. Notre équipe va récuperer vos informations pour vous créer un compte, auquel vous aurez accés une fois l'installation terminée.
           Nous vous recontacterons dès que votre dossier sera traité et qu'une date d'installation sera disponible.</p>
-
+          
         </section>
       </div>
       <div>
@@ -103,7 +103,7 @@
         <p><br />
           <div class="debuttest">
 
-<?php
+<?php  
 
 foreach($catalogue as $donnees){
 
@@ -113,7 +113,7 @@ foreach($catalogue as $donnees){
 
 
 
-<!--
+<!-- 
             <input type="hidden" name="elec" value="non"/>
        <label class="labelcheck" >Chauffage éléctrique<input type="checkbox" name="elec"  value="oui" /> <span class="checkmark"></span> </label><br />
 
@@ -228,7 +228,7 @@ foreach($catalogue as $donnees){
                   <input type="radio" name="gender" value="Mme">
                   <span class="radiomark"></span>
                 </label>
-              </p>
+              </p> 
 
              <div id="info">
               <div id="flex1">
@@ -261,7 +261,7 @@ foreach($catalogue as $donnees){
                         <option value="spain">Espagne</option>
                       </select>
               </div>
-             </div>
+             </div>  
             <label id="conditions">Accepter les conditions générales d'utilisation
                 <input type="checkbox" name="condition" required style="width: 8%;"></label>
                    <div id="devissubmit">
@@ -271,22 +271,13 @@ foreach($catalogue as $donnees){
     </section>
     </form>
             <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
-
-    <h3>Indiquez le nom du service que vous voulez ajouter au catalogue</h3>
-      <form method="post" action="index.php?action=add_service">
-        <input type="text" name="newService">
-        <h3>Indiquez le nom qui sera donnée pour la base de donnée ( en Anglais ou un abrégé)</h3>
-        <input type="text" name="bddService">
-        <input type="submit" value="Ajouter" >
-      </form>
-
     <footer>
 
-        <h3>Designed by MeerCast Designer</h3>
+        <h3>Designed by Alexandre Amiot</h3>
     </footer>
     <!--Mes fonctions javascript -->
     <script>
@@ -320,15 +311,15 @@ function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
+  if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+      slides[i].style.display = "none";  
   }
   for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
 </script>

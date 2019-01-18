@@ -2,7 +2,6 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-  font-family: "Roboto", sans-serif;
 }
 header{
 	background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(background.png);
@@ -65,14 +64,14 @@ header{
     background-color: #0f2e60;
     border-radius: 15px;
     justify-content: space-between;
-    padding-bottom: 50px;
+    padding-bottom: 50px; 
     color: white;
 
 }
 .textfor h3{
     font-size: 2em;
 }
-.textfor p{
+.textfor p{ 
     font-size: 1.2em;
     margin-top: 10px;
     text-align: justify;
@@ -86,20 +85,16 @@ text-align: justify;
 img[title="devis photo"]{
     margin-left: -50%;
     margin-top: 20px;
+
+
 }
-@media all and (max-width: 1200px) {
-    img[title="devis photo"]{
-    margin-left: -20%;
-    margin-top: 50px;
-}
-  }
 .columfor{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 80%;
     height:auto;
-
+    
     align-items: center;
 }
 /*Devis formulaire*/
@@ -191,7 +186,7 @@ img[title="devis photo"]{
   font-size: 24px;
   margin-left: 18%;
   padding: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 15px; 
 }
 #surface{
   margin-left: 17%;
@@ -330,13 +325,13 @@ img[title="devis photo"]{
   width: 70%;
   background-color: #f1f1f1;
   border: none;
-  border-radius: 4px;
+  border-radius: 4px; 
 }
 #rollliste2{
   width: 46%;
   background-color: #f1f1f1;
   border: none;
-  border-radius: 4px;
+  border-radius: 4px; 
 }
 #comment{
   margin-left: 18%;
@@ -371,7 +366,6 @@ img[title="devis photo"]{
   position: relative;
   margin: auto;
 }
-
 .debutdevis{
     padding: 40px;
   margin:15px;
@@ -392,7 +386,7 @@ img[title="devis photo"]{
 }
 .findevis{
   padding: 40px;
-  margin:15px;
+  margin:15px; 
   color: white;
   background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../PageAccueil/Image/devis3.jpeg);
   background-size: cover;
@@ -465,12 +459,12 @@ img[title="devis photo"]{
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
+  from {opacity: .4} 
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4}
+  from {opacity: .4} 
   to {opacity: 1}
 }
 
@@ -479,6 +473,16 @@ img[title="devis photo"]{
   .prev, .next,.text {font-size: 11px}
 }
 
+footer{
+	height: 12vh;
+	background-color: #555;
+	color:#e8e9ed;
+}
+footer h3{
+	text-align: center;
+	padding: 30px;
+	font-family: "Raleway", sans-serif;
+}
 /*Sidepanel de connexion*/
 .sidepanel  {
   font-family:"Raleway", Helvetica, sans-serif;
@@ -646,13 +650,148 @@ input[type=submit]:hover {
     resize: vertical;
 }
 
-footer{
-  height: 12vh;
-  background-color: #555;
-  color:#e8e9ed;
+
+
+
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */
+
+
+/* Set a style for all buttons */
+button {
+  background-color: darkorange;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
-footer h3{
-  text-align: center;
-  padding: 30px;
-  font-family: "Raleway", sans-serif;
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+
+
+.elem{
+font-size: 1.8em;
+padding:20px;
+
+
+}
+
+form label input{
+  margin-top: 15px  ;
+  margin-bottom: 5px  ;
+border-radius: 10px;
+width: 50%;
+
+height:35px;
+ 
+}
+
+
+.button {
+  
+    background-color: darkorange;
+    border: none;
+    color: white;
+    margin: auto;
+    padding:20px;
+    font-size: 1.7em;
+    text-decoration: none;
+   border-radius: 5px;
+   margin-bottom: 40px;
+   margin-top: 30px;
+   width: 40%;
+
+
 }

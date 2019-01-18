@@ -449,11 +449,8 @@ text-align: justify;
 }
 
 img[title="forum photo"]{
-   margin-top: 20px;
-   margin-bottom: 0px;
-   margin-right: -20px;
-    height: 80%;
-    width:80%;
+   margin-left: -50%;
+    margin-top: 20px;
 
 }
 
