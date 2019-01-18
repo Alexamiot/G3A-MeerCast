@@ -9,28 +9,46 @@
 
 <body>
 
-  <header>
+   <header>
     <!-- Barre de navigation -->
             <div class="logo">
-              <img src="view/PageAccueil/image/meercastest.png">
+              <a href="index.php?action=see_PageAc"><img src="view/PageAccueil/image/meercastest.png"></a>
             </div>
             <div class="row">
               <ul class="mainNav">
-              <li class="active"><a href="index.php?action=see_PageAc">ACCUEIL</a></li>
-              <li><a href="index.php?action=see_pageservice">SERVICES</a></li>
+              <li><a href="index.php?action=see_PageAc">ACCUEIL</a></li>
+              <li class="active"><a href="">SERVICES</a></li>
               <li><a href="index.php?action=see_pagedevis" >DEMANDER UN DEVIS</a></li>
                 <li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
               <li><a href="index.php?action=see_pagefaq">FAQ / FORUM</a></li>
-              <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
-              </ul>
-            </div>
-            <!--Overlay pour nous conctacter  -->
-            <div id="myNav" class="overlay">
-                    <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
-                  <div class="overlay-content">
-                  <h2>Envoyez-nous un message</h2>
-                  <div class="container2">
-        <form method="post" action="index.php?action=add_message">
+             <?php
+
+      if (isset($_SESSION['email'])){?>
+      <li><a href="index.php?action=see_choose_house_page">MES MAISONS</a></li>
+        
+        <?php }  else{?>
+        <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
+
+<?php
+      }
+        
+
+      if (isset($_SESSION['email'])){?>
+       <li><a href="index.php?action=deconnexion">DECONNEXION</a></li>
+      
+    <?php 
+   }
+   ?>
+
+        
+        </ul>
+      </div>
+      <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+            <div class="overlay-content">
+            <h2>Nous envoyer un message</h2>
+            <div class="container">
+  <form method="post" action="index.php?action=add_message">
     <label class="form"><br>Prénom<br></label>
     <input type="text" name="name" placeholder="Votre Prénom">
 
@@ -46,30 +64,36 @@
 
     <input type="submit" value="Envoyer">
   </form>
-      </div>
-                </div>
+</div>
           </div>
-          <!-- Overlay de connexion -->
-            <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <div class="identification">
-        <p>
-             <h2 class="sidetitle">Votre compte : </h2>
-             <label>
-              Email : <br>
-              <input type="email" name="email" placeholder="Ex: nom-prenom@gmail.com" id="email" required><br>
-          </label>
-          <label>
-              Mot de passe :  <br>
-              <input type="password" name="password" id="mdp" required><br>
-          </label>
-          <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
-          <a href="index.php?action=inscription""><p class="compte1" >Créer un Compte</p></a>
-          <a href=""><p class="compte1" >Mot de passe oublié</p></a>
-          </p>
+    </div>
+      <div id="mySidepanel" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <div class="identification">
+  <p>
+       <h2 class="sidetitle">Votre compte : </h2>
+      
 
-        </div>
-      </div>
+    <form method="post" action="index.php?action=connexion">
+
+    <label>
+        Email :<br>
+        <input type="email" name="email" placeholder="Email...." id="email" required>
+    </label><br>
+    
+    <label>
+        Mot de Passe :<br>
+        <input type="password" name="mdp" id="mdp" required>
+    </label><br>
+    
+    <input type="submit" value="Se Connecter" id="connexion">
+</form>
+
+    <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
+    <a href=""><p class="compte1" >Mot de passe oublié</p></a>
+    </p>
+   </div>
+</div>
   </header>
   <!-- body -->
   <section id="bandeau">

@@ -109,7 +109,7 @@
           	<div class="devpart3">
 		    <label>
 		        Nom :
-		        <input type="text" name="name" required style="width: 30%; height: 20px;">
+		        <input type="text" name="property_name" required style="width: 30%; height: 20px;">
 		    </label><br>
             <label id="conditions">Accepter les conditions générales d'utilisation
                 <input type="checkbox" name="condition" required style="width: 8%;"></label>

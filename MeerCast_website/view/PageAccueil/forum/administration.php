@@ -1,7 +1,7 @@
 <!-- ici il faudra mettre le template admin .....
  --> <?php  require "view/PageAccueil/forum/template.php";?>
- 	
- 
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,21 +11,21 @@
 </head>
 
 <body>
-      
+
     <div id="Forum">
     <h1 id="nom" style="text-align: center">Administration</h1>
-    
+
       <?php
 
-      
-   
+
+
 if(isset($_GET["categorie"])){
   $_GET["categorie"]= htmlspecialchars($_GET["categorie"]);
   ?>
-  <img src="view/PageAccueil/image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
-  <div class = "categories"> 
+  <img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
+  <div class = "categories">
  <h1> <?php echo $_GET["categorie"];  ?></h1>
- 
+
 
   <?php
    $topic =getcategorie ($_GET["categorie"]);
@@ -35,7 +35,7 @@ if(isset($_GET["categorie"])){
    <a href="index.php?action=administrateur&amp;categorie=<?php echo $_GET["categorie"]; ?>&amp;supptopic=<?php echo $topic2["newtopic"]; ?>"><p>supprimer</p></a>
 </div>
 <?php } ?>
-</div>  
+</div>
 <?php
     if (isset($_SESSION['pseudo'])){?>
   <a class="newSubject" href="index.php?action=addPost2&amp;categorie=<?php echo $_GET["categorie"]; ?>">Nouveau sujet</a>
@@ -44,20 +44,20 @@ if(isset($_GET["categorie"])){
 }
 }
 elseif(isset($newtopic)|| isset($_GET["newtopic"])){?>
-<img src="view/PageAccueil/image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
+<img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
  <div class="categories">
  <h1 style="text-transform: uppercase;"> <?php echo $newtopic;  ?></h1>
- 
+
  <?php
  $subjects= getTopic ($newtopic);
- while($subject = $subjects->fetch()){ 
+ while($subject = $subjects->fetch()){
            $proprietary=$subject["proprietary"];
            $proprio= getProprietaryTopic ($proprietary);
            $proprioz= $proprio->fetch();
            $proprio2=$proprioz["pseudo"];
            $dates=$subject["dates"];
     ?>
-    <div class = "reponse">  
+    <div class = "reponse">
       <div class="sousrep">
  <h1> <?php echo $subject["contenu"];  ?> </h1>
     <a style="text-decoration: none; color:red;" href="index.php?action=administrateur&amp;suppmessage=<?php echo $subject["contenu"] ; ?>"><p>supprimer</p></a>
@@ -66,7 +66,7 @@ elseif(isset($newtopic)|| isset($_GET["newtopic"])){?>
  echo $proprio2." ".$dates;?>
  </div><?php
  }
- 
+
  if (isset($_SESSION['pseudo'])){?>
            <form class="formulaire" method="post" action="index.php?action=administrateur">
            <label>
@@ -81,10 +81,10 @@ elseif(isset($newtopic)|| isset($_GET["newtopic"])){?>
 }
 else { ?>
     <div class = "categories">
-   <?php    
+   <?php
         $requete= getcategories();
         while ($donnees = $requete->fetch())
-          
+
 {
 ?>
     <div class = "categorie">
@@ -99,7 +99,7 @@ else { ?>
 } ?>
     </div>
 
-    
+
 
 </body>
 </html>

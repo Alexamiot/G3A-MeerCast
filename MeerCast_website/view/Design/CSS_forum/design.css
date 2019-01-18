@@ -5,14 +5,13 @@
 
 
 #Forum {
-margin: auto;
-background-color: #0f2e60;
-width:80%;
-min-height: 80%;
-height: auto;
-
-border-radius: 30px;
-margin-bottom: 40px;
+  margin: auto;
+  background-color: #0f2e60;
+  width:80%;
+  height: auto;
+  min-height: 80%;
+  border-radius: 30px;
+  margin-bottom: 40px;
 }
 #nom{
     text-align: center;
@@ -30,13 +29,15 @@ margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     margin-left:7%;
+    display: flex;
+    flex-direction: column;
 
 }
 .categories h1{
     color:white;
     text-decoration: none;
     font-size: 1.7em;
-    
+
 }
 
 .newSubject{
@@ -47,17 +48,17 @@ margin-bottom: 40px;
     border-radius: 10px;
     padding :10px;
      position: absolute;
-    
+
      margin-top: 1%;
-    
+
     margin-left: 8%
-  
+
 
 }
 .sousrep{
     display: flex;
-    
-    
+
+
     align-items: center;
     justify-content: space-between;
 
@@ -69,14 +70,14 @@ margin-bottom: 40px;
     margin-top: 3%;
     display: flex;
     width: 30%;
-    
+
     align-items: center;
     justify-content: space-between;
 }
 
 .formulaire{
     margin-top: 8%;
-    
+
     margin-left: 8%
 
 
@@ -85,7 +86,7 @@ margin-bottom: 40px;
    width:80%;
    border: 1px solid darkorange;
    border-radius: 10px;
-   margin-top:15px; 
+   margin-top:15px;
    margin-bottom:15px;
    padding: 10px;
    word-wrap: break-word;
@@ -96,4 +97,3 @@ margin-bottom: 40px;
     text-decoration: none;
     font-size: 1.3em;
 }
-
