@@ -144,6 +144,18 @@ echo 'Nouvelle utilisateur !';
     $req->closeCursor();
 }
 
+function createAdmin($pseudo, $email, $mdp){
+    $db = dbConnect();
+
+    $hash = hash("sha256", $mdp);
+     
+    $req = $db->prepare("INSERT INTO administrateurs(pseudo, email, mdp) VALUES(:pseudo, :email, :mdp)");
+$req->execute(array( 'pseudo' => $pseudo, 'email' => $email, 'mdp' => $hash )); 
+echo 'Nouvelle Admin !'; 
+
+    $req->closeCursor();
+}
+
 
 function getUsers($email)
 {
@@ -272,4 +284,54 @@ function getAdmin(){
 
 
 }
+
+
+
+function myFaq (){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM faq ");
+    return $req;
+}
+
+function AddTomyFaq($question,$reponse){
+    $db = dbConnect();
+    $req2= $db->prepare("INSERT INTO faq(question, reponse) VALUES(:question,:reponse)");
+       $req2 -> execute(array("question"=> $question,"reponse"=>$reponse));
+
+      
+       $req2->closeCursor();
+}
+function SuppFromMyFaq ($question){
+    $db = dbConnect();
+    $req = $db->prepare("DELETE FROM faq  WHERE question =:question");
+    $req -> execute(array("question"=> $question));
+    return $req;
+}
+
+function AddTomyCatalogue($name,$newbox){
+    $db = dbConnect();
+    $req2= $db->prepare("INSERT INTO catalogue(name, bddName) VALUES(:name,:newbox)");
+       $req2 -> execute(array("name"=> $name, "newbox"=>  $newbox ));
+
+      
+       $req2->closeCursor();
+}
+
+
+
+function SuppFromMyCatalogue ($question){
+    $db = dbConnect();
+    $req = $db->prepare("DELETE FROM catalogue  WHERE name =:question");
+    $req -> execute(array("question"=> $question));
+    return $req;
+}
+
+
+
+function userEtMaison(){
+$db = dbConnect();
+    $req = $db->query("SELECT u.pseudo pseudo, u.email email, h.property_name nomhabitation, h.property_type typehabitation FROM users u LEFT JOIN houses h ON u.id = h.id_user");
+    return $req;
+}
+
 ?>

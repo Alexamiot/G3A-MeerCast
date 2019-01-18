@@ -1,5 +1,3 @@
-
-
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="view/Design/CSS_forum/template.css">
@@ -15,24 +13,19 @@
       </div>
       <div class="row">
         <ul class="mainNav">
-        <li ><a href="index.php?action=see_PageAc">ACCUEIL</a></li>
-        <li><a href="index.php?action=see_pageservice">SERVICES</a></li>
-        <li><a href="index.php?action=see_pagedevis">DEMANDER UN DEVIS</a></li>
+        <!-- <?php
+        
 
-          <li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
-        <li class="active2"><a href="">FAQ / FORUM</a></li>
+        ?> -->
+
+        <li  ><a href="index.php?action=see_admin_users">GERER LES UTILISATEURS</a></li>
+
+        <li  class="active2" ><a href="index.php?action=see_pagedevis_admin">MODIFIER LE DEVIS</a></li>
+
+          
+        <li  ><a href="index.php?action=see_faq_admin">FAQ / FORUM</a></li>
         <?php
-
-      if (isset($_SESSION['email'])){?>
-      <li><a href="index.php?action=see_choose_house_page">MES MAISONS</a></li>
         
-        <?php }  else{?>
-        <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
-
-<?php
-      }
-        
-
       if (isset($_SESSION['email'])){?>
        <li><a href="index.php?action=deconnexion">DECONNEXION</a></li>
       

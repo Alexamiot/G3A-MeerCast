@@ -328,6 +328,9 @@ body {
 
 
 
+
+
+
 /* Style the search box */
 #mySearch {
   width: 100%;
@@ -495,4 +498,74 @@ section[class=""] {
     
 
     
+}
+
+
+#bin {
+    width:2%;
+    height:3%;
+}
+
+
+
+
+#inscription{
+/*margin-left: 200px;
+margin-right: 200px;*/
+/*display: block;*/
+margin: auto;
+text-align: center;
+/*width: 30%;
+height: 60%;*/
+/*background-color: rgba(0,0,0,0.6);*/
+/*border-radius: 30px;*/
+
+padding: 40px;
+
+margin-top: 20px;
+
+display: flex; 
+flex-direction: column;
+text-align: center;
+
+
+}
+
+.elem{
+    color: white;
+}
+
+form label input{
+  margin-top: 15px  ;
+  margin-bottom: 5px  ;
+border-radius: 10px;
+width: 50%;
+
+height:35px;
+ 
+}
+form label textarea{
+  margin-top: 15px  ;
+  margin-bottom: 5px  ;
+  border-radius: 10px;
+width: 50%;
+
+height:10%;
+}
+
+.button {
+  text-align: center;
+    background-color: darkorange;
+    border: none;
+    color: white;
+    margin: auto;
+    padding:10px;
+    font-size: 1.7em;
+    text-decoration: none;
+   border-radius: 5px;
+   margin-bottom: 40px;
+   margin-top: 30px;
+   width: 50%;
+
+
 }

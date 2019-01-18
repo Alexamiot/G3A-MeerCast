@@ -9,6 +9,8 @@ margin: auto;
 background-color: #0f2e60;
 width:80%;
 min-height: 80%;
+height: auto;
+
 border-radius: 30px;
 margin-bottom: 40px;
 }
@@ -23,8 +25,10 @@ margin-bottom: 40px;
 
 .categories{
     margin-top: 30px;
-    margin-bottom: 10%;
+    margin-bottom: 2%;
     color:white;
+    display: flex;
+    flex-direction: column;
     margin-left:7%;
 
 }
@@ -43,8 +47,10 @@ margin-bottom: 40px;
     border-radius: 10px;
     padding :10px;
      position: absolute;
-     margin-left:7%;
-  bottom: 10%;
+    
+     margin-top: 1%;
+    
+    margin-left: 8%
   
 
 }

@@ -41,6 +41,8 @@ if (isset($_GET["action"])) {
     case "inscription":
         inscription();
         break;
+
+    
     case "deconnexion":
         deconnexion();
         break;
@@ -89,6 +91,32 @@ if (isset($_GET["action"])) {
         case 'see_pagecapteur':
             seeCapteurPage();
             break;
+
+        case 'see_admin_users':
+            seeAdminUers();
+            break;
+        case 'see_pagedevis_admin':
+            seepagedevisadmin();
+            break;
+        case 'see_forum_admin':
+            seeforumadmin();
+            break;
+        case 'see_faq_admin':
+            seefaqadmin();
+            break;
+        case 'add_faq':
+            addfaq();
+            break;
+        case 'suppTopicFaq':
+            suppTopicFaq();
+            break;
+         case 'changecatalogue':
+            changecatalogue();
+            break;
+        case 'inscription2':
+        inscription2();
+        break;
+
 
     default:
         echo "Erreur 404";

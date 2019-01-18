@@ -1,5 +1,7 @@
 <!-- ici il faudra mettre le template admin .....
- --> <?php  require "view/PageAccueil/forum/template.php";?>
+ --> 
+ <?php $util="active2"?>
+ <?php  require "view/PageAccueil/admisnistration/templateadmin.php";?>
  	
  
 <!DOCTYPE html>
@@ -22,11 +24,11 @@
 if(isset($_GET["categorie"])){
   $_GET["categorie"]= htmlspecialchars($_GET["categorie"]);
   ?>
-  <img src="view/PageAccueil/image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
+  <img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
   <div class = "categories"> 
  <h1> <?php echo $_GET["categorie"];  ?></h1>
  
-
+  <div>
   <?php
    $topic =getcategorie ($_GET["categorie"]);
    while($topic2= $topic->fetch()){?>
@@ -35,16 +37,19 @@ if(isset($_GET["categorie"])){
    <a href="index.php?action=administrateur&amp;categorie=<?php echo $_GET["categorie"]; ?>&amp;supptopic=<?php echo $topic2["newtopic"]; ?>"><p>supprimer</p></a>
 </div>
 <?php } ?>
-</div>  
+<div>
 <?php
     if (isset($_SESSION['pseudo'])){?>
   <a class="newSubject" href="index.php?action=addPost2&amp;categorie=<?php echo $_GET["categorie"]; ?>">Nouveau sujet</a>
 
+ <?php }?>
+</div>  
+
 <?php
-}
+
 }
 elseif(isset($newtopic)|| isset($_GET["newtopic"])){?>
-<img src="view/PageAccueil/image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
+<img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
  <div class="categories">
  <h1 style="text-transform: uppercase;"> <?php echo $newtopic;  ?></h1>
  

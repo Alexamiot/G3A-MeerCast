@@ -1,81 +1,21 @@
- <!DOCTYPE html>
-  <?php $admins =getAdmin(); ?>
-  
+<?php $util="active2"?>
+<?php  require "view/PageAccueil//admisnistration/templateadmin3.php";?>
 
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
+     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="view/Design/pagedevis.css">
     <link rel="icon"  href="view/PageAccueil/favicon/favicon-16x16.png" type="image/png" sizes="any">
-    <title>MeerCast</title>
+    
+    <title>Gerer les utilisateurs</title>
 </head>
 
 <body>
 
-  <header>
-    <!-- Barre de navigation -->
-            <div class="logo">
-              <img src="view/PageAccueil/image/meercastest.png">
-            </div>
-            <div class="row">
-              <ul class="mainNav">
-              <li><a href="index.php?action=see_PageAc">ACCUEIL</a></li>
-              <li><a href="index.php?action=see_pageservice">SERVICES</a></li>
-              <li class="active"><a href="#" >DEMANDER UN DEVIS</a></li>
-                <li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
-              <li><a href="index.php?action=see_pagefaq">FAQ / FORUM</a></li>
-              <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
-              </ul>
-            </div>
-            <!--Overlay pour nous conctacter  -->
-            <div id="myNav" class="overlay">
-                    <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
-                  <div class="overlay-content">
-                  <h2>Envoyez-nous un message</h2>
-                  <div class="container">
-        <form method="post" action="index.php?action=add_message" target="_blank">
-    <label class="form"><br>Prénom<br></label>
-    <input type="text" name="name" placeholder="Votre Prénom">
-
-    <label class="form"><br>Nom<br></label>
-    <input type="text" name="last_name" placeholder="Votre Nom de famille">
-
-   <label class="form"><br>Email<br></label>
-    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" required>
-
-
-    <label class="form"><br>Que voulez-vous nous dire ?<br></label>
-    <textarea name="message" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
-
-    <input type="submit" value="Envoyer">
-  </form>
-      </div>
-                </div>
-          </div>
-          <!-- Overlay de connexion -->
-            <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <div class="identification">
-        <p>
-             <h2 class="sidetitle">Votre compte : </h2>
-             <label>
-              Email : <br>
-              <input type="email" name="email" placeholder="Ex: nom-prenom@gmail.com" id="email" required><br>
-          </label>
-          <label>
-              Mot de passe :  <br>
-              <input type="password" name="password" id="mdp" required><br>
-          </label>
-          <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
-          <a href="index.php?action=inscription""><p class="compte1" >Créer un Compte</p></a>
-          <a href=""><p class="compte1" >Mot de passe oublié</p></a>
-          </p>
-
-        </div>
-      </div>
-  </header>
-  <p style="text-align: center; border: 2px darkblue; margin:5px; padding: 1px; font-size: 25px;">
-  <?php echo $successmessage; ?></p>
+ 
+  <!-- <p style="text-align: center; border: 2px darkblue; margin:5px; padding: 1px; font-size: 25px;">
+  <?php echo $successmessage; ?></p> -->
   <!-- body -->
 <section id="bandeau">
       <div class="textfor">
@@ -92,7 +32,46 @@
       </div>
     </section>
 
+   
+    		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Modifier le catalogue</button>
 
+<div id="id01" class="modal">
+  <div class="modal-content animate">
+  <form method="post" action="index.php?action=changecatalogue"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
+  	<label class="elem">
+        box :<br>
+        <input type="text" name="name" placeholder="name...." ><br>
+    </label>
+    <label class="elem">
+        box :<br>
+        <input type="text" name="newbox" placeholder="topic...."><br>
+    </label>
+
+
+
+
+    <label>quel box du catalogue souhaitex vous retirez ? <br>
+        <select name="suppbox">
+            <?php  
+
+foreach($catalogue as $donnees){
+
+  ?>
+                <option value="<?php echo $donnees['name'];?>"><?php echo $donnees['name'];?></option>
+              <?php }?>  
+        </select>
+    </label>
+    
+
+
+
+
+    <input type="submit" value="Modifier le catalogue"  class="button">
+</form>
+</div>
+</div>
+         
+   <!-- changecatalogue -->
 
     <form method="post" action="index.php?action=add_devis">
     <section class="devis">
@@ -105,7 +84,7 @@
 
 <?php  
 
-foreach($catalogue as $donnees){
+foreach($catalogue2 as $donnees){
 
   ?>
             <input type="hidden" name="<?php echo $donnees['bddName']?>" value="non"/>
@@ -322,6 +301,20 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
+
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
 </script>
 </body>
 </html>

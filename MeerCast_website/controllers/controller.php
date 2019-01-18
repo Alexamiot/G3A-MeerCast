@@ -5,9 +5,55 @@ function seeViewAccueil() {
     require "view/PageAccueil/PageAc.php";
 }
 
+function seeAdminUers(){
+  $erreur="";
+  $lesUsersetMaison= userEtMaison();
+
+
+  require "view/PageAccueil/admisnistration/adminusers.php";
+}
+function seepagedevisadmin(){
+  $successmessage="";
+    $catalogue = getCatalogue();
+    $catalogue2 = getCatalogue();
+require "view/PageAccueil/admisnistration/admindevis.php";
+
+}
+
+function changecatalogue(){
+ if($_POST["newbox"] && $_POST["name"] ){
+  $name = htmlspecialchars($_POST["name"]);
+  $newbox = htmlspecialchars($_POST["newbox"]);
+  AddTomyCatalogue($name,$newbox);
+ }
+  if($_POST["suppbox"]){
+
+    $suppbox=htmlspecialchars($_POST["suppbox"]);
+    SuppFromMyCatalogue ($suppbox);
+  }
+
+$successmessage="";
+$catalogue = getCatalogue();
+$catalogue2 = getCatalogue();
+
+require "view/PageAccueil/admisnistration/admindevis.php";
+
+}
+
+function seeforumadmin(){
+  require "view/PageAccueil/admisnistration/pageadmin.php";
+}
+
+function seefaqadmin(){
+
+  $faqs=myFaq();
+require "view/PageAccueil/admisnistration/faqadmin.php";
+}
+
 function seeViewDevis() {
 	$successmessage="";
     $catalogue = getCatalogue();
+    $catalogue2 = getCatalogue();
     require "view/PageAccueil/Devis/pagedevis.php";
 }
 function seeViewService(){
@@ -16,7 +62,35 @@ function seeViewService(){
 function seeViewHistoire(){
 	require "view/PageAccueil/Histoire/pagehistoire.php";
 }
+function addfaq(){
+  if ($_POST["question"] && $_POST["reponse"] ){
+     $question = htmlspecialchars($_POST["question"]);
+      $reponse = htmlspecialchars($_POST["reponse"]);
+      AddTomyFaq($question,$reponse);
+      $faqs=myFaq();
+    require "view/PageAccueil/admisnistration/faqadmin.php";
+  }
+  else{
+    $faqs=myFaq();
+    require "view/PageAccueil/admisnistration/faqadmin.php";
+  }
+}
+
+function suppTopicFaq(){
+    if(isset($_GET["topicToSupp"])){
+    $question = htmlspecialchars($_GET["topicToSupp"]);
+    SuppFromMyFaq($question);
+    $faqs=myFaq();
+    require "view/PageAccueil/admisnistration/faqadmin.php";
+    }else{
+    $faqs=myFaq();
+    require "view/PageAccueil/admisnistration/faqadmin.php";
+  }
+}
+
 function seeViewFaq(){
+
+  $faqs=myFaq();
 	require "view/PageAccueil/faq/pagefaq.php";
 }
 function addMessage() {
@@ -129,7 +203,7 @@ function administrateur() {
          insertTopic2($newtopic,$comadditionnel);
         
 
-         require "view/PageAccueil/forum/administration.php";
+         require "view/PageAccueil/admisnistration/pageadmin.php";
          
       }
      
@@ -139,16 +213,16 @@ function administrateur() {
       
       $supptopic=htmlspecialchars($_GET["supptopic"]);
       suppTopic($supptopic);
-      require "view/PageAccueil/forum/administration.php";
+      require "view/PageAccueil/admisnistration/pageadmin.php";
     }
     elseif(isset($_GET["suppmessage"])){
         $suppmessage=htmlspecialchars($_GET["suppmessage"]);
       suppmessage($suppmessage);
-      require "view/PageAccueil/forum/administration.php";
+      require "view/PageAccueil/admisnistration/pageadmin.php";
     }
     else{
 
-      require "view/PageAccueil/forum/administration.php";
+      require "view/PageAccueil/admisnistration/pageadmin.php";
     }
    
 }
@@ -187,7 +261,7 @@ function addPost2() {
    $name="";
     if(isset($_GET["newtopic"])){
       $newtopic=htmlspecialchars($_GET["newtopic"]);
-      require "view/PageAccueil/forum/administration.php";
+      require "view/PageAccueil/admisnistration/pageadmin.php";
     
 
     }
@@ -199,7 +273,7 @@ function addPost2() {
 
            insertTopic($newtopic,$contenu, $categorie);
            
-          require "view/PageAccueil/forum/administration.php";
+          require "view/PageAccueil/admisnistration/pageadmin.php";
 
         }
         else{
@@ -273,12 +347,73 @@ function inscription() {
 }
 
 
-function deconnexion(){
 
-require   "view/PageAccueil/forum/deconnexion.php";
 
+
+
+function inscription2() {
+    $erreur="";
+    
+
+ if ( isset($_POST["pseudo"]) && isset($_POST["email"]) && isset($_POST["mdp"]) && isset($_POST["mdp2"])) {
+        $pseudo = htmlspecialchars($_POST["pseudo"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $mdp = htmlspecialchars($_POST["mdp"]);
+        $mdp2 = htmlspecialchars($_POST["mdp2"]);
+
+
+        $syntaxe = '#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
+        if ((strlen($pseudo)>4 AND strlen($pseudo)<20) AND preg_match($syntaxe, $email) AND (strlen($mdp)>4 AND strlen($mdp)<20) AND ($mdp==$mdp2)) {
+            
+
+            insertUser($pseudo, $email, $mdp, $mdp2);
+            createAdmin($pseudo, $email, $mdp);
+            echo 'Nouvelle utilisateur !'; 
+            
+
+
+           require "view/PageAccueil/admisnistration/adminusers.php";
+        }else{
+            if (!preg_match($syntaxe, $email)) {
+              $erreur="Syntaxe du email n'est pas la bonne";
+              }
+
+
+            if (!(strlen($pseudo)>4 AND strlen($pseudo)<20) ){
+               $erreur ="il faut un speudo de bonne taille ";
+              }
+
+            if (!(strlen($mdp)>4 AND strlen($mdp)<20)) {
+
+                  $errreur ="Il faut un mdp de la bonne taille";
+             }
+            if (!($mdp==$mdp2 ) ){
+                  $erreur ="les mdp ne correspondent pas !! ";
+              }
+          require "view/PageAccueil/admisnistration/adminusers.php";
+        }
+
+
+        
+  }else {
+        require "view/PageAccueil/admisnistration/adminusers.php";
+   }
+
+
+ require "view/PageAccueil/admisnistration/adminusers.php";
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 function connexion(){
@@ -294,22 +429,24 @@ function connexion(){
         
         $rep= getUser($email, $mdp);
         if ($rep){
-          $bool=true;
+            $bool=true;
             getUsers($email);
             $actionner=true;
             $admins=getAdmin();
             $mdp = hash("sha256", $mdp);
             foreach ($admins as $admin) {
-
+              
               if ($admin["email"]== $email && $admin["mdp"]== $mdp ) {
-
                 $bool=false;
-                require "view/PageAccueil/forum/administration.php";
+                $faqs=myFaq();
+                require "view/PageAccueil/admisnistration/faqadmin.php";
               }
 
             }
-            if($bool){require "view/PageAccueil/forum/forum.php";}
-
+            if($bool){
+           
+           require "view/PageAccueil/forum/forum.php";
+         }
         }
 
             
@@ -344,6 +481,15 @@ function displayUserProperties() {
     require "view/PageMaison/HTML_Page_choix_maison.php";
 }
 
+
+
+
+function deconnexion(){
+
+require   "view/PageAccueil/forum/deconnexion.php";
+
+
+}
 // fonction qui demande l'affichage de la page de choix de maison ( page d'accueil en gros )
 /*function seeChooseHousePage() {
      require "view/PageAccueil/forum/HTML_Page_choix_maison.php";

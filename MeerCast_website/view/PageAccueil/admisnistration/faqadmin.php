@@ -1,3 +1,8 @@
+
+<?php
+require "view/PageAccueil/admisnistration/templateadmin.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,76 +13,17 @@
     <title>MeerCast</title>
 </head>
  <body>
-     <header>
-    	<div class="logo">
-    		<img src="view/PageAccueil/image/meercastest.png">
-    	</div>
-    	<div class="row">
-    		<ul class="mainNav">
-    		<li ><a href="index.php?action=see_PageAc">ACCUEIL</a></li>
-    		<li><a href="index.php?action=see_pageservice">SERVICES</a></li>
-    		<li><a href="index.php?action=see_pagedevis">DEMANDER UN DEVIS</a></li>
-       		<li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
-    		<li class="active2"><a href="">FAQ / FORUM</a></li>
-    		<li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
-    		</ul>
-    	</div>
-    	<div id="myNav" class="overlay">
-       				<a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
-       			<div class="overlay-content">
-	   				<h2>Nous envoyer un message</h2>
-            <div class="container">
-  <form method="post" action="index.php?action=add_message">
-    <label class="form"><br>Prénom<br></label>
-    <input type="text" name="name" placeholder="Votre Prénom">
-
-    <label class="form"><br>Nom<br></label>
-    <input type="text" name="last_name" placeholder="Votre Nom de famille">
-
-   <label class="form"><br>Email<br></label>
-    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" required>
-
-
-    <label class="form"><br>Que voulez-vous nous dire ?<br></label>
-    <textarea name="message" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
-
-    <input type="submit" value="Envoyer">
-  </form>
-</div>
-  				</div>
-		</div>
-    	<div id="mySidepanel" class="sidepanel">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <div class="identification">
-  <p>
-       <h2 class="sidetitle">Votre compte : </h2>
-       <label>
-        Email : <br>
-        <input type="email" name="email" placeholder="Ex: nom-prenom@gmail.com" id="email" required><br>
-    </label>
-    <label>
-        Mot de passe :  <br>
-        <input type="password" name="password" id="mdp" required><br>
-    </label>
-    <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
-    <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
-    <a href=""><p class="compte1" >Mot de passe oublié</p></a>
-    </p>
-   </div>
-</div>
-    	
-    </header>
+     
 
 
 
 
-
-<div class="faq">
+  <div class="faq">
     <h2>FAQ (Foire aux questions)</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
     <?php  foreach ($faqs as $faq) { ?>
-        <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?></button>
+        <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?> <a href="index.php?action=suppTopicFaq&amp;topicToSupp=<?php echo $faq["question"];?>"><img src="view/PageAccueil/image/bin.png" id="bin"></a></button>
 <div class="panel">
 
   <p><?php  echo $faq["reponse"]  ;?></p>
@@ -93,7 +39,29 @@
       
       
     </ul>
+
+
+<!-- textContent avec un getelement byid sur element et unn size()    ou ElementsByTagName("textarea")[0]-->
+<!-- ici on voudra mettre le js qui nous dit que on est en dessous des 500 charactere limiter  -->
+<form method="post" action="index.php?action=add_faq"  id="inscription"  >
+    <label class="elem">
+        Sujet :<br>
+        <input type="text" name="question" placeholder="topic...." required><br>
+    </label>
+    <label class="element">
+        Ecrivez :<br>
+        <textarea id="changeText" type="text" name="reponse" placeholder="votre contenu du sujet" required> </textarea><span id="pseudo_info"></span><br>
+        
+    </label >
+    
+    
+    
+    <input type="submit" value="Ajouter a la FAQ"  class="button" >
+</form>
+
+
   </div>
+  
 
 
   <section id="bandeau">
@@ -109,7 +77,7 @@
 
 
 
-        <a href="index.php?action=see_forum" class="button">Forum</a>
+        <a href="index.php?action=see_forum_admin" class="button">Forum</a>
        
 
 
@@ -126,7 +94,29 @@
     </section>
 
 
-	 
+	 <script type="text/javascript"> 
+ const inputElt = document.getElementById("changeText");
+const spanInfoElt = document.getElementById("pseudo_info");
+
+inputElt.addEventListener("keypress", keypressFunction);
+inputElt.addEventListener("blur", blurInputFunction);
+
+function keypressFunction(event) {
+    if(( inputElt.value.length)<=100){
+    spanInfoElt.textContent = "On faut 100 charactere max";
+    spanInfoElt.style.color = "white"
+
+    }else{
+     spanInfoElt.textContent = "vous avez depasez le nombre charactere autoriser";
+    spanInfoElt.style.color = "red"
+    } 
+}
+
+function blurInputFunction(event) {
+    
+    spanInfoElt.textContent = "";
+}
+</script>
 	  <script>
 function openNav() {
     document.getElementById("mySidepanel").style.width = "350px";
@@ -177,6 +167,9 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
+
+
+
 
 </script>
 </body>
