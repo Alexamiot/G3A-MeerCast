@@ -33,25 +33,26 @@
     </section>
 
    
-    		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Modifier le catalogue</button>
+    		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto; margin-left: 45%;">Modifier le catalogue</button>
 
 <div id="id01" class="modal">
   <div class="modal-content animate">
   <form method="post" action="index.php?action=changecatalogue"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
   	<label class="elem">
-        box :<br>
+        Nom du nouveau service:<br>
         <input type="text" name="name" placeholder="name...." ><br>
     </label>
     <label class="elem">
-        box :<br>
-        <input type="text" name="newbox" placeholder="topic...."><br>
+        Son nom dans la base de donnée (abregé, sans espace, en anglais de préférence) :<br>
+        <input type="text" name="newbox" placeholder="BDD Name"><br>
     </label>
 
 
 
 
-    <label>quel box du catalogue souhaitex vous retirez ? <br>
+    <label>Quel service du catalogue souhaitez vous retirez ? <br>
         <select name="suppbox">
+          <option value="nothing">Rien</option>
             <?php  
 
 foreach($catalogue as $donnees){

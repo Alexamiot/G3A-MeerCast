@@ -399,6 +399,10 @@ function addDevis() {
         require "view/PageAccueil/Devis/pagedevis.php";
     }
 }
+function seeViewEnvironment(){
+    require "view/PageAccueil/Environnement/PageEnvironnement.php";
+}
+
 function seeforum() {
     $name="";
     

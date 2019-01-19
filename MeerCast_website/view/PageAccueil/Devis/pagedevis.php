@@ -115,13 +115,6 @@
             <img src="view/PageAccueil/image/devisbandeau.png" alt="devis photo" title="devis photo">
       </div>
     </section>
-<?php 
-    if( isset($_SESSION["pseudo"])) { 
-      foreach ($admins as $admin) {
-        if($admin["pseudo"]==$_SESSION["pseudo"]){ ?>
-
-          <button class="openbtn" style="background-color: darkorange;">Modifier le catalogue</button>
-    <?php } } }   ?>
 
     <form method="post" action="index.php?action=add_devis">
     <section class="devis">
@@ -305,17 +298,9 @@ foreach($catalogue as $donnees){
   <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
 
-    <h3>Indiquez le nom du service que vous voulez ajouter au catalogue</h3>
-      <form method="post" action="index.php?action=add_service">
-        <input type="text" name="newService">
-        <h3>Indiquez le nom qui sera donnée pour la base de donnée ( en Anglais ou un abrégé)</h3>
-        <input type="text" name="bddService">
-        <input type="submit" value="Ajouter" >
-      </form>
-
     <footer>
 
-        <h3>Designed by MeerCast Designer</h3>
+        <h3>Designed by Alexandre Amiot</h3>
     </footer>
     <!--Mes fonctions javascript -->
     <script>
