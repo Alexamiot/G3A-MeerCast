@@ -19,7 +19,7 @@
 		  <a href="index.php?action=see_scenario_page" target="blank">Programmer un scénario</a>
 		  <a href="index.php?action=see_info_house_page">Mes pièces</a>
 		  <a href="index.php?action=see_choose_house_page">Retour au choix de la maison</a>
-		  <a href="index.php?action=deconnexion">Se déconnecter</a>
+		  <a href="#">Se déconnecter</a>
 		</div>
 <button class="openbtn" onclick="openNav()">☰ </button>
 		<div class="logo">

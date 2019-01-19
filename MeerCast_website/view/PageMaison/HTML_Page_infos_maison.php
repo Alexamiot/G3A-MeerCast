@@ -44,7 +44,7 @@
 		  <a href="index.php?action=see_Ajout_batiment">Ajouter un bâtiment</a>
 		  <a href="index.php?action=see_scenario_page" target="blank">Programmer un scénario</a>
 		  <a href="index.php?action=see_choose_house_page">Retour au choix de la maison</a>
-		  <a href="index.php?action=deconnexion">Se déconnecter</a>
+		  <a href="#">Se déconnecter</a>
 		</div>
 <button class="openbtn" onclick="openNav()">☰ </button>
 		<div class="logo">
@@ -82,7 +82,7 @@
 	<!--  -->
 	
 	<footer class="boutonScenario">
-		<a href="index.php?action=see_scenario_page">Programmez un scénario</a>
+		<a href="index.php?action=see_scenario_page" target="blank">Programmez un scénario</a>
 	</footer>
 
 	<script type="text/javascript" src="view/Design/CSS_Maison/JS_Page_infos_maison.js"></script>

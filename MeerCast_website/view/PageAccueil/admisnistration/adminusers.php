@@ -29,7 +29,7 @@ foreach($lesUsersetMaison as $donnees){
   <tr>
     <td><?php echo $donnees["pseudo"] ?></td>
     <td><?php echo  $donnees["email"] ?></td>
-    <td><button id="but" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><?php echo $donnees["nomhabitation"] ?></button></td>
+    <td><a href="index.php?action=see_adminmaison&amp;propertyName=<?php echo $donnees["nomhabitation"]; ?> "><?php echo $donnees["nomhabitation"]; ?></a></td>
     <td><?php echo $donnees["typehabitation"] ?></td>
     
   </tr>

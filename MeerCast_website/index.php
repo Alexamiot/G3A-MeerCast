@@ -27,81 +27,106 @@ if (isset($_GET["action"])) {
         seeViewFaq();       
         break;
 
-    case "see_environment_page":
-        seeViewEnvironment();
-        break;
-
     case "add_message":
-        addMessage();
-        break;
+    addMessage();
+    break;
 
     case "add_devis":
-        addDevis();
-        break;
-
-    case "add_service":
-        addService();
-        break;
+    addDevis();
+    break;
 
     case "see_forum":
         seeforum();
         break;
-
     case "inscription":
         inscription();
         break;
 
+    
     case "deconnexion":
         deconnexion();
         break;
-
     case "connexion":
         connexion();
         break;
-
     case "addPost":
         addPost();
         break;
-
     case "addPost2":
         addPost2();
         break;
-
     case "administrateur":
         administrateur();
         break;
 
  /* index des pages une fois que nous sommes connectés.*/
-    case "see_choose_house_page":
-        displayUserProperties();
+        case "see_choose_house_page":
+            displayUserProperties();
+            break;
+
+        // Idem pour la page d'ajout de maison
+        case 'see_add_house_page':
+            seeAddHousePage();
+            break;
+
+        // méthode pour ajouter une propriété
+        case 'add_property':
+            addPropertyMethod();
+            break;
+
+        // Page pour voir les infos sur une maison
+        case "see_info_house_page":
+            seeInfoHousePage();
+            break;
+
+        case 'see_Ajout_batiment':
+            seeAjoutBatiment();
+            break;    
+
+        // Page pour programmer un scénario
+        case 'see_scenario_page':
+            seeScenarioPage();
+            break;
+
+        case 'see_pagecapteur':
+            seeCapteurPage();
+            break;
+
+        case 'see_admin_users':
+            seeAdminUers();
+            break;
+        case 'see_pagedevis_admin':
+            seepagedevisadmin();
+            break;
+        case 'see_forum_admin':
+            seeforumadmin();
+            break;
+        case 'see_faq_admin':
+            seefaqadmin();
+            break;
+        case 'add_faq':
+            addfaq();
+            break;
+        case 'suppTopicFaq':
+            suppTopicFaq();
+            break;
+         case 'changecatalogue':
+            changecatalogue();
+            break;
+        case 'inscription2':
+            inscription2();
         break;
-
-    // Idem pour la page d'ajout de maison
-    case 'see_add_house_page':
-        seeAddHousePage();
+        case 'adminservice':
+            adminservice();
         break;
-
-    // méthode pour ajouter une propriété
-    case 'add_property':
-        addPropertyMethod();
+        case 'addtoadminservice':
+            addtoadminservice();
         break;
-
-    // Page pour voir les infos sur une maison
-    case "see_info_house_page":
-        seeInfoHousePage();
+        case 'see_adminmaison':
+            see_adminmaison();
         break;
-
-    case 'see_Ajout_batiment':
-        seeAjoutBatiment();
-        break;    
-
-    // Page pour programmer un scénario
-    case 'see_scenario_page':
-        seeScenarioPage();
-        break;
-
-    case 'see_pagecapteur':
-        seeCapteurPage();
+        case 'addapiece':
+            addapiece();
         break;
 
     default:

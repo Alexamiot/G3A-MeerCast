@@ -5,9 +5,294 @@ function seeViewAccueil() {
     require "view/PageAccueil/PageAc.php";
 }
 
+
+function addapiece(){
+
+
+      // $service=htmlspecialchars($_POST["service"]);
+
+      // $description=htmlspecialchars($_POST["description"]);
+
+      // $image=htmlspecialchars($_POST["image"]);
+      // nouvellepiece();
+
+
+if (isset($_GET['propertyName'])) {
+        $_SESSION['propertyName'] = htmlspecialchars($_GET['propertyName']);
+    }
+    
+    $sensores=lescapteur();
+    $room="";
+    if(isset($_POST["name"]) && isset($_POST["image"]) ){
+
+    $room=htmlspecialchars($_POST["name"]);;
+    $picture=htmlspecialchars($_POST["image"]);;
+    addpiece($room, $picture);
+  }
+  
+    $idroom=idpiece($room);
+    
+   
+
+    $houses=getIdHouseByName($_SESSION['propertyName']);
+  
+    foreach ($idroom as $id ) {
+     foreach ($houses as $house ) {
+       nouvellepiece($house["id"],$id["id"]);
+     }
+    }
+
+    $valeurcapteur="null";
+
+
+
+    if($_POST["Température"]!="non"){
+      
+      $idroom=idpiece($room);
+    $houses=getIdHouseByName($_SESSION['propertyName']);
+    $checkbox= htmlspecialchars($_POST["Température"]);
+    echo $checkbox;
+    echo $valeurcapteur;
+
+      foreach ($idroom as $id ) {
+     foreach ($houses as $house ) {
+      echo "house id";
+      echo $house["id"];
+      echo "room id";
+    echo $id["id"];
+    houseroomsensors($house["id"],$id["id"],$checkbox,$valeurcapteur);
+      }
+      }
+    }
+    if ($_POST["Luminosité"]!="non"){
+      
+      $idroom=idpiece($room);
+    $houses=getIdHouseByName($_SESSION['propertyName']);
+    $checkbox= htmlspecialchars($_POST["Luminosité"]);
+    echo $checkbox;
+    echo $valeurcapteur;
+    foreach ($idroom as $id ) {
+     foreach ($houses as $house ) {
+      echo "house id";
+      echo $house["id"];
+       echo "room id";
+    echo $id["id"];
+    houseroomsensors($house["id"],$id["id"],$checkbox,$valeurcapteur);
+  }}
+    }
+    if ($_POST["Humidité"]!="non"){
+      
+      $idroom=idpiece($room);
+    $houses=getIdHouseByName($_SESSION['propertyName']);
+    $checkbox= htmlspecialchars($_POST["Humidité"]);
+    echo $checkbox;
+    echo $valeurcapteur;
+    foreach ($idroom as $id ) {
+     foreach ($houses as $house ) {
+      echo "house id";
+      echo $house["id"];
+       echo "room id";
+    echo $id["id"];
+    houseroomsensors($house["id"],$id["id"],$checkbox,$valeurcapteur);
+}}
+    }
+    if ($_POST["Télévision"]!="non"){
+      
+      $idroom=idpiece($room);
+    $houses=getIdHouseByName($_SESSION['propertyName']);
+    $checkbox= htmlspecialchars($_POST["Télévision"]);
+    echo $checkbox;
+    echo $valeurcapteur;
+    foreach ($idroom as $id ) {
+     foreach ($houses as $house ) {
+      echo "house id";
+      echo $house["id"];
+       echo "room id";
+    echo $id["id"];
+    houseroomsensors($house["id"],$id["id"],$checkbox,$valeurcapteur);
+  }}
+    }
+
+    $rooms = getRooms();
+    // on crée ici des tableaux et grâce aux deux whiles on rajoute les éléments dans les tableaux dont j'ai besoin dans la view
+    $roomsArray = array(array());
+    $itR = 0; 
+    $sensorsArray = array(array(array()));
+    $itS1 = 0;
+    $itS2 =  0;
+
+    while ($room = $rooms->fetch()) {
+
+        $roomname = $room['room_name'];
+        $pictureName = $room['picture_name'];
+        $picturePath = "view/Design/imagesMaison/".$pictureName.".jpg";
+        $roomId = $room['id'];
+
+        $roomsArray[$itR][0] = $roomname;
+        // $roomsArray[$itR][1] = $pictureName;
+        $roomsArray[$itR][2] = $picturePath;
+        $roomsArray[$itR][1] = $roomId; 
+
+        $sensors = getSensors();
+
+        while ($sensor = $sensors->fetch()) {
+
+            if ($sensor['room_name'] == $roomsArray[$itR][0]) {
+
+                // on stocke dans le tableau le nom de la pièce, celui du capteur et la valeur de sa mesure
+                $sensorsArray[$itS1][$itS2][0] = $sensor['room_name'];
+                $sensorsArray[$itS1][$itS2][1] = $sensor['sensor_name'];
+                $sensorsArray[$itS1][$itS2][2] = $sensor['value'];
+
+                // comme pour les pièces, on crée une variable qui contient le chemin vers les images pour les capteurs
+                $sensorPictName = $sensor['picture_name'];
+                $sensorPictPath = "view/Design/imagesMaison/".$sensorPictName.".png";
+                // et on la stocke dans le tableau
+                $sensorsArray[$itS1][$itS2][3] = $sensorPictPath;
+
+                $itS2+=1;
+            }
+        }
+        $itR+=1;
+        $itS1+=1;
+    }
+require "view/PageAccueil/admisnistration/adminmaison.php";
+
+
+
+}
+
+
+
+
+
+function see_adminmaison(){
+if (isset($_GET['propertyName'])) {
+        $_SESSION['propertyName'] = $_GET['propertyName'];
+    }
+    $rooms = getRooms();
+    $sensores=lescapteur();
+    
+    // on crée ici des tableaux et grâce aux deux whiles on rajoute les éléments dans les tableaux dont j'ai besoin dans la view
+    $roomsArray = array(array());
+    $itR = 0; 
+    $sensorsArray = array(array(array()));
+    $itS1 = 0;
+    $itS2 = 0;
+
+    while ($room = $rooms->fetch()) {
+
+        $roomname = $room['room_name'];
+        $pictureName = $room['picture_name'];
+        $picturePath = "view/Design/imagesMaison/".$pictureName.".jpg";
+        $roomId = $room['id'];
+
+        $roomsArray[$itR][0] = $roomname;
+        // $roomsArray[$itR][1] = $pictureName;
+        $roomsArray[$itR][2] = $picturePath;
+        $roomsArray[$itR][1] = $roomId; 
+
+        $sensors = getSensors();
+
+        while ($sensor = $sensors->fetch()) {
+
+            if ($sensor['room_name'] == $roomsArray[$itR][0]) {
+
+                // on stocke dans le tableau le nom de la pièce, celui du capteur et la valeur de sa mesure
+                $sensorsArray[$itS1][$itS2][0] = $sensor['room_name'];
+                $sensorsArray[$itS1][$itS2][1] = $sensor['sensor_name'];
+                $sensorsArray[$itS1][$itS2][2] = $sensor['value'];
+
+                // comme pour les pièces, on crée une variable qui contient le chemin vers les images pour les capteurs
+                $sensorPictName = $sensor['picture_name'];
+                $sensorPictPath = "view/Design/imagesMaison/".$sensorPictName.".png";
+                // et on la stocke dans le tableau
+                $sensorsArray[$itS1][$itS2][3] = $sensorPictPath;
+
+                $itS2+=1;
+            }
+        }
+        $itR+=1;
+        $itS1+=1;
+    }
+require "view/PageAccueil/admisnistration/adminmaison.php";
+
+}
+
+function addtoadminservice(){
+
+
+$service=htmlspecialchars($_POST["service"]);
+echo $service;
+$description=htmlspecialchars($_POST["description"]);
+echo $description;
+$image=htmlspecialchars($_POST["image"]);
+echo $image;
+addadminservice($service,$description,$image);
+
+
+$services= getadminservice();
+require "view/PageAccueil/admisnistration/adminservice.php";
+
+}
+
+function adminservice(){
+
+$services= getadminservice();
+
+
+  require "view/PageAccueil/admisnistration/adminservice.php";
+}
+
+function seeAdminUers(){
+  $erreur="";
+  $lesUsersetMaison= userEtMaison();
+
+
+  require "view/PageAccueil/admisnistration/adminusers.php";
+}
+function seepagedevisadmin(){
+  $successmessage="";
+    $catalogue = getCatalogue();
+    $catalogue2 = getCatalogue();
+require "view/PageAccueil/admisnistration/admindevis.php";
+
+}
+
+function changecatalogue(){
+ if($_POST["newbox"] && $_POST["name"] ){
+  $name = htmlspecialchars($_POST["name"]);
+  $newbox = htmlspecialchars($_POST["newbox"]);
+  AddTomyCatalogue($name,$newbox);
+ }
+  if($_POST["suppbox"]){
+
+    $suppbox=htmlspecialchars($_POST["suppbox"]);
+    SuppFromMyCatalogue ($suppbox);
+  }
+
+$successmessage="";
+$catalogue = getCatalogue();
+$catalogue2 = getCatalogue();
+
+require "view/PageAccueil/admisnistration/admindevis.php";
+
+}
+
+function seeforumadmin(){
+  require "view/PageAccueil/admisnistration/pageadmin.php";
+}
+
+function seefaqadmin(){
+
+  $faqs=myFaq();
+require "view/PageAccueil/admisnistration/faqadmin.php";
+}
+
 function seeViewDevis() {
 	$successmessage="";
     $catalogue = getCatalogue();
+    $catalogue2 = getCatalogue();
     require "view/PageAccueil/Devis/pagedevis.php";
 }
 function seeViewService(){
@@ -16,14 +301,37 @@ function seeViewService(){
 function seeViewHistoire(){
 	require "view/PageAccueil/Histoire/pagehistoire.php";
 }
+function addfaq(){
+  if ($_POST["question"] && $_POST["reponse"] ){
+     $question = htmlspecialchars($_POST["question"]);
+      $reponse = htmlspecialchars($_POST["reponse"]);
+      AddTomyFaq($question,$reponse);
+      $faqs=myFaq();
+    require "view/PageAccueil/admisnistration/faqadmin.php";
+  }
+  else{
+    $faqs=myFaq();
+    require "view/PageAccueil/admisnistration/faqadmin.php";
+  }
+}
+
+function suppTopicFaq(){
+    if(isset($_GET["topicToSupp"])){
+    $question = htmlspecialchars($_GET["topicToSupp"]);
+    SuppFromMyFaq($question);
+    $faqs=myFaq();
+    require "view/PageAccueil/admisnistration/faqadmin.php";
+    }else{
+    $faqs=myFaq();
+    require "view/PageAccueil/admisnistration/faqadmin.php";
+  }
+}
+
 function seeViewFaq(){
+
+  $faqs=myFaq();
 	require "view/PageAccueil/faq/pagefaq.php";
 }
-
-function seeViewEnvironment(){
-    require "view/PageAccueil/Environnement/PageEnvironnement.php";
-}
-
 function addMessage() {
     if ($_POST["name"] && $_POST["last_name"] && $_POST["email"]&& $_POST["message"]) {
 
@@ -51,7 +359,7 @@ function addDevis() {
     if (($_POST["alarm"] || $_POST["elec"] || $_POST["heater"]|| $_POST["AC"] || $_POST["pool"]||  $_POST["gate"]||  $_POST["lighting"]||  $_POST["devices"]||  $_POST["shutters"]||  $_POST["garden"])&& ($_POST["building"] && $_POST["construction"] && $_POST["surface"] && $_POST["type"] && $_POST["gender"] && $_POST["name"] && $_POST["last_name"] && $_POST["tel"] && $_POST["phonenumber"] && $_POST["email"] && $_POST["adress"] && $_POST["areacode"] && $_POST["city"] && $_POST["country"] && $_POST["condition"])) {
 
         $comment= htmlspecialchars($_POST["comment"]);
-		    $name = htmlspecialchars($_POST["name"]);
+		$name = htmlspecialchars($_POST["name"]);
         $last_name = htmlspecialchars($_POST["last_name"]);
         $email = htmlspecialchars($_POST["email"]);
         $phonenumber= htmlspecialchars($_POST["phonenumber"]);
@@ -91,21 +399,6 @@ function addDevis() {
         require "view/PageAccueil/Devis/pagedevis.php";
     }
 }
-
-function addService()
-{
-  if ($_POST["newService"]&& $_POST["bddService"]) {
-    $newService= htmlspecialchars($_POST["newService"]);
-    $bddService= htmlspecialchars($_POST["bddService"]);
-
-    insertService($newService, $bddService);
-    insertServiceIntoDevis($bddService);
-    $successmessage=" Le service à bien été ajouté ! ";
-    $catalogue=getCatalogue();
-    require "view/PageAccueil/Devis/pagedevis.php";
-  }
-}
-
 function seeforum() {
     $name="";
     
@@ -133,6 +426,9 @@ function seeforum() {
 }
 
 
+
+
+
 function administrateur() {
     $name="";
     if( isset($_POST["comadditionnel"])){
@@ -146,7 +442,7 @@ function administrateur() {
          insertTopic2($newtopic,$comadditionnel);
         
 
-         require "view/PageAccueil/forum/administration.php";
+         require "view/PageAccueil/admisnistration/pageadmin.php";
          
       }
      
@@ -156,16 +452,16 @@ function administrateur() {
       
       $supptopic=htmlspecialchars($_GET["supptopic"]);
       suppTopic($supptopic);
-      require "view/PageAccueil/forum/administration.php";
+      require "view/PageAccueil/admisnistration/pageadmin.php";
     }
     elseif(isset($_GET["suppmessage"])){
         $suppmessage=htmlspecialchars($_GET["suppmessage"]);
       suppmessage($suppmessage);
-      require "view/PageAccueil/forum/administration.php";
+      require "view/PageAccueil/admisnistration/pageadmin.php";
     }
     else{
 
-      require "view/PageAccueil/forum/administration.php";
+      require "view/PageAccueil/admisnistration/pageadmin.php";
     }
    
 }
@@ -204,7 +500,7 @@ function addPost2() {
    $name="";
     if(isset($_GET["newtopic"])){
       $newtopic=htmlspecialchars($_GET["newtopic"]);
-      require "view/PageAccueil/forum/administration.php";
+      require "view/PageAccueil/admisnistration/pageadmin.php";
     
 
     }
@@ -216,7 +512,7 @@ function addPost2() {
 
            insertTopic($newtopic,$contenu, $categorie);
            
-          require "view/PageAccueil/forum/administration.php";
+          require "view/PageAccueil/admisnistration/pageadmin.php";
 
         }
         else{
@@ -290,12 +586,73 @@ function inscription() {
 }
 
 
-function deconnexion(){
 
-require   "view/PageAccueil/forum/deconnexion.php";
 
+
+
+function inscription2() {
+    $erreur="";
+    
+
+ if ( isset($_POST["pseudo"]) && isset($_POST["email"]) && isset($_POST["mdp"]) && isset($_POST["mdp2"])) {
+        $pseudo = htmlspecialchars($_POST["pseudo"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $mdp = htmlspecialchars($_POST["mdp"]);
+        $mdp2 = htmlspecialchars($_POST["mdp2"]);
+
+
+        $syntaxe = '#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
+        if ((strlen($pseudo)>4 AND strlen($pseudo)<20) AND preg_match($syntaxe, $email) AND (strlen($mdp)>4 AND strlen($mdp)<20) AND ($mdp==$mdp2)) {
+            
+
+            insertUser($pseudo, $email, $mdp, $mdp2);
+            createAdmin($pseudo, $email, $mdp);
+            echo 'Nouvelle utilisateur !'; 
+            
+
+
+           require "view/PageAccueil/admisnistration/adminusers.php";
+        }else{
+            if (!preg_match($syntaxe, $email)) {
+              $erreur="Syntaxe du email n'est pas la bonne";
+              }
+
+
+            if (!(strlen($pseudo)>4 AND strlen($pseudo)<20) ){
+               $erreur ="il faut un speudo de bonne taille ";
+              }
+
+            if (!(strlen($mdp)>4 AND strlen($mdp)<20)) {
+
+                  $errreur ="Il faut un mdp de la bonne taille";
+             }
+            if (!($mdp==$mdp2 ) ){
+                  $erreur ="les mdp ne correspondent pas !! ";
+              }
+          require "view/PageAccueil/admisnistration/adminusers.php";
+        }
+
+
+        
+  }else {
+        require "view/PageAccueil/admisnistration/adminusers.php";
+   }
+
+
+ require "view/PageAccueil/admisnistration/adminusers.php";
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 function connexion(){
@@ -311,22 +668,24 @@ function connexion(){
         
         $rep= getUser($email, $mdp);
         if ($rep){
-          $bool=true;
+            $bool=true;
             getUsers($email);
             $actionner=true;
             $admins=getAdmin();
             $mdp = hash("sha256", $mdp);
             foreach ($admins as $admin) {
-
+              
               if ($admin["email"]== $email && $admin["mdp"]== $mdp ) {
-
                 $bool=false;
-                require "view/PageAccueil/forum/administration.php";
+                $faqs=myFaq();
+                require "view/PageAccueil/admisnistration/faqadmin.php";
               }
 
             }
-            if($bool){require "view/PageAccueil/forum/forum.php";}
-
+            if($bool){
+           
+           require "view/PageAccueil/forum/forum.php";
+         }
         }
 
             
@@ -361,6 +720,15 @@ function displayUserProperties() {
     require "view/PageMaison/HTML_Page_choix_maison.php";
 }
 
+
+
+
+function deconnexion(){
+
+require   "view/PageAccueil/forum/deconnexion.php";
+
+
+}
 // fonction qui demande l'affichage de la page de choix de maison ( page d'accueil en gros )
 /*function seeChooseHousePage() {
      require "view/PageAccueil/forum/HTML_Page_choix_maison.php";
@@ -383,7 +751,7 @@ function addPropertyMethod() {
 
         insertProperty($property_name, $property_type);
 
-        displayUserProperties();
+        require "view/PageMaison/HTML_Ajout_maison_succes.php";
 
     } else {
         require "view/PageMaison/HTML_Ajout_maison_echec.php";
