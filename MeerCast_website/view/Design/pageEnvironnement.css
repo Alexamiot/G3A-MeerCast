@@ -13,6 +13,7 @@ header{
     height: 15vh;
     background-size: cover;
 }
+
 .mainNav{
     float: right;
     list-style: none;
@@ -105,7 +106,7 @@ header{
     margin-left: 80px;
 }
 .hero{
-    /*	position: absolute;
+    /*  position: absolute;
         width: 60%;
         margin-left: 25%;
         margin-top: 10em;
@@ -179,7 +180,6 @@ header{
     color: black;
     /*font-family: "Roboto",sans-serif;*/
 }
-
 .boutton{
     cursor: pointer;
     margin-top: 20px;
@@ -384,6 +384,7 @@ h1:hover {
 
 
 .content{
+    /*background-color: LightGrey;*/
     background-color: LightGrey;
 }
 
@@ -416,28 +417,45 @@ h1:hover {
 
     flex-wrap: wrap;
     border: 3px solid grey;
-    border-radius: 10px; */
+    border-radius: 10px;
  /*   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);*/
     margin: 25px 25px 25px 25px;
 
 }
 
-
 .element img{
-		width: 700px;
-		height:300px;
+        width: 700px;
+        height:300px;
         vertical-align: top; /* solve padding bottom*/
     }
 
+.con_img{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.ms{
+    position: absolute;
+    /*position: relative;*/
+    bottom: 20px;
+    left: 20px;
+    width: 50%;
+    height: 50%;
+    background: #A9A9A9;
+    opacity: 0.6;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+}
+
+.paragraph{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 50%;
+    height: 50%;
+}
 
 
-
-
-
-
-
-
-
-
-
-
+#p1{
+    color : white;
+}

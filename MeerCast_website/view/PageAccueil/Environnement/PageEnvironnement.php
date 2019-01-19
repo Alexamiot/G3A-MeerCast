@@ -22,7 +22,6 @@
             <li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
             <li><a href="index.php?action=see_pagefaq">FAQ / FORUM</a></li>
             <?php
-
             if (isset($_SESSION['email'])){?>
                 <li><a href="index.php?action=see_choose_house_page">MES MAISONS</a></li>
 
@@ -31,8 +30,6 @@
 
                 <?php
             }
-
-
             if (isset($_SESSION['email'])){?>
                 <li><a href="index.php?action=deconnexion">DECONNEXION</a></li>
 
@@ -106,37 +103,66 @@
 
     <div class="line" >
       <div class="element" ">
-        <img src="view/PageAccueil/image/eau.jpg" alt="eau" />
-
+        <!-- <img src="view/PageAccueil/image/eau.jpg" alt="eau" />
+        <div style="background:"view/PageAccueil/image/eau.jpg")"> <img style="float:left" src="view/PageAccueil/image/feu.jpg" /></div> -->
         <!-- This is a comment -->
-
+        <div class="con_img">
+            <img class="image" src="view/PageAccueil/image/eau.jpg" alt="eau">
+            <span class="ms"></span>
+            <div class="paragraph">
+                <em id="p1">
+                    Notre système va permettre l'économie de votre eau grâce à différentes méthodes, en effet tout d'abord grâce à nos capteurs de niveau d'eau, mais aussi grâce à certaines installation de récupération d''eau (comme l'eau du bain pour les toilettes)...
+                </em>
+            </div>
+        </div>
+        <!-- <div class="img-wrapper">
+            <img src="view/PageAccueil/image/eau.jpg" alt="" alt="图片..." />
+            <span class="time">
+                <h2 id="scenic_title"><font color="#FFFFFF">文字在这</font></h2>
+            </span>
+        </div>
+-->
       </div>
-
       
       <div class="element">
-        <img src="view/PageAccueil/image/feu.jpg" alt="feu">
+          <div class="con_img">
+              <img class="image" src="view/PageAccueil/image/feu.jpg" alt="feu">
+              <span class="ms"></span>
+              <div class="paragraph">
+                  <em id="p1">
+                      Le chauffage sera gérer automatiquement par nos systèmes en fonction de vos envies, vous pourrez gérer votre consomation et ainsi la réduire.
+                  </em>
+              </div>
+          </div>
       </div>
     </div>
-
-
     <div class="line" >
-      <div class="element"> 
-        <img src="view/PageAccueil/image/air.jpg" class="image1" alt="air">
-
+      <div class="element">
+          <div class="con_img">
+              <img class="image" src="view/PageAccueil/image/air.jpg" alt="air">
+              <span class="ms"></span>
+              <div class="paragraph">
+                  <em id="p1">
+                      Si votre maison n'est pas construite, on peut vous aider avec l'isolation de cette dernière, car en effet l'air qui circule est une grosse perte d'energie.
+                  </em>
+              </div>
+          </div>
       </div>
-
-      <div class="element">   
-        <img src="view/PageAccueil/image/terre.jpg" alt="terre">
+      <div class="element">
+          <div class="con_img">
+              <img class="image" src="view/PageAccueil/image/terre.jpg" alt="terre">
+              <span class="ms"></span>
+              <div class="paragraph">
+                  <em id="p1">
+                      Nous vous offrons la possibilité de connecter votre jardin, en effet plus besoin d'avoir la main verte pour cultiver vos tomates, on peut vous aider tout au long du procesus.
+                  </em>
+              </div>
+          </div>
       </div>
-
     </div> <!-- line -->
-
     </div> <!-- board -->
 </div> <!-- content1 -->
-
 </section> <!-- board -->
-
-
 <script>
   function openNav() {
     document.getElementById("mySidepanel").style.width = "350px";
@@ -144,16 +170,12 @@
   function closeNav() {
     document.getElementById("mySidepanel").style.width = "0";
   }
-
   function openNav2() {
     document.getElementById("myNav").style.height = "100%";
   }
-
   function closeNav2() {
     document.getElementById("myNav").style.height = "0%";
   }
 </script>
-
 </body>
 </html>
-
