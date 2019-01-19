@@ -23,7 +23,7 @@ require "view/PageAccueil/admisnistration/templateadmin.php";
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
     <?php  foreach ($faqs as $faq) { ?>
-        <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?> <a href="index.php?action=suppTopicFaq&amp;topicToSupp=<?php echo $faq["question"];?>"><img src="view/PageAccueil/image/bin.png" id="bin"></a></button>
+        <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?> <a href="index.php?action=suppTopicFaq&amp;topicToSupp=<?php echo $faq["question"];?>"><img  style="width: 20px; height: 20px;" src="view/PageAccueil/image/bin.png" id="bin"></a></button>
 <div class="panel">
 
   <p><?php  echo $faq["reponse"]  ;?></p>
@@ -43,20 +43,20 @@ require "view/PageAccueil/admisnistration/templateadmin.php";
 
 <!-- textContent avec un getelement byid sur element et unn size()    ou ElementsByTagName("textarea")[0]-->
 <!-- ici on voudra mettre le js qui nous dit que on est en dessous des 500 charactere limiter  -->
-<form method="post" action="index.php?action=add_faq"  id="inscription"  >
-    <label class="elem">
+<form style="color: white; margin-left: 50px; " method="post" action="index.php?action=add_faq"  id="inscription"  >
+    <label  class="elem">
         Sujet :<br>
         <input type="text" name="question" placeholder="topic...." required><br>
     </label>
     <label class="element">
         Ecrivez :<br>
-        <textarea id="changeText" type="text" name="reponse" placeholder="votre contenu du sujet" required> </textarea><span id="pseudo_info"></span><br>
+        <textarea id="changeText" type="text" name="reponse" placeholder="Le contenu" required> </textarea><span id="pseudo_info"></span><br>
         
     </label >
     
     
     
-    <input type="submit" value="Ajouter a la FAQ"  class="button" >
+    <input style="margin-left: 0px;" type="submit" value="Ajouter a la FAQ"  class="button" >
 </form>
 
 

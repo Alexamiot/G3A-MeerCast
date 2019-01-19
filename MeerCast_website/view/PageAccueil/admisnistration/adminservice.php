@@ -29,29 +29,29 @@ require "view/PageAccueil/admisnistration/templateadmin4.php";
 
 
 
-<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Modifier le catalogue</button>
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto; margin-left: 45%;">Modifier le catalogue</button>
 
 <div id="id01" class="modal">
   <div class="modal-content animate">
   <form method="post" action="index.php?action=addtoadminservice"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
     <label class="elem">
         Service :<br>
-        <input type="text" name="service" placeholder="name...." ><br>
+        <input type="text" name="service" placeholder="service" ><br>
     </label>
     <label class="elem">
         Description :<br>
-        <input type="text" name="description" placeholder="topic...."><br>
+        <input type="text" name="description" placeholder="description"><br>
     </label>
     <label class="elem">
-        Image name (make sure png):<br>
-        <input type="text" name="image" placeholder="topic...."><br>
+        Image name (make sure it is a png):<br>
+        <input type="text" name="image" placeholder="image"><br>
     </label>
 
-    <button type="submit">Create new Box</button>
+    <button type="submit">Create new Flip Card</button>
      
 </form>
 <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="width: 100px;">Cancel</button>
       
     </div>
 </div>
@@ -74,7 +74,7 @@ foreach ($services as $service) {
       $lien = "view/PageAccueil/Image/".$image.".png"; 
       ?>
 
-      <img src=<?php echo $lien;?> alt="Lampes" style="width:300px;height:300px;">
+      <img src=<?php echo $lien;?> alt="<?php echo $image ?>" style="width:300px;height:300px;">
     </div>
     <div class="flip-card-back">
       <h1><?php echo $service["service"]?></h1> 
@@ -88,7 +88,7 @@ foreach ($services as $service) {
 </section>
   <footer>
 
-        <h3>Designed by Jean-Baptiste de Bellescize</h3>
+        <h3>Designed by Jean-Baptiste de Bellescize & Alexandre Amiot</h3>
     </footer>
     <!--Mes fonctions javascript -->
     <script>
