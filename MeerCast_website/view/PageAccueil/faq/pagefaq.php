@@ -10,7 +10,7 @@
  <body>
      <header>
     	<div class="logo">
-    		<img src="view/PageAccueil/image/meercastest.png">
+    		<a href="index.php?action=see_PageAc"><img src="view/PageAccueil/image/meercastest.png"></a>
     	</div>
     	<div class="row">
     		<ul class="mainNav">
@@ -19,13 +19,32 @@
     		<li><a href="index.php?action=see_pagedevis">DEMANDER UN DEVIS</a></li>
        		<li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
     		<li class="active2"><a href="">FAQ / FORUM</a></li>
-    		<li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
-    		</ul>
-    	</div>
-    	<div id="myNav" class="overlay">
-       				<a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
-       			<div class="overlay-content">
-	   				<h2>Nous envoyer un message</h2>
+    		<?php
+
+      if (isset($_SESSION['email'])){?>
+      <li><a href="index.php?action=see_choose_house_page">MES MAISONS</a></li>
+        
+        <?php }  else{?>
+        <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
+
+<?php
+      }
+        
+
+      if (isset($_SESSION['email'])){?>
+       <li><a href="index.php?action=deconnexion">DECONNEXION</a></li>
+      
+    <?php 
+   }
+   ?>
+
+        
+        </ul>
+      </div>
+      <div id="myNav" class="overlay">
+              <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+            <div class="overlay-content">
+            <h2>Nous envoyer un message</h2>
             <div class="container">
   <form method="post" action="index.php?action=add_message">
     <label class="form"><br>Prénom<br></label>
@@ -44,56 +63,62 @@
     <input type="submit" value="Envoyer">
   </form>
 </div>
-  				</div>
-		</div>
-    	<div id="mySidepanel" class="sidepanel">
+          </div>
+    </div>
+      <div id="mySidepanel" class="sidepanel">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <div class="identification">
   <p>
        <h2 class="sidetitle">Votre compte : </h2>
-       <label>
-        Email : <br>
-        <input type="email" name="email" placeholder="Ex: nom-prenom@gmail.com" id="email" required><br>
-    </label>
+      
+
+    <form method="post" action="index.php?action=connexion">
+
     <label>
-        Mot de passe :  <br>
-        <input type="password" name="password" id="mdp" required><br>
-    </label>
-    <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
+        Email :<br>
+        <input type="email" name="email" placeholder="Email...." id="email" required>
+    </label><br>
+    
+    <label>
+        Mot de Passe :<br>
+        <input type="password" name="mdp" id="mdp" required>
+    </label><br>
+    
+    <input type="submit" value="Se Connecter" id="connexion">
+</form>
+
     <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
     <a href=""><p class="compte1" >Mot de passe oublié</p></a>
     </p>
    </div>
 </div>
-    	
     </header>
 
 
 
 
 
-<div class="faq">
+  <div class="faq">
     <h2>FAQ (Foire aux questions)</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
-    <?php  foreach ($faqs as $faq) { ?>
-        <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?></button>
+      <li><button class="accordion" style="color: white;">Changer temperature</button>
 <div class="panel">
 
-  <p><?php  echo $faq["reponse"]  ;?></p>
-
-
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ecuoiiiecoewn iewosjfeowic ewiopsjfoiewnm fwiopwejmfoimcew weiopeimfcoew fweoijfciewomc weofmipoewmfk ewiofmpweofm ewoifmipewmf.</p>
 </div></li>
-   
-
-
-   <?php }
-    ?>
-      
-      
+      <li><button class="accordion"  style="color: white;">La climatisation</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div></li>
+      <li><button class="accordion" style="color: white;">Jardin</button>
+<div class="panel">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div></li>
       
     </ul>
   </div>
+  
 
 
   <section id="bandeau">
@@ -102,23 +127,8 @@
         <section class="columfor">
         <p >
         Si vous avez d'autres questions qui ne sont pas présentes dans la faq, cliquez ici pour acceder au forum où vous pourrez posez vos propres questions. Certains utilisateurs et nous, administrateur pourront y répondre, alors n'hésitez pas.</p>
-
-
-
-
-
-
-
         <a href="index.php?action=see_forum" class="button">Forum</a>
-       
-
-
-
-
         </section>
-
-
-
       </div>
       <div>
       <img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="forum photo">

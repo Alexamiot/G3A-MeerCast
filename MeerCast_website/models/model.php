@@ -75,6 +75,28 @@ function getCatalogue(){
         $req = $db->query("SELECT name,bddName FROM catalogue");
         return $req;
 }
+
+function insertService($newService, $bddService){
+    $db= dbConnect();
+    $req = $db-> prepare("INSERT INTO catalogue(name,bddName) VALUES (:newService, :bddService)");
+    
+    $req->bindParam("newService",$newService);
+    $req->bindParam("bddService",$bddService);
+  
+
+    $req->execute();
+    $req->closeCursor();
+}
+
+function insertServiceIntoDevis($bddService){
+    $db= dbConnect();
+    $req = $db-> prepare("ALTER TABLE devis ADD :bddService VARCHAR(20) NOT NULL DEFAULT 'non' AFTER garden");
+    $req->bindParam("bddService",$bddService);
+
+    $req->execute();
+    $req->closeCursor();
+}
+
 /*                  Model pour les pages une fois que nous sommes connectés
 
  * Cette fonction permet de récupérer la liste des propriétés d'un utilisateur
@@ -94,20 +116,24 @@ function getCatalogue(){
 
 function getProperties()
 {
-        $db = dbConnect();
-        $req = $db->query("SELECT * FROM houses");
+    $db = dbConnect();
+    $req = $db->prepare("SELECT * FROM houses WHERE id_user = :id");
+    $req -> execute(array("id"=>$_SESSION["id"]));
 
-        return $req;
+
+    return $req;
 }
 
 function insertProperty($property_name, $property_type)
 {
     $db = dbConnect();
 
-    $req = $db->prepare("INSERT INTO houses(property_name, property_type) VALUES(:property_name, :property_type)");
+    $req = $db->prepare("INSERT INTO houses(property_name, property_type, id_user) VALUES(:property_name, :property_type, :id_user)");
 
     $req->bindParam("property_name", $property_name);
     $req->bindParam("property_type", $property_type);
+    $req->bindParam("id_user", $_SESSION["id"]);
+
 
     $req->execute();
     $req->closeCursor();
@@ -117,7 +143,7 @@ function getRooms() {
 
     $db = dbConnect();
     $req = $db->prepare("SELECT * FROM ((houses AS h JOIN HouseRooms AS hR ON h.id = hR.id_house) JOIN rooms AS r ON r.id = hR.id_room) WHERE h.property_name = :housename");
-    $req->execute(array('housename' => $_GET['propertyName']));
+    $req->execute(array('housename' => $_SESSION['propertyName']));
 
     return $req;
 }
@@ -126,7 +152,7 @@ function getSensors() {
 
     $db = dbConnect();
     $req = $db->prepare("SELECT * FROM (((houses AS H JOIN HouseRoomsSensors AS HRS ON H.id = HRS.id_house) JOIN rooms AS R ON HRS.id_room = R.id) JOIN sensors AS S ON HRS.id_sensor = S.id) WHERE H.property_name = :housename");
-    $req->execute(array('housename' => $_GET['propertyName']));
+    $req->execute(array('housename' => $_SESSION['propertyName']));
 
     return $req;
 }
@@ -140,18 +166,6 @@ function insertUser($pseudo, $email, $mdp, $mdp2){
     $req = $db->prepare("INSERT INTO users(pseudo, email, mdp, mdp2) VALUES(:pseudo, :email, :mdp, :mdp2)");
 $req->execute(array( 'pseudo' => $pseudo, 'email' => $email, 'mdp' => $hash, 'mdp2' => $hash2)); 
 echo 'Nouvelle utilisateur !'; 
-
-    $req->closeCursor();
-}
-
-function createAdmin($pseudo, $email, $mdp){
-    $db = dbConnect();
-
-    $hash = hash("sha256", $mdp);
-     
-    $req = $db->prepare("INSERT INTO administrateurs(pseudo, email, mdp) VALUES(:pseudo, :email, :mdp)");
-$req->execute(array( 'pseudo' => $pseudo, 'email' => $email, 'mdp' => $hash )); 
-echo 'Nouvelle Admin !'; 
 
     $req->closeCursor();
 }
@@ -276,7 +290,7 @@ function suppmessage($suppmessage){
 
 function getAdmin(){
         $db = dbConnect();
-        $req = $db->query("SELECT email, mdp FROM administrateurs ");
+        $req = $db->query("SELECT email, pseudo, mdp FROM administrateurs ");
         
         
         return $req;
@@ -284,54 +298,4 @@ function getAdmin(){
 
 
 }
-
-
-
-function myFaq (){
-    $db = dbConnect();
-    $req = $db->query("SELECT * FROM faq ");
-    return $req;
-}
-
-function AddTomyFaq($question,$reponse){
-    $db = dbConnect();
-    $req2= $db->prepare("INSERT INTO faq(question, reponse) VALUES(:question,:reponse)");
-       $req2 -> execute(array("question"=> $question,"reponse"=>$reponse));
-
-      
-       $req2->closeCursor();
-}
-function SuppFromMyFaq ($question){
-    $db = dbConnect();
-    $req = $db->prepare("DELETE FROM faq  WHERE question =:question");
-    $req -> execute(array("question"=> $question));
-    return $req;
-}
-
-function AddTomyCatalogue($name,$newbox){
-    $db = dbConnect();
-    $req2= $db->prepare("INSERT INTO catalogue(name, bddName) VALUES(:name,:newbox)");
-       $req2 -> execute(array("name"=> $name, "newbox"=>  $newbox ));
-
-      
-       $req2->closeCursor();
-}
-
-
-
-function SuppFromMyCatalogue ($question){
-    $db = dbConnect();
-    $req = $db->prepare("DELETE FROM catalogue  WHERE name =:question");
-    $req -> execute(array("question"=> $question));
-    return $req;
-}
-
-
-
-function userEtMaison(){
-$db = dbConnect();
-    $req = $db->query("SELECT u.pseudo pseudo, u.email email, h.property_name nomhabitation, h.property_type typehabitation FROM users u LEFT JOIN houses h ON u.id = h.id_user");
-    return $req;
-}
-
 ?>

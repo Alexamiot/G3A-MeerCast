@@ -1,5 +1,5 @@
-<!-- ici il faudra mettre le template admin .....
- --> <?php  require "view/PageAccueil/forum/template.php";?>
+
+ <?php  require "view/PageAccueil/forum/template.php";?>
  	
  
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
 if(isset($_GET["categorie"])){
   $_GET["categorie"]= htmlspecialchars($_GET["categorie"]);
   ?>
-  <img src="view/PageAccueil/image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
+  <img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
   <div class = "categories"> 
  <h1> <?php echo $_GET["categorie"];  ?></h1>
  
@@ -44,7 +44,7 @@ if(isset($_GET["categorie"])){
 }
 }
 elseif(isset($newtopic)|| isset($_GET["newtopic"])){?>
-<img src="view/PageAccueil/image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
+<img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
  <div class="categories">
  <h1 style="text-transform: uppercase;"> <?php echo $newtopic;  ?></h1>
  

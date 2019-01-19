@@ -106,75 +106,27 @@
 
     <div class="line" >
       <div class="element" ">
-        <!-- <img src="view/PageAccueil/image/eau.jpg" alt="eau" />
-        <div style="background:"view/PageAccueil/image/eau.jpg")"> <img style="float:left" src="view/PageAccueil/image/feu.jpg" /></div> -->
+        <img src="view/PageAccueil/image/eau.jpg" alt="eau" />
+
         <!-- This is a comment -->
 
-        <div class="con_img">
-            <img class="image" src="view/PageAccueil/image/eau.jpg" alt="eau">
-            <span class="ms"></span>
-            <div class="paragraph">
-                <em id="p1">
-                    Nous économisons de l'eau grâce aux salles de bains connectées, les capteurs niveau d'eau etc.
-                </em>
-            </div>
-        </div>
-
-
-        <!-- <div class="img-wrapper">
-            <img src="view/PageAccueil/image/eau.jpg" alt="" alt="图片..." />
-            <span class="time">
-                <h2 id="scenic_title"><font color="#FFFFFF">文字在这</font></h2>
-            </span>
-        </div>
--->
       </div>
+
       
       <div class="element">
-
-          <div class="con_img">
-              <img class="image" src="view/PageAccueil/image/feu.jpg" alt="feu">
-              <span class="ms"></span>
-              <div class="paragraph">
-                  <em id="p1">
-                      Nous économisons du feu grâce aux cuisines connectées.
-                  </em>
-              </div>
-          </div>
-
+        <img src="view/PageAccueil/image/feu.jpg" alt="feu">
       </div>
     </div>
 
 
     <div class="line" >
-      <div class="element">
-
-          <div class="con_img">
-              <img class="image" src="view/PageAccueil/image/air.jpg" alt="air">
-              <span class="ms"></span>
-              <div class="paragraph">
-                  <em id="p1">
-                      Slides cours 1 - Composants élémentaires présentation Powerpoint, Slides cours 2 - Arithmétique présentation Powerpoint, Slides cours 3 - Présentation ARM présentation Powerpoint
-                      Slides cours 4 - Codage des instructions présentation Powerpoint
-                  </em>
-              </div>
-          </div>
+      <div class="element"> 
+        <img src="view/PageAccueil/image/air.jpg" class="image1" alt="air">
 
       </div>
 
-      <div class="element">
-
-          <div class="con_img">
-              <img class="image" src="view/PageAccueil/image/terre.jpg" alt="terre">
-              <span class="ms"></span>
-              <div class="paragraph">
-                  <em id="p1">
-                      Slides cours 1 - Composants élémentaires présentation Powerpoint, Slides cours 2 - Arithmétique présentation Powerpoint, Slides cours 3 - Présentation ARM présentation Powerpoint
-                      Slides cours 4 - Codage des instructions présentation Powerpoint
-                  </em>
-              </div>
-          </div>
-
+      <div class="element">   
+        <img src="view/PageAccueil/image/terre.jpg" alt="terre">
       </div>
 
     </div> <!-- line -->

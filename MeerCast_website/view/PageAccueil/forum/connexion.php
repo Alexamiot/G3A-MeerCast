@@ -34,7 +34,7 @@ elseif (!isset($actionner)) { ?>
         <input type="password" name="mdp" required>
     </label><br/>
     
-    <input type="submit" value="Ajouter" class= "button">
+    <input type="submit" value="Se Connecter" class= "button" style="cursor: pointer;">
 </form>
 
 <?php 

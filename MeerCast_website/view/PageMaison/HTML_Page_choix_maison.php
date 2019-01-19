@@ -15,8 +15,9 @@
 		<div id="mySidepanel" class="sidepanel">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
 		  <a href="index.php?action=see_pagecapteur">Mon Profil</a>
+		  <a href="index.php?action=see_Ajout_batiment">Ajouter un bâtiment</a>
 		  <a href="index.php?action=see_pagecapteur">Mes capteurs / Actionneur</a>
-		  <a href="#">Se déconnecter</a>
+		  <a href="index.php?action=deconnexion">Se déconnecter</a>
 		</div>
 <button class="openbtn" onclick="openNav()">☰ </button>
 		<div class="logo">
@@ -52,7 +53,7 @@
 		<div class="addButtonDiv">
 			<!-- Section contenant le bouton -->
 			<section class="addButtonSection">
-				<a href="index.php?action=see_add_house_page" target="blank"><i class="fas fa-plus fa-10x"></i></a>
+				<a href="index.php?action=see_Ajout_batiment"><i class="fas fa-plus fa-10x"></i></a>
 			</section>
 
 		</div>
