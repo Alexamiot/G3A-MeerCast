@@ -1,6 +1,6 @@
  <!DOCTYPE html>
-  <?php $admins =getAdmin(); ?>
-  
+<?php $admins =getAdmin();
+?>
 
 <html>
 <head>
@@ -15,7 +15,7 @@
   <header>
     <!-- Barre de navigation -->
             <div class="logo">
-              <img src="view/PageAccueil/image/meercastest.png">
+              <a href="index.php?action=see_PageAc"><img src="view/PageAccueil/image/meercastest.png"></a>
             </div>
             <div class="row">
               <ul class="mainNav">
@@ -24,7 +24,24 @@
               <li class="active"><a href="#" >DEMANDER UN DEVIS</a></li>
                 <li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
               <li><a href="index.php?action=see_pagefaq">FAQ / FORUM</a></li>
-              <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
+              <?php
+
+      if (isset($_SESSION['email'])){?>
+      <li><a href="index.php?action=see_choose_house_page">MES MAISONS</a></li>
+        
+        <?php }  else{?>
+        <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
+
+<?php
+      }
+        
+
+      if (isset($_SESSION['email'])){?>
+       <li><a href="index.php?action=deconnexion">DECONNEXION</a></li>
+      
+    <?php 
+   }
+   ?>
               </ul>
             </div>
             <!--Overlay pour nous conctacter  -->
@@ -53,26 +70,33 @@
                 </div>
           </div>
           <!-- Overlay de connexion -->
-            <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-        <div class="identification">
-        <p>
-             <h2 class="sidetitle">Votre compte : </h2>
-             <label>
-              Email : <br>
-              <input type="email" name="email" placeholder="Ex: nom-prenom@gmail.com" id="email" required><br>
-          </label>
-          <label>
-              Mot de passe :  <br>
-              <input type="password" name="password" id="mdp" required><br>
-          </label>
-          <a href="index.php?action=connexion"><input type="submit" id="connexion" value="Se Connecter"></a>
-          <a href="index.php?action=inscription""><p class="compte1" >Créer un Compte</p></a>
-          <a href=""><p class="compte1" >Mot de passe oublié</p></a>
-          </p>
+                    <div id="mySidepanel" class="sidepanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <div class="identification">
+          <p>
+               <h2 class="sidetitle">Votre compte : </h2>
+              
 
+            <form method="post" action="index.php?action=connexion">
+
+            <label>
+                Email :<br>
+                <input type="email" name="email" placeholder="Email...." id="email" required>
+            </label><br>
+            
+            <label>
+                Mot de Passe :<br>
+                <input type="password" name="mdp" id="mdp" required>
+            </label><br>
+            
+            <input type="submit" value="Se Connecter" id="connexion">
+        </form>
+
+            <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
+            <a href=""><p class="compte1" >Mot de passe oublié</p></a>
+            </p>
+           </div>
         </div>
-      </div>
   </header>
   <p style="text-align: center; border: 2px darkblue; margin:5px; padding: 1px; font-size: 25px;">
   <?php echo $successmessage; ?></p>
@@ -91,8 +115,13 @@
             <img src="view/PageAccueil/image/devisbandeau.png" alt="devis photo" title="devis photo">
       </div>
     </section>
+<?php 
+    if( isset($_SESSION["pseudo"])) { 
+      foreach ($admins as $admin) {
+        if($admin["pseudo"]==$_SESSION["pseudo"]){ ?>
 
-
+          <button class="openbtn" style="background-color: darkorange;">Modifier le catalogue</button>
+    <?php } } }   ?>
 
     <form method="post" action="index.php?action=add_devis">
     <section class="devis">
@@ -275,9 +304,18 @@ foreach($catalogue as $donnees){
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
+
+    <h3>Indiquez le nom du service que vous voulez ajouter au catalogue</h3>
+      <form method="post" action="index.php?action=add_service">
+        <input type="text" name="newService">
+        <h3>Indiquez le nom qui sera donnée pour la base de donnée ( en Anglais ou un abrégé)</h3>
+        <input type="text" name="bddService">
+        <input type="submit" value="Ajouter" >
+      </form>
+
     <footer>
 
-        <h3>Designed by Alexandre Amiot</h3>
+        <h3>Designed by MeerCast Designer</h3>
     </footer>
     <!--Mes fonctions javascript -->
     <script>

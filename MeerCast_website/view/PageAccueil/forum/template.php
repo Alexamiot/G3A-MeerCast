@@ -11,7 +11,7 @@
 
 <header>
       <div class="logo">
-        <img src="view/PageAccueil/Image/meercastest.png">
+        <a href="index.php?action=see_PageAc"><img src="view/PageAccueil/image/meercastest.png"></a>
       </div>
       <div class="row">
         <ul class="mainNav">
@@ -89,10 +89,6 @@
     <input type="submit" value="Se Connecter" id="connexion">
 </form>
 
-
-
-
-   
     <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
     <a href=""><p class="compte1" >Mot de passe oublié</p></a>
     </p>
