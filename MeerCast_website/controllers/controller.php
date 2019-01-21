@@ -482,7 +482,7 @@ function addPost() {
       $newtopic =htmlspecialchars($_POST["newtopic"]);
         $contenu = htmlspecialchars($_POST["contenu"]);
         $categorie=htmlspecialchars($_POST["categorie"]);
-        if((strlen($newtopic)>4 AND strlen($newtopic)<20) AND strlen($contenu)>=1){
+        if((strlen($newtopic)>4 AND strlen($newtopic)<200) AND strlen($contenu)>=1){
 
            insertTopic($newtopic,$contenu,$categorie);
            
@@ -512,7 +512,7 @@ function addPost2() {
       $newtopic = htmlspecialchars($_POST["newtopic"]);
         $contenu = htmlspecialchars($_POST["contenu"]);
         $categorie=htmlspecialchars($_POST["categorie"]);
-        if((strlen($newtopic)>4 AND strlen($newtopic)<20) AND strlen($contenu)>=1){
+        if((strlen($newtopic)>4 AND strlen($newtopic)<200) AND strlen($contenu)>=1){
 
            insertTopic($newtopic,$contenu, $categorie);
            
