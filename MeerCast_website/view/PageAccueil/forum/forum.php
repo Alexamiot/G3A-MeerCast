@@ -25,7 +25,7 @@
 if(isset($_GET["categorie"])){
   $_GET["categorie"]=htmlspecialchars($_GET["categorie"]);
   ?>
-  <img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top;cursor:pointer;" >
+  <img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 40px; height:40px; margin-left: 15px; position: top;cursor:pointer;" >
   <!-- <input type="button" value="Retour" onclick="history.go(-1)" style="color: darkorange; background-color: transparent; border: none;"> -->
   <div class = "categories"> 
 
@@ -48,7 +48,9 @@ if(isset($_GET["categorie"])){
 
 }
 elseif(isset($newtopic)){?>
-<img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 4%; height:7%; margin-left: 15px; position: top; cursor:pointer;" >
+<img src="view/PageAccueil/Image/arrow2.png" value="Retour" onclick="history.go(-1)" style="width: 40px; height:40px
+
+; margin-left: 15px; position: top; cursor:pointer;" >
  <div class="categories">
   
  <h1 style="text-transform: uppercase;"> <?php echo $newtopic;  ?></h1>

@@ -296,6 +296,7 @@ function seeViewDevis() {
     require "view/PageAccueil/Devis/pagedevis.php";
 }
 function seeViewService(){
+  $services= getadminservice();
 	require "view/PageAccueil/Services/pageservice.php";
 }
 function seeViewHistoire(){

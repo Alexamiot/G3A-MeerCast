@@ -108,102 +108,28 @@
     </section>
 
   <section id="cartes">
+     <?php
+foreach ($services as $service) {
+?>
+
       <div class="flip-card">
   <div class="flip-card-inner">
     <div class="flip-card-front">
-      <img src="view/PageAccueil/Image/lumière.png" alt="Lampes" style="width:300px;height:300px;">
+      <?php
+      $image=  $service["image"];
+      $lien = "view/PageAccueil/Image/".$image.".png"; 
+      ?>
+
+      <img src=<?php echo $lien;?> alt="<?php echo $image ?>" style="width:300px;height:300px;">
     </div>
     <div class="flip-card-back">
-      <h1>Lumière</h1> 
-      <p>N'avez vous jamais rêvé que les lumières s'allument toutes seules quand vous arriver ?</p> 
-      <p>C'est maintenant possible grâce à notre système qui permet de faire de nombreuse choses, que ce soit un accès à distance, une automatisation avec des detecteurs de mouvement.</p>
+      <h1><?php echo $service["service"]?></h1> 
+      <p><?php echo $service["description"]?></p> 
     </div>
   </div>
 </div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="view/PageAccueil/Image/chauffage.png" alt="Chauffage" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>Chauffage</h1> 
-      <p>Que ce soit un chaffage éléctrique ou une chaudière, on peut s'en occuper</p> 
-      <p>Vous avez accés aux statistiques sur les évolutions de la température et certains automatismes vous permetteront de faire des économies d'énérgie.</p>
-    </div>
-  </div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="view/PageAccueil/Image/alarme.png" alt="Alarme" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>Alarme</h1> 
-      <p>Votre sécurité est très importante pour nous.</p> 
-      <p>C'est pour cela que notre système va vous permettre d'être en toute séécurité, vous serez prévenue dès que quelqu'un entre chez vous, si vous le désirez, des caméra peut vous montrer en direct les activités devant votre maison</p>
-    </div>
-  </div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="view/PageAccueil/Image/portail.png" alt="Portail" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>Portail</h1> 
-      <p>Il ne laisse entrer que vous, sans que vous l'activer</p> 
-      <p>Il peut lire votre plaque d'imatriculation ou celle de vos invités, et ouvre le portail tout seul. Si ce dernier ne la reconnait, il vous prévient et vos demande une autorisation temporaire.</p>
-    </div>
-  </div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="view/PageAccueil/Image/électroménager.png" alt="Electroménager" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>Electroménager</h1> 
-      <p>Entre machine à café, lave linge, frigo et même votre bain </p> 
-      <p>Tout peut être controlés avec votre smartphone</p>
-    </div>
-  </div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="view/PageAccueil/Image/jardin.png" alt="Jardin" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>Jardin</h1> 
-      <p>Le pelouse qui s'arrose automatiquement en fonction de la météo</p> 
-      <p>Vos statistiques pour votre potager</p>
-    </div>
-  </div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="view/PageAccueil/Image/stores.jpg" alt="Stores" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>Volets / Stores</h1> 
-      <p>Et même vos fenêtres</p> 
-      <p>Une fermeture en fonction de l'heure, de la luminosité, plein de possibilité qui s'offre à vous</p>
-    </div>
-  </div>
-</div>
-<div class="flip-card">
-  <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img src="view/PageAccueil/Image/scénario.jpg" alt="Scénario" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1>Scénario</h1> 
-      <p>C'est bien d'avoir quelques objets connectés mais s'ils sont automatisés, c'est mieux</p> 
-      <p>On vous en propose mais vous pouvez en créer vous-même.</p>
-    </div>
-  </div>
-</div>
+
+<?php  } ?>
 </section>
   <footer>
 

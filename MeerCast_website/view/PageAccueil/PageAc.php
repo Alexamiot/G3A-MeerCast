@@ -46,7 +46,7 @@
    ?>
     		</ul>
     	</div>
-                 <div id="forResponsive">
+                 <div style="" id="forResponsive">
                     <div id="respons" class="respon">
                       <a href="javascript:void(0)" id="closebtnR" onclick="closeNavR()">×</a>
                       <a class="active" href="#">ACCUEIL</a>

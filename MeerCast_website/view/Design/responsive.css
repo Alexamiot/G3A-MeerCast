@@ -1,6 +1,9 @@
 /*			Responsive design		*/
 
 @media all and (max-width: 1200px) {
+	body{
+		width: 90%;
+	}
 	.header{
 		height: auto;
 		width: auto;
@@ -8,6 +11,9 @@
 	#forResponsive{
 		display: initial;
 		float: right;
+	}
+	.hero h1{
+		font-size: 25px;
 	}
 	.row{
 		display: none;
@@ -19,6 +25,7 @@
 		/*position: relative;*/
 		left: 0%
 	}
+
 	.wrapper img{
 		float: left;
 		width: 12em;
