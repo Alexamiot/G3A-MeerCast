@@ -151,7 +151,7 @@
 						<div class="content2">
 							<h2>Nouveautés</h2>
 							<p align="justify">Nous sommes encore dans la conception de notre système, nous écoutons les besoins de nos clients et utilisons la méthode agile.</p>
-							<a href="index.php?action=see_choose_house_page"><button class="boutton">Voir Plus</button></a>
+							<a href="#"><button class="boutton">Voir Plus</button></a>
 						</div>
 					</article>
 

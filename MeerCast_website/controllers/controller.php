@@ -344,18 +344,14 @@ function addMessage() {
         insertMessage($name, $last_name, $email, $message);
 
        	$successmessage="Votre message à été stocké dans notre base de donnée";
-        require "view/PageAccueil/Devis/pagedevis.php";
+        seeViewDevis();
 
     } else {
     	$successmessage="Echec de l'envoie de votre formulaire, nos serveurs sont surement en maintenance ou une de vos information est invalide";
-        require "view/PageAccueil/Devis/pagedevis.php";
+        seeViewDevis();
     }
 }
 function addDevis() {
-
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
 
     if (($_POST["alarm"] || $_POST["elec"] || $_POST["heater"]|| $_POST["AC"] || $_POST["pool"]||  $_POST["gate"]||  $_POST["lighting"]||  $_POST["devices"]||  $_POST["shutters"]||  $_POST["garden"])&& ($_POST["building"] && $_POST["construction"] && $_POST["surface"] && $_POST["type"] && $_POST["gender"] && $_POST["name"] && $_POST["last_name"] && $_POST["tel"] && $_POST["phonenumber"] && $_POST["email"] && $_POST["adress"] && $_POST["areacode"] && $_POST["city"] && $_POST["country"] && $_POST["condition"])) {
 

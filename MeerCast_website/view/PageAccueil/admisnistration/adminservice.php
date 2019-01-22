@@ -35,7 +35,7 @@ require "view/PageAccueil/admisnistration/templateadmin4.php";
   <div class="modal-content animate">
   <form method="post" action="index.php?action=addtoadminservice"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
     <label class="elem">
-        Service :<br>
+        Service : (titre)<br>
         <input type="text" name="service" placeholder="service" ><br>
     </label>
     <label class="elem">
@@ -43,15 +43,15 @@ require "view/PageAccueil/admisnistration/templateadmin4.php";
         <input type="text" name="description" placeholder="description"><br>
     </label>
     <label class="elem">
-        Image name (make sure it is a png):<br>
+        Nom de l'image (vérifier que c'est un png):<br>
         <input type="text" name="image" placeholder="image"><br>
     </label>
 
-    <button type="submit">Create new Flip Card</button>
+    <button type="submit" style="width: 20%; margin-left: 40%;">Create new Flip Card</button>
      
 </form>
 <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="width: 100px;">Cancel</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="width: 100px;">Annuler</button>
       
     </div>
 </div>

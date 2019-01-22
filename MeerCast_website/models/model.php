@@ -119,7 +119,7 @@ function getRooms() {
 
     $db = dbConnect();
     $req = $db->prepare("SELECT * FROM ((houses AS h JOIN HouseRooms AS hR ON h.id = hR.id_house) JOIN rooms AS r ON r.id = hR.id_room) WHERE h.property_name = :housename");
-    $req->execute(array('housename' => $_GET['propertyName']));
+    $req->execute(array('housename' => $_SESSION['propertyName']));
 
     return $req;
 }
@@ -128,7 +128,7 @@ function getSensors() {
 
     $db = dbConnect();
     $req = $db->prepare("SELECT * FROM (((houses AS H JOIN HouseRoomsSensors AS HRS ON H.id = HRS.id_house) JOIN rooms AS R ON HRS.id_room = R.id) JOIN sensors AS S ON HRS.id_sensor = S.id) WHERE H.property_name = :housename");
-    $req->execute(array('housename' => $_GET['propertyName']));
+    $req->execute(array('housename' => $_SESSION['propertyName']));
 
     return $req;
 }
