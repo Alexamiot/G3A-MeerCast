@@ -37,9 +37,9 @@ foreach($lesUsersetMaison as $donnees){
 </table>
 
 
-<button onclick="document.getElementById('id01').style.display='block'" class="button" style="width: auto; margin-left: 15px;">supprimer utilisateur</button>
+<button onclick="document.getElementById('id02').style.display='block'" class="button" style="width: auto; margin-left: 15px;">supprimer utilisateur</button>
 
-<div id="id01" class="modal">
+<div id="id02" class="modal">
   <div class="modal-content animate">
   <form method="post" action="index.php?action=suppAdmin"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; padding: 50px; " >
     
