@@ -814,6 +814,26 @@ function addPropertyMethod() {
     }
 }
 
+function updateProfil() {
+    if ($_POST["email"] && $_POST["pseudo"] && $_POST["mdp"]) {
+
+        $id= $_SESSION["id"];
+        $pseudo= htmlspecialchars($_POST["pseudo"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $mdp = htmlspecialchars($_POST["mdp"]);
+
+        profilupd($id, $pseudo, $email, $mdp, $mdp);
+
+        seeViewMonprofil();
+
+    } else {
+        seeViewMonprofil();
+    }
+}
+function seeViewMonprofil(){
+    $successmessage="";
+    require "view/PageMaison/Monprofil.php";
+}
 // Affichage de la page pour consulter les infos relatives à une maison
 function seeInfoHousePage() {
     if (isset($_GET['propertyName'])) {

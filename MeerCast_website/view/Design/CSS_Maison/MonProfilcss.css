@@ -1,0 +1,68 @@
+body {	/* couleur du fond */
+	margin: 0;	/* pour que le contenu remplisse toute la largeur de l'écran */
+}
+/* Paramètres du contenu du header : titre, bouton */
+
+
+
+
+.profil {
+    margin-top: -21vh;
+   background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../background.png");
+    height: 103%;
+    background-size: cover;
+    color: white;
+}
+
+.inscription{
+/*margin-left: 200px;
+margin-right: 200px;*/
+/*display: block;*/
+margin: auto;
+text-align: left;
+width: 100%;
+height: 60%;
+background-color: rgba(0,0,0,0.6);
+border-radius: 30px;
+padding: 40px;
+margin-top: 10px;
+}
+
+
+
+.pageTop{
+    background-image: none;
+
+}
+.indentation{
+    text-indent: 100px;
+    position: absolute; top: 100px; left: 25px; 
+    color: white; font-size: x-large; font-weight: bold;
+}
+
+.btn{
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: "Roboto",sans-serif;
+}
+.btnOne{
+    background-color: transparent;
+    cursor: pointer;
+}
+.btnOne:hover{
+    background-color: blue;
+    transition: all 0.4s ease-in;
+}
+.btnTwo{
+    background-color: darkorange;
+}
+.textInput{
+    color: white;
+    background: transparent;
+    border: none;
+}

@@ -286,6 +286,28 @@ function getAdmin(){
 
 
 }
+function getMdp($email)
+{
+    $db = dbConnect();
+    $req = $db->prepare("SELECT mdp FROM users WHERE email=:$email");
+    $req->bindParam("email", $email);
+
+    return $req;
+}
+
+function profilupd($id,$pseudo, $email, $mdp, $mdp2){
+    $db = dbConnect();
+    $hash = hash("sha256", $mdp);
+    $hash2 = hash("sha256", $mdp2);
+    $update = $db->prepare("UPDATE  users SET pseudo= :pseudo, email=:email, mdp=:mdp, mdp2=:mdp2 WHERE id=:id");
+    $successmessage="Votre profil à bien été mis à jour";   
+    $update->execute(array('id' => $id, 'pseudo' => $pseudo, 'email' => $email, 'mdp' => $hash, 'mdp2' => $hash2)); 
+
+    $_SESSION["pseudo"]= $pseudo;
+    $_SESSION["email"]=$email;
+
+    $update->closeCursor();
+}
 
 
 

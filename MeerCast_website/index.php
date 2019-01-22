@@ -75,6 +75,14 @@ if (isset($_GET["action"])) {
     case 'see_add_house_page':
         seeAddHousePage();
         break;
+        
+    case "see_PageMonProfil":
+        seeViewMonprofil();
+            break;
+
+    case "updateProfil":
+    updateProfil();
+    break;
 
     // méthode pour ajouter une propriété
     case 'add_property':

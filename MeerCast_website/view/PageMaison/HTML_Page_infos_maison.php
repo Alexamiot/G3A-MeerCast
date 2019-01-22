@@ -39,7 +39,7 @@
 	<header class="pageTop">
 		<div id="mySidepanel" class="sidepanel">
 		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-		  <a href="#">Mon Profil</a>
+		  <a href="index.php?action=see_PageMonProfil">Mon Profil</a>
 		  <a href="index.php?action=see_pagecapteur">Mes capteurs/ actionneurs</a>
 		  <a href="index.php?action=see_Ajout_batiment">Ajouter un bâtiment</a>
 		  <a href="index.php?action=see_scenario_page" target="blank">Programmer un scénario</a>
