@@ -44,7 +44,7 @@ foreach($lesUsersetMaison as $donnees){
 
 <div id="id01" class="modal">
   <div class="modal-content animate">
-  <form method="post" action="index.php?action=inscriptionadmin"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; padding: 50px; " >
+  <form method="post" action="index.php?action=ajoutAdmin"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; padding: 50px; " >
     <label class="elem">
         Pseudo:<br>
         <input type="text" name="pseudo" placeholder="pseudo" ><br>
@@ -63,7 +63,7 @@ foreach($lesUsersetMaison as $donnees){
     </label>
 
     
-    <input type="submit" value="Modifier le catalogue"  class="button" style="width: 20%; padding: 5px; margin-left: 40%">
+    <input type="submit" value="Ajouter"  class="button" style="width: 20%; padding: 5px; margin-left: 40%">
 </form>
 </div>
 </div>
