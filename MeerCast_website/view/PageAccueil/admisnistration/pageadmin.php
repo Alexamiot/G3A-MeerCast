@@ -16,7 +16,7 @@
       
     <div id="Forum">
     <h1 id="nom" style="text-align: center">Administration</h1>
-    
+    <a href="index.php?action=see_faq_admin"><img src="view/PageAccueil/Image/arrow2.png" value="Retour" style="width: 40px; height:40px; margin-left: 15px; position: top; cursor:pointer;" ></a>
       <?php
 
       
@@ -98,7 +98,21 @@ else { ?>
 
 <?php
 }
-?>
+
+if (isset($_SESSION['pseudo'])){?>
+           <form class="formulaire" method="post" action="index.php?action=addCategorie">
+           <label>
+        Ajouter une categorie:<br>
+        <textarea name="categorie" required></textarea>
+    </label>
+    
+    <input type="submit" value="Ajouter">
+    
+    </form>
+ <?php  } ?>
+
+
+
 </div>
 <?php
 } ?>

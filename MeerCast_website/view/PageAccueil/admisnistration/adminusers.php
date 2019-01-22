@@ -9,11 +9,11 @@
     <title>Gerer les utilisateurs</title>
 </head>
 
-<body>
-	<div id="Forum">
+<body >
+	<div id="Forum"  >
 
 
-		<table>
+		<table >
   <tr>
     <th>Pseudo</th>
     <th>Email</th>
@@ -40,35 +40,32 @@ foreach($lesUsersetMaison as $donnees){
 
 
 
-<button class="button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">New Admin</button>
+<button onclick="document.getElementById('id01').style.display='block'" class="button" style="width: auto; margin-left: 15px;">New Admin</button>
 
 <div id="id01" class="modal">
-  
-  <form class="modal-content animate" action="index.php?action=deconnexion">
+  <div class="modal-content animate">
+  <form method="post" action="index.php?action=inscriptionadmin"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; padding: 50px; " >
+    <label class="elem">
+        Pseudo:<br>
+        <input type="text" name="pseudo" placeholder="pseudo" ><br>
+    </label>
+   <label class="elem">
+        Email:<br>
+        <input type="email" name="email" placeholder="Email" ><br>
+    </label>
+    <label class="elem">
+        mot de passe:<br>
+        <input type="password" name="mdp" placeholder="mdp" ><br>
+    </label>
+    <label class="elem">
+        Vérification de mot de passe:<br>
+        <input type="password" name="mdp2" placeholder="mdp2" ><br>
+    </label>
+
     
-
-    <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="pseudo" required>
-
-      <label for="mail"><b>email</b></label>
-      <input type="email" placeholder="Enter Username" name="email" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="mdp" required>
-        
-        <label for="psw"><b>Password check</b></label>
-      <input type="password" placeholder="Enter Password" name="mdp2" required>
-        
-      <button type="submit">Create new admin</button>
-     <?php echo $erreur  ?>
-    </div>
-
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      
-    </div>
-  </form>
+    <input type="submit" value="Modifier le catalogue"  class="button" style="width: 20%; padding: 5px; margin-left: 40%">
+</form>
+</div>
 </div>
 
 

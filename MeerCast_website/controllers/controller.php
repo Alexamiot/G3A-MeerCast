@@ -426,6 +426,12 @@ function seeforum() {
    
 }
 
+function addCategorie(){
+
+  $newcategorie=htmlspecialchars($_POST["categorie"]);
+  addCategories($newcategorie);
+  require 'view/PageAccueil/admisnistration/pageadmin.php';
+}
 
 
 
@@ -465,6 +471,55 @@ function administrateur() {
       require "view/PageAccueil/admisnistration/pageadmin.php";
     }
    
+}
+
+function ajoutAdmin() {
+    echo $_SESSION["id"];
+    $erreur="";
+    
+
+ if ( isset($_POST["pseudo"]) && isset($_POST["email"]) && isset($_POST["mdp"]) && isset($_POST["mdp2"])) {
+        $pseudo = htmlspecialchars($_POST["pseudo"]);
+        $email = htmlspecialchars($_POST["email"]);
+        $mdp = htmlspecialchars($_POST["mdp"]);
+        $mdp2 = htmlspecialchars($_POST["mdp2"]);
+
+
+        $syntaxe = '#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
+        if ((strlen($pseudo)>4 AND strlen($pseudo)<20) AND preg_match($syntaxe, $email) AND (strlen($mdp)>4 AND strlen($mdp)<20) AND ($mdp==$mdp2)) {
+            
+
+            insertUser($pseudo, $email, $mdp, $mdp2);
+            createAdmin($pseudo, $email, $mdp);
+            echo 'Nouvelle utilisateur !'; 
+            
+           seeAdminUers();
+        }
+        else{
+            if (!preg_match($syntaxe, $email)) {
+              $erreur="Syntaxe du email n'est pas la bonne";
+              }
+
+
+            if (!(strlen($pseudo)>4 AND strlen($pseudo)<20) ){
+               $erreur ="il faut un speudo de bonne taille ";
+              }
+
+            if (!(strlen($mdp)>4 AND strlen($mdp)<20)) {
+
+                  $errreur ="Il faut un mdp de la bonne taille";
+             }
+            if (!($mdp==$mdp2 ) ){
+                  $erreur ="les mdp ne correspondent pas !! ";
+              }
+         seeAdminUers();
+        }
+      
+  }else {
+        seeAdminUers();
+   }
+
+
 }
 
 function addPost() {

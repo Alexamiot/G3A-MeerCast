@@ -328,6 +328,19 @@ function SuppFromMyCatalogue ($question){
     return $req;
 }
 
+function addCategories ($namecategorie){
+
+$db = dbConnect();
+    
+    $req2= $db->prepare("INSERT INTO categories (name) VALUES(:name)");
+    
+    $req2 -> execute(array("name"=> $namecategorie ));
+   
+      
+    $req2->closeCursor();
+
+}
+
 
 
 function userEtMaison(){
