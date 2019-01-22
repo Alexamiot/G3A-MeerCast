@@ -150,6 +150,22 @@ if (isset($_GET["action"])) {
     case 'addCategorie':
         addCategorie();
     break;
+    case 'suppAdmin':
+        suppAdmin();
+    break;
+    case 'suppadminservice':
+        suppadminservice();
+    break;
+
+    case 'addCapteurToPiece':
+        addCapteurToPiece();
+    break;
+    case 'addCapteur':
+        addCapteur();
+    break;
+addCapteur
+    
+   
 
     default:
         echo "Erreur 404";

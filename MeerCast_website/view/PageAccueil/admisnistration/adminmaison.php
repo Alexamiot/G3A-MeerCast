@@ -70,13 +70,13 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 
 
 
-<button onclick="document.getElementById('id01').style.display='block'" style="margin-top: 20%; width:auto;height:5%;">Une nouvelle Piece</button>
+<button onclick="document.getElementById('id01').style.display='block'" style="margin-top: 20%; width:auto;height:5%;">    Piece    </button>
 
 <div id="id01" class="modal">
   <div class="modal-content animate">
   <form method="post" action="index.php?action=addapiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
     <label class="elem">
-         Piece:<br>
+         Pieces:<br>
         <input type="text" name="name" placeholder="name...." ><br>
     </label>
 
@@ -106,12 +106,94 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
     <button type="submit">New Piece</button>
      
 </form>
+
 <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
       
     </div>
+
 </div>
 </div>
+
+
+
+
+<button onclick="document.getElementById('id02').style.display='block'" style="margin-top: 20%; width:auto;height:5%;">  sensor for room    </button>
+
+<div id="id02" class="modal">
+  <div class="modal-content animate">
+<form method="post" action="index.php?action=addCapteurToPiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
+
+
+ <label>Dans quelle chambre souhaitez vous mettre un capteur ? <br>
+        <select name="chambre">
+          
+            <?php  
+
+foreach($rooms2 as $room){
+
+  ?>
+                <option value="<?php echo $room['id']?>"><?php echo $room['room_name']?></option>
+              <?php }?>  
+        </select>
+    </label>
+
+
+    <label>Quel capteur souhaitez-vous mettre dans cette chambre ? <br>
+        <select name="capteur">
+          
+            <?php  
+
+foreach($sensorAdd as $sensorA){
+
+  ?>
+                <option value="<?php echo $sensorA['id']?>"><?php echo $sensorA['sensor_name']?></option>
+              <?php }?>  
+        </select>
+    </label>
+
+
+   
+
+
+
+    <button type="submit">New Capteur for room</button>
+     
+</form>
+
+
+<div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div>
+</div>
+</div>
+
+
+
+
+<!-- <button onclick="document.getElementById('id03').style.display='block'" style="margin-top: 20%; width:auto;height:5%;">    Piece    </button>
+
+<div id="id03" class="modal">
+  <div class="modal-content animate">
+  <form method="post" action="index.php?action=addapiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
+    <label class="elem">
+         Nom du Capteur:<br>
+        <input type="text" name="capteur" placeholder="name...." ><br>
+    </label>
+
+
+    <button type="submit">New Sensor</button>
+     
+</form>
+
+<div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div>
+
+</div>
+</div> -->
 
 
 

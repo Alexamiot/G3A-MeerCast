@@ -5,6 +5,52 @@ function seeViewAccueil() {
     require "view/PageAccueil/PageAc.php";
 }
 
+function suppadminservice(){
+  if ($_POST["suppservice"]) {
+    $service=htmlspecialchars($_POST["suppservice"]);
+
+    suppadminservices($service);
+   adminservice();
+ }
+}
+
+
+
+
+function addCapteurToPiece(){
+if (isset($_GET['propertyName'])) {
+        $_SESSION['propertyName'] = htmlspecialchars($_GET['propertyName']);
+    }
+    if(isset($_POST["chambre"]) && isset($_POST["capteur"]) ){
+
+    $room=htmlspecialchars($_POST["chambre"]);
+    $capteur=htmlspecialchars($_POST["capteur"]);
+    $valeur="null";
+    $houses=getIdHouseByName($_SESSION['propertyName']);
+    foreach ($houses as $house ) {
+    houseroomsensors($house["id"],$room, $capteur,$valeur);
+    }
+    }
+    see_adminmaison();
+}
+
+
+// function addCapteur(){
+//   if (isset($_POST["capteur"])) {
+
+//     $capteur=htmlspecialchars($_POST["capteur"]);
+
+    
+//    see_adminmaison();
+//   }
+  
+// else{
+//   see_adminmaison();
+// }
+    
+// }
+
+
 
 function addapiece(){
 
@@ -25,8 +71,8 @@ if (isset($_GET['propertyName'])) {
     $room="";
     if(isset($_POST["name"]) && isset($_POST["image"]) ){
 
-    $room=htmlspecialchars($_POST["name"]);;
-    $picture=htmlspecialchars($_POST["image"]);;
+    $room=htmlspecialchars($_POST["name"]);
+    $picture=htmlspecialchars($_POST["image"]);
     addpiece($room, $picture);
   }
   
@@ -171,7 +217,9 @@ if (isset($_GET['propertyName'])) {
         $_SESSION['propertyName'] = $_GET['propertyName'];
     }
     $rooms = getRooms();
+    $rooms2 = getRooms();
     $sensores=lescapteur();
+    $sensorAdd=lescapteur();
     
     // on crée ici des tableaux et grâce aux deux whiles on rajoute les éléments dans les tableaux dont j'ai besoin dans la view
     $roomsArray = array(array());
@@ -239,6 +287,7 @@ require "view/PageAccueil/admisnistration/adminservice.php";
 function adminservice(){
 
 $services= getadminservice();
+$services2= getadminservice();
 
 
   require "view/PageAccueil/admisnistration/adminservice.php";
@@ -247,9 +296,21 @@ $services= getadminservice();
 function seeAdminUers(){
   $erreur="";
   $lesUsersetMaison= userEtMaison();
+  $lesUsersetMaison2= userEtMaison();
 
 
   require "view/PageAccueil/admisnistration/adminusers.php";
+}
+
+function suppAdmin (){
+  if ($_POST["suppuser"]) {
+    $pseudo=htmlspecialchars($_POST["suppuser"]);
+    suppUsers ($pseudo);
+  suppAdmins($pseudo);
+  seeAdminUers();
+  }
+  
+  
 }
 function seepagedevisadmin(){
   $successmessage="";

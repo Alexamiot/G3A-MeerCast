@@ -42,12 +42,42 @@ require "view/PageAccueil/admisnistration/templateadmin4.php";
         Description :<br>
         <input type="text" name="description" placeholder="description"><br>
     </label>
+    <!-- <label>
+    Photo de profil :
+    <input type="file" name="image" accept=".jpg, .jpeg, .png">
+</label> -->
+    
     <label class="elem">
         Nom de l'image (vérifier que c'est un png):<br>
         <input type="text" name="image" placeholder="image"><br>
     </label>
 
     <button type="submit" style="width: 20%; margin-left: 40%;">Create new Flip Card</button>
+     
+</form>
+
+
+
+
+
+
+
+<form method="post" action="index.php?action=suppadminservice"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
+    <label>Quel Service souhaitez vous retirez ? <br>
+        <select name="suppservice">
+          <option value="nothing">Rien</option>
+            <?php  
+
+foreach($services2 as $donnees){
+
+  ?>
+                <option value="<?php echo $donnees['service'];?>"><?php echo $donnees['service'];?></option>
+              <?php }?>  
+        </select>
+    </label>
+    
+
+    <button type="submit" style="width: 20%; margin-left: 40%;">Supprimer un Service</button>
      
 </form>
 <div class="container" style="background-color:#f1f1f1">

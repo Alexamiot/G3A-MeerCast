@@ -123,6 +123,18 @@ function getRooms() {
 
     return $req;
 }
+// function setSensors($sensorName, $sensorPic){
+//     $db = dbConnect();
+
+//     $hash = hash("sha256", $mdp);
+     
+//     $req = $db->prepare("INSERT INTO administrateurs(pseudo, email, mdp) VALUES(:pseudo, :email, :mdp)");
+//     $req->execute(array( 'pseudo' => $sensorName, 'email' => $sensorPic )); 
+// echo 'Nouvelle Admin !'; 
+
+//     $req->closeCursor();
+
+// }
 
 function getSensors() {
 
@@ -440,4 +452,30 @@ function houseroomsensors($house,$room,$sensor,$valeur){
 }
 
 
+function suppUsers ($pseudo){
+
+    $db = dbConnect();
+    $req = $db->prepare("DELETE FROM users  WHERE pseudo =:pseudo");
+    $req -> execute(array("pseudo"=> $pseudo));
+    return $req;
+
+
+}
+function suppAdmins ($pseudo){
+
+    $db = dbConnect();
+    $req = $db->prepare("DELETE FROM administrateurs  WHERE pseudo =:pseudo");
+    $req -> execute(array("pseudo"=> $pseudo));
+    return $req;
+
+
+}
+
+function suppadminservices($service) {
+    $db = dbConnect();
+    $req = $db->prepare("DELETE FROM services WHERE service =:service");
+    $req -> execute(array("service"=> $service));
+    return $req;
+
+}
 ?>

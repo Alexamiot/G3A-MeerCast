@@ -37,7 +37,36 @@ foreach($lesUsersetMaison as $donnees){
 </table>
 
 
+<button onclick="document.getElementById('id01').style.display='block'" class="button" style="width: auto; margin-left: 15px;">supprimer utilisateur</button>
 
+<div id="id01" class="modal">
+  <div class="modal-content animate">
+  <form method="post" action="index.php?action=suppAdmin"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; padding: 50px; " >
+    
+
+    <label>Quel utilisateur souhaitez vous retirez ? <br>
+        <select name="suppuser">
+          <option value="nothing">Rien</option>
+            <?php  
+
+foreach($lesUsersetMaison2 as $donnees){
+
+  ?>
+                <option value="<?php echo $donnees['pseudo'];?>"><?php echo $donnees['pseudo'];?></option>
+              <?php }?>  
+        </select>
+    </label>
+
+    
+    <input type="submit" value="supprimer"  class="button" style="width: 20%; padding: 5px; margin-left: 40%">
+</form>
+<div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="width: 100px;">Annuler</button>
+      
+    </div>
+
+</div>
+</div>
 
 
 <button onclick="document.getElementById('id01').style.display='block'" class="button" style="width: auto; margin-left: 15px;">New Admin</button>
