@@ -23,7 +23,8 @@ require "view/PageAccueil/admisnistration/templateadmin.php";
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
     <?php  foreach ($faqs as $faq) { ?>
-        <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?> <a href="index.php?action=suppTopicFaq&amp;topicToSupp=<?php echo $faq["question"];?>"><img  style="width: 20px; height: 20px;" src="view/PageAccueil/image/bin.png" id="bin"></a></button>
+        <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?>
+         <a style="width: 45px; float: left; margin-right: 50px;" href="index.php?action=suppTopicFaq&amp;topicToSupp=<?php echo $faq["question"];?>"><img  style="width: 20px; height: 20px;" src="view/PageAccueil/image/bin.png" id="bin"></a></button>
 <div class="panel">
 
   <p><?php  echo $faq["reponse"]  ;?></p>
@@ -43,7 +44,7 @@ require "view/PageAccueil/admisnistration/templateadmin.php";
 
 <!-- textContent avec un getelement byid sur element et unn size()    ou ElementsByTagName("textarea")[0]-->
 <!-- ici on voudra mettre le js qui nous dit que on est en dessous des 500 charactere limiter  -->
-<form style="color: white; margin-left: 50px; " method="post" action="index.php?action=add_faq"  id="inscription"  >
+<form style="color: white; margin-left: 22%; " method="post" action="index.php?action=add_faq"  id="inscription"  >
     <label  class="elem">
         Sujet :<br>
         <input type="text" name="question" placeholder="topic...." required><br>
@@ -72,16 +73,8 @@ require "view/PageAccueil/admisnistration/templateadmin.php";
         Si vous avez d'autres questions qui ne sont pas présentes dans la faq, cliquez ici pour acceder au forum où vous pourrez posez vos propres questions. Certains utilisateurs et nous, administrateur pourront y répondre, alors n'hésitez pas.</p>
 
 
-
-
-
-
-
         <a href="index.php?action=see_forum_admin" class="button">Forum</a>
        
-
-
-
 
         </section>
 
