@@ -13,7 +13,7 @@ require "view/PageAccueil/admisnistration/templateadmin.php";
     <title>MeerCast</title>
 </head>
  <body>
-     
+
 
 
 
@@ -95,12 +95,12 @@ inputElt.addEventListener("keypress", keypressFunction);
 inputElt.addEventListener("blur", blurInputFunction);
 
 function keypressFunction(event) {
-    if(( inputElt.value.length)<=100){
-    spanInfoElt.textContent = "On faut 100 charactere max";
+    if(( inputElt.value.length)<=200){
+    spanInfoElt.textContent = "Il faut moins de 200 charaère ! ";
     spanInfoElt.style.color = "white"
 
     }else{
-     spanInfoElt.textContent = "vous avez depasez le nombre charactere autoriser";
+     spanInfoElt.textContent = "Vous avez dépassé le nombre de charactère autorisé";
     spanInfoElt.style.color = "red"
     } 
 }

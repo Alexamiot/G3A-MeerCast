@@ -11,40 +11,24 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="testRunner" value="GRADLE" />
+    <option name="delegatedBuild" value="true" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/PageAccueil/PageAc.php">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="391">
               <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/Design/pageAc.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="27" selection-end-line="418" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/Design/pageEnvironnement.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="418" selection-start-line="418" selection-end-line="418" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/PageAccueil/admisnistration/adminmaison.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1513">
-              <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+
             </state>
           </provider>
         </entry>
@@ -52,8 +36,43 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/PageAccueil/Environnement/PageEnvironnement.php">
           <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="17">
+              <caret line="1" column="27" selection-end-line="418" />
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/Design/pageEnvironnement.css">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="608">
+              <caret line="418" selection-start-line="418" selection-end-line="418" />
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+
+        <entry file="file://$PROJECT_DIR$/view/PageAccueil/admisnistration/adminmaison.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1513">
+              <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/PageAccueil/admisnistration/faqadmin.php">
+          <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="170">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
+
             </state>
           </provider>
         </entry>
@@ -61,8 +80,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/Design/pageservice.css">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="272">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
+
             </state>
           </provider>
         </entry>
@@ -70,7 +91,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/PageAccueil/Services/pageservice.php">
           <provider selected="true" editor-type-id="text-editor">
+
             <state relative-caret-position="1632">
+
               <caret line="96" column="11" selection-end-line="96" selection-end-column="11" />
             </state>
           </provider>
@@ -80,6 +103,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -89,8 +113,11 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/view/Design/pageservice.css" />
         <option value="$PROJECT_DIR$/view/PageAccueil/PageAc.php" />
+        <option value="D:/ISEP/A11/S1/II.1102 Algo et Prog/TP/TP3/Exercices.java" />
         <option value="$PROJECT_DIR$/view/PageAccueil/Environnement/PageEnvironnement.php" />
         <option value="$PROJECT_DIR$/view/Design/pageEnvironnement.css" />
+        <option value="$PROJECT_DIR$/view/PageAccueil/admisnistration/faqadmin.php" />
+        <option value="$PROJECT_DIR$/view/PageAccueil/faq/pagefaq.php" />
       </list>
     </option>
   </component>
@@ -101,6 +128,7 @@
     <option name="y" value="22" />
     <option name="width" value="1680" />
     <option name="height" value="1028" />
+
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -123,6 +151,11 @@
             <path>
               <item name="MeerCast_website" type="b2602c69:ProjectViewProjectNode" />
               <item name="MeerCast_website" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MeerCast_website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeerCast_website" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -137,18 +170,53 @@
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="PageAccueil" type="462c0819:PsiDirectoryNode" />
               <item name="admisnistration" type="462c0819:PsiDirectoryNode" />
+
+            </path>
+            <path>
+              <item name="MeerCast_website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeerCast_website" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="PageAccueil" type="462c0819:PsiDirectoryNode" />
+              <item name="Devis" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MeerCast_website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeerCast_website" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="PageAccueil" type="462c0819:PsiDirectoryNode" />
+              <item name="Environnement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MeerCast_website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeerCast_website" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="PageAccueil" type="462c0819:PsiDirectoryNode" />
+              <item name="faq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MeerCast_website" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MeerCast_website" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="PageMaison" type="462c0819:PsiDirectoryNode" />
+
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+
       <pane id="Scope" />
+
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="D:/ISEP/A11/S1/II.1102 Algo et Prog/TP/TP3/Exercices.java" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -183,11 +251,14 @@
       <option name="presentableId" value="Default" />
       <updated>1547572669530</updated>
       <workItem from="1547572671136" duration="3837000" />
+
       <workItem from="1559718114710" duration="766000" />
+
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+
     <option name="totallyTimeSpent" value="4603000" />
   </component>
   <component name="ToolWindowManager">
@@ -196,6 +267,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21546596" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -212,6 +284,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
+
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +316,7 @@
         </state>
       </provider>
     </entry>
+
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -261,32 +335,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="27" selection-end-line="418" />
+
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/PageAccueil/Environnement/PageEnvironnement.php">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="170">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
+
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/Design/pageservice.css">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="272">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
+
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/PageAccueil/Services/pageservice.php">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="1632">
           <caret line="96" column="11" selection-end-line="96" selection-end-column="11" />
+
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/Design/pageEnvironnement.css">
       <provider selected="true" editor-type-id="text-editor">
+
         <state relative-caret-position="608">
           <caret line="418" selection-start-line="418" selection-end-line="418" />
         </state>
@@ -296,6 +378,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1513">
           <caret line="89" column="8" lean-forward="true" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+
         </state>
       </provider>
     </entry>
