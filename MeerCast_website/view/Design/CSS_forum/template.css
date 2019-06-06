@@ -1,0 +1,288 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+header{
+   background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../../PageAccueil/Image/background.png");
+    height: 15vh;
+    background-size: cover;
+    
+}
+.mainNav{
+    float: right;
+    list-style: none;
+    margin-top: 40px;
+ }
+.mainNav li{
+    display: inline-block;
+}
+.mainNav li a{
+    color:white;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size:15px;
+}
+.mainNav li.active2 a{
+    background-color: darkorange;
+}
+.mainNav li a:hover{
+    background-color:darkorange;
+}
+.openbtn{
+    color:white;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: "Roboto", sans-serif;
+    font-size:15px;
+    background-color: transparent;
+    border:none;
+    cursor: pointer;
+}
+.openbtn:hover{
+    background-color: darkorange;
+}
+.logo img{
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-left: 80px;
+}
+.hero{
+    position: absolute;
+    width: 60%;
+    margin-left: 25%;
+    margin-top: 9%;
+}
+/*h1{
+        color: darkorange;
+    text-transform: uppercase;
+    font-size:2em;
+     text-align: center;
+
+    margin-top: 30px;
+}*/
+.button{
+    margin-top: 2%;
+    margin-left: 27%;
+}
+.btn{
+    border: 1px solid white;
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: "Roboto",sans-serif;
+}
+.btnOne{
+    background-color: transparent;
+    cursor: pointer;
+}
+.btnOne:hover{
+    background-color: darkorange;
+    transition: all 0.4s ease-in;
+}
+.btnTwo{
+    background-color: darkorange;
+}
+img{
+    width: 200px;
+    height:140px;
+}
+ .inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.boutton{
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 30px;
+    border-color: black;
+    background-color: white;
+    color: black ;
+}
+ .boutton: hover{
+    background-color: darkorange;
+}
+footer{
+    height: 100px;
+    background-color: #555;
+    color:#e8e9ed;
+}
+footer h3{
+    text-align: center;
+    padding: 30px;
+    font-family: "Raleway", sans-serif;
+}
+/*Sidepanel de connexion*/
+.sidepanel  {
+    font-family:"Raleway", Helvetica, sans-serif;
+    width: 0px;
+    position: fixed;
+    z-index: 1;
+    height: 450px;
+    top: 0;
+    right: 0;
+    filter: opacity(92%);
+    background-color: #111;
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+ .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+.identification{
+    text-align: center;
+    color: white;
+    text-decoration: white;
+}
+.sidetitle{
+    margin-bottom: 20px;
+}
+#email{
+    padding: 10px;
+    width: 200px;
+    height: 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+#email:focus{
+    outline: 2px solid green;
+    border-radius: 8px;
+}
+#mdp{
+    margin-top: 5px;
+    border-radius: 8px;
+    padding:10px;
+    width: 200px;
+    height: 25px;
+}
+#connexion {
+    text-align: center;
+    margin-top: 25px;
+    margin-left: -20px;
+    padding: 8px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    background-color: darkorange;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+ #connexion:hover {
+    background-color: #45a049;
+    color: white;
+}
+#email:invalid {
+    color: red;
+}
+.compte1{
+    text-align: center;
+    color: darkorange;
+    font-size: 15px;
+        margin-left: -20px;
+
+}
+/*Le CSS de "Nous contacter" avec un overlay*/
+.overlay {
+    width: 100%;
+    height: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    font-family: "Raleway", Helvetica, sans-serif;
+    color: white;
+    position: relative;
+    top: 0%;
+    height: : 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn2 {
+    z-index: 1;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+input[type=text],input, select, textarea {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: darkorange;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+    border-radius: 5px;
+    padding: 20px;
+}
+#email2{
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}

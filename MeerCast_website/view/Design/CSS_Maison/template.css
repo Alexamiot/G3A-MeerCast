@@ -1,0 +1,78 @@
+body {
+	background-color: lightgrey;	/* couleur du fond */
+	margin: 0;	/* pour que le contenu remplisse toute la largeur de l'écran */
+}
+/* Paramètres du contenu du header : titre, bouton */
+.pageTop {
+
+   background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("../background.png");
+    height: 18vh;
+    background-size: cover;
+}
+@media only screen and (max-width: 768px){
+   .pageTop{ height:8vh;}
+}
+.logo img{
+    width: 150px;
+    height: auto;
+    float: left;
+    margin-left: 30px;
+}
+.pageTop h1 {
+
+  font-size: 40px;
+  text-align: center;
+  margin-top: 0px;
+  padding: 20px;
+  color: white;
+  font-family: "Georgia";
+}
+/* Menu */
+.sidepanel  {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 400px;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    white-space: nowrap;
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidepanel a:hover {
+    color: darkorange;
+}
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.openbtn {
+  margin: 20px;
+    font-size: 45px;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    float:right;
+}
+
+.openbtn:hover {
+    color:darkorange;
+}
