@@ -415,19 +415,17 @@ h1:hover {
 
 .element{
 
-flex-wrap: wrap;
-    width: 40%;
-    height:30%;
-border: 3px solid grey;
-border-radius: 10px;
-/*   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);*/
-margin: 25px 25px 25px 25px;
+    flex-wrap: wrap;
+    border: 3px solid grey;
+    border-radius: 10px;
+ /*   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);*/
+    margin: 25px 25px 25px 25px;
 
 }
 
 .element img{
-        width: 100%;
-        height:100%;
+        width: 700px;
+        height:300px;
         vertical-align: top; /* solve padding bottom*/
     }
 
@@ -441,8 +439,8 @@ margin: 25px 25px 25px 25px;
     /*position: relative;*/
     bottom: 20px;
     left: 20px;
-    width: 70%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
     background: #A9A9A9;
     opacity: 0.6;
     filter:alpha(opacity=60);
@@ -453,13 +451,11 @@ margin: 25px 25px 25px 25px;
     position: absolute;
     bottom: 20px;
     left: 20px;
-    width: 70%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
 }
 
 
 #p1{
-    flex-wrap: wrap;
-    font-size: 18px;
     color : white;
 }

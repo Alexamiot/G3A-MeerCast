@@ -9,39 +9,39 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 <head>
 	<meta charset="utf-8">
 	<!-- <link rel="stylesheet" type="text/css" href="view/Design/CSS_Maison/CSS_Page_infos_maison.css"> -->
-	<link rel="stylesheet" type="text/css" href="view/Design/CSS_Maison/CSS_Page_infos_maison.css">
+	<link rel="stylesheet" type="text/css" href="view/Design/CSS_Maison/CSS_Page_infos_maison_admin.css">
 	<link rel="icon"  href="view/PageAccueil/favicon/favicon-16x16.png" type="image/png" sizes="any">
 	<title>Informations sur la maison</title>
 </head>
 
-<body>
+<body id="bodyM">
 
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-		<!-- Modal content -->
-		<div class="modal-content">
+    <!-- Modal content -->
+    <div class="modal-content">
 
-			<!-- en-tête du modal -->
-	    	<div class="modal-header">
-	      		<span class="close">&times;</span>
-	      		<h1 id="modalTitle">Modal Header</h1>
-	    	</div>
+        <!-- en-tête du modal -->
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h1 id="modalTitle">Modal Header</h1>
+        </div>
 
-	    	<!-- body du modal -->
-	    	<div class="modal-body">
-	    		<!-- partie remplie individuellement pour chaque pièce dans le js -->
-	    	</div>
+        <!-- body du modal -->
+        <div id="modal-body">
+            <!-- partie remplie individuellement pour chaque pièce dans le js -->
+        </div>
 
-	    	<div class="modal-footer">
-	    		<h3>Modal footer</h3>
-	    	</div>
-	  	</div>
+        <div class="modal-footer">
+            <h3>Modal footer</h3>
+        </div>
+    </div>
 
-	</div>
+</div>
 
 
-	
+    <h1><?php echo htmlspecialchars($_SESSION['propertyName']); ?></h1>
 
 <section id="allrooms">
 
@@ -56,7 +56,7 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 					<?php foreach ($sensor as $sensorInfo) { ?>
 						<?php if ($sensorInfo[0] == $room[0]) { ?>
 							<li><?php echo $sensorInfo[1]." : "; ?><span><?php echo $sensorInfo[2]; ?></span></li>
-							<p hidden=""><?php echo $sensorInfo[3]; ?></p>
+							<p hidden="" class="imagePath"><?php echo $sensorInfo[3]; ?></p>
 						<?php } ?>
 					<?php } ?>
 				<?php } ?>
@@ -70,7 +70,7 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 
 
 
-<button onclick="document.getElementById('id01').style.display='block'" style="margin-top: 20%; width:auto;height:5%;">    Piece    </button>
+<button class="buttonAdd" onclick="document.getElementById('id01').style.display='block'">    Ajouter une Piece    </button>
 
 <div id="id01" class="modal">
   <div class="modal-content animate">
@@ -103,12 +103,12 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 
 
 
-    <button type="submit">New Piece</button>
+    <button type="submit">Ajouter Piece</button>
      
 </form>
 
 <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
       
     </div>
 
@@ -118,14 +118,14 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 
 
 
-<button onclick="document.getElementById('id02').style.display='block'" style="margin-top: 20%; width:auto;height:5%;">  sensor for room    </button>
+<button class="buttonAdd" onclick="document.getElementById('id02').style.display='block'" >  Ajouter un capteur   </button>
 
 <div id="id02" class="modal">
   <div class="modal-content animate">
 <form method="post" action="index.php?action=addCapteurToPiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
 
 
- <label>Dans quelle chambre souhaitez vous mettre un capteur ? <br>
+ <label>Dans quelle pièce souhaitez vous mettre un capteur ? <br>
         <select name="chambre">
           
             <?php  
@@ -139,7 +139,7 @@ foreach($rooms2 as $room){
     </label>
 
 
-    <label>Quel capteur souhaitez-vous mettre dans cette chambre ? <br>
+    <label>Quel capteur souhaitez-vous mettre dans cette pièce ? <br>
         <select name="capteur">
           
             <?php  
@@ -157,13 +157,13 @@ foreach($sensorAdd as $sensorA){
 
 
 
-    <button type="submit">New Capteur for room</button>
+    <button class="buttonAdd" type="submit">Ajouter</button>
      
 </form>
 
 
 <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      <button  type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
       
     </div>
 </div>

@@ -98,30 +98,7 @@
 
 
 
-     <div class="faq">
-         <h2>FAQ (Foire aux questions)</h2>
-         <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-         <ul id="myMenu">
-             <?php  foreach ($faqs as $faq) { ?>
-             <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?>
-                     </button>
-                 <div class="panel">
-
-                     <p><?php  echo $faq["reponse"]  ;?></p>
-
-
-                 </div></li>
-
-
-             <?php }
-             ?>
-
-
-
-         </ul>
-
-<!--
-             <div class="faq">
+  <div class="faq">
     <h2>FAQ (Foire aux questions)</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
@@ -138,10 +115,10 @@
 <div class="panel">
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 </div></li>
-
+      
     </ul>
   </div>
--->
+  
 
 
   <section id="bandeau">
@@ -159,7 +136,7 @@
     </section>
 
 
-
+	 
 	  <script>
 function openNav() {
     document.getElementById("mySidepanel").style.width = "350px";

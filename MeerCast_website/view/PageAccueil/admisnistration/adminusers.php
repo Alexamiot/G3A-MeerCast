@@ -29,7 +29,7 @@ foreach($lesUsersetMaison as $donnees){
   <tr>
     <td><?php echo $donnees["pseudo"] ?></td>
     <td><?php echo  $donnees["email"] ?></td>
-    <td><a href="index.php?action=see_adminmaison&amp;propertyName=<?php echo $donnees["nomhabitation"]; ?> "><?php echo $donnees["nomhabitation"]; ?></a></td>
+    <td><a style="color: white;" href="index.php?action=see_adminmaison&amp;propertyName=<?php echo $donnees["nomhabitation"]; ?> "><?php echo $donnees["nomhabitation"]; ?></a></td>
     <td><?php echo $donnees["typehabitation"] ?></td>
     
   </tr>
@@ -61,7 +61,7 @@ foreach($lesUsersetMaison2 as $donnees){
     <input type="submit" value="supprimer"  class="button" style="width: 20%; padding: 5px; margin-left: 40%">
 </form>
 <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn" style="width: 100px;">Annuler</button>
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn" style="width: 100px; border:none; color: white;">Annuler</button>
       
     </div>
 

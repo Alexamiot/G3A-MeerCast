@@ -9,31 +9,31 @@
 	<title>Informations sur la maison</title>
 </head>
 
-<body>
+<body id="bodyM">
 
-	<!-- The Modal -->
-	<div id="myModal" class="modal">
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-		<!-- Modal content -->
-		<div class="modal-content">
+    <!-- Modal content -->
+    <div class="modal-content">
 
-			<!-- en-tête du modal -->
-	    	<div class="modal-header">
-	      		<span class="close">&times;</span>
-	      		<h1 id="modalTitle">Modal Header</h1>
-	    	</div>
+        <!-- en-tête du modal -->
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h1 id="modalTitle">Modal Header</h1>
+        </div>
 
-	    	<!-- body du modal -->
-	    	<div class="modal-body">
-	    		<!-- partie remplie individuellement pour chaque pièce dans le js -->
-	    	</div>
+        <!-- body du modal -->
+        <div id="modal-body">
+            <!-- partie remplie individuellement pour chaque pièce dans le js -->
+        </div>
 
-	    	<div class="modal-footer">
-	    		<h3>Modal footer</h3>
-	    	</div>
-	  	</div>
+        <div class="modal-footer">
+            <h3>Modal footer</h3>
+        </div>
+    </div>
 
-	</div>
+</div>
 
 
 	<header class="pageTop">
@@ -67,12 +67,12 @@
 					<?php foreach ($sensor as $sensorInfo) { ?>
 						<?php if ($sensorInfo[0] == $room[0]) { ?>
 							<li><?php echo $sensorInfo[1]." : "; ?><span><?php echo $sensorInfo[2]; ?></span></li>
-							<p hidden=""><?php echo $sensorInfo[3]; ?></p>
+							<p hidden="" class="imagePath"><?php echo $sensorInfo[3]; ?></p>
 						<?php } ?>
 					<?php } ?>
 				<?php } ?>
 			</div>
-			<div class="div2"> 
+			<div class="div2">
 				<img src=<?php echo $room[2]; ?>>
 			</div>
 		</div>
@@ -80,7 +80,7 @@
 </section>
 
 	<!--  -->
-	
+
 	<footer class="boutonScenario">
 		<a href="index.php?action=see_scenario_page">Programmez un scénario</a>
 	</footer>

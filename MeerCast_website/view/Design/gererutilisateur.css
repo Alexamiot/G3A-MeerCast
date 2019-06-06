@@ -63,14 +63,14 @@ input[type=text],input[type=email] , input[type=password] {
 
 /* Set a style for all buttons */
 .button {
-  background-color: darkorange;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+   background-color: darkorange;
+   color: white;
+   padding: 14px 20px;
+   margin: 8px 0;
+   border: none;
+   cursor: pointer;
+   width: 100%;
+ }
 
 #but {
   background-color:none ;

@@ -23,7 +23,7 @@
  
     Email : <input class="textInput" type="text" name="email" value="<?php echo $_SESSION["email"]?>" required> 
     <br>
-    Mot de passe : <input class="textInput" type="password" name="mdp" value="<?php echo "mdpadmin"?>">  
+    Mot de passe : <input class="textInput" type="password" name="mdp" value="<?php echo ""?>">
     </p>
 
    	<input type="submit" name="updateProfil" value="Sauvegarder" style="background-color: darkorange; border: none; color: white; padding: 10px; margin-left: 30%;">

@@ -41,29 +41,29 @@
               <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
             <div class="overlay-content">
             <h2>Nous envoyer un message</h2>
-            <div class="container">
-  <form method="post" action="index.php?action=add_message">
-    <label class="form"><br>Prénom<br></label>
-    <input type="text" name="name" placeholder="Votre Prénom">
+                 <div class="container">
+                  <form method="post" action="index.php?action=add_message">
+                    <label class="form"><br>Prénom<br></label>
+                    <input type="text" name="name" placeholder="Votre Prénom">
 
-    <label class="form"><br>Nom<br></label>
-    <input type="text" name="last_name" placeholder="Votre Nom de famille">
+                    <label class="form"><br>Nom<br></label>
+                    <input type="text" name="last_name" placeholder="Votre Nom de famille">
 
-   <label class="form"><br>Email<br></label>
-    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" required>
+                   <label class="form"><br>Email<br></label>
+                    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" required>
 
 
-    <label class="form"><br>Que voulez-vous nous dire ?<br></label>
-    <textarea name="message" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
+                    <label class="form"><br>Que voulez-vous nous dire ?<br></label>
+                    <textarea name="message" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
 
-    <input type="submit" value="Envoyer">
-  </form>
-</div>
+                    <input type="submit" value="Envoyer">
+                  </form>
+                </div>
           </div>
     </div>
       <div id="mySidepanel" class="sidepanel">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <div class="identification">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <div class="identification">
   <p>
        <h2 class="sidetitle">Votre compte : </h2>
       

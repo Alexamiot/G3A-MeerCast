@@ -1,0 +1,14 @@
+#Forum {
+margin: auto;
+color: white;
+padding: 20px;
+text-align: center;
+background-color: #0f2e60;
+width:80%;
+min-height: 80%;
+border-radius: 30px;
+margin-bottom: 40px;
+}
+input{
+	width: 20%;
+}
