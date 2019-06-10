@@ -41,7 +41,7 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 </div>
 
 
-    <h1><?php echo htmlspecialchars($_SESSION['propertyName']); ?></h1>
+    <h1 style="text-align:center"><?php echo htmlspecialchars($_SESSION['propertyName']); ?></h1>
 
 <section id="allrooms">
 
