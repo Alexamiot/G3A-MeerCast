@@ -17,12 +17,11 @@
         
 
         ?> -->
-        
         <li  ><a href="index.php?action=adminservice">NOS SERVICES</a></li>
         <li  ><a href="index.php?action=see_admin_users">GERER LES UTILISATEURS</a></li>
-        <li  ><a href="index.php?action=see_admin_messages">LES MESSAGES</a></li>
+        <li class="active2" ><a href="index.php?action=see_admin_messages">LES MESSAGES</a></li>
 
-        <li  class="active2" ><a href="index.php?action=see_pagedevis_admin">MODIFIER LE DEVIS</a></li>
+        <li   ><a href="index.php?action=see_pagedevis_admin">MODIFIER LE DEVIS</a></li>
 
           
         <li  ><a href="index.php?action=see_faq_admin">FAQ / FORUM</a></li>
