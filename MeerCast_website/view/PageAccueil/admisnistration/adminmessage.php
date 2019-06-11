@@ -5,32 +5,35 @@
 <html>
 <head>
      <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="view/Design/pagedevis.css">
+    <link rel="stylesheet" type="text/css" href="view/Design/adminMessage.css">
     <link rel="icon"  href="view/PageAccueil/favicon/favicon-16x16.png" type="image/png" sizes="any">
     
     <title>Gerer les messages</title>
 </head>
 
 <body>
-    <?php  foreach ($messages as $message) {
-?>
-    <div style="color: black">
-      
-     <?php $messag=  $message["message"]; 
-      $mail=  $message["email"]; 
-      $nom =$message["name"];
-      ?>
-  <h3><?php echo $mail ?> :  <?php echo $nom ?></h3>
-      <br/> 
-      <h3><?php echo $messag ?></h3>
 
+    <div class="allMessage">
+        <h2 style="margin:15px;">Les messages reçues :</h2>
+            <?php  foreach ($messages as $message) {
+        ?>
+            <div class="messageBody">
+
+                 <?php $messag=  $message["message"];
+                  $mail=  $message["email"];
+                  $nom =$message["name"];
+                  ?>
+                <h3><?php echo $mail ?> :  <?php echo $nom ?></h3>
+                  <br/>
+                  <h3><?php echo $messag ?></h3>
+
+            </div>
+            <br/><br/>
+
+
+
+            <?php }  ?>
     </div>
-    <br/><br/>
-
-
-
-    <?php }  ?>
-
 
  
 </body>
