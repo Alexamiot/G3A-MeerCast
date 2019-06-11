@@ -1,3 +1,8 @@
+
+<?php
+require "view/PageAccueil/admisnistration/templateadmin.php";
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,140 +13,56 @@
     <title>MeerCast</title>
 </head>
  <body>
-     <header>
-    	<div class="logo">
-    		<a href="index.php?action=see_PageAc"><img src="view/PageAccueil/image/meercastest.png"></a>
-    	</div>
-    	<div class="row">
-    		<ul class="mainNav">
-    		<li ><a href="index.php?action=see_PageAc">ACCUEIL</a></li>
-    		<li><a href="index.php?action=see_pageservice">SERVICES</a></li>
-    		<li><a href="index.php?action=see_pagedevis">DEMANDER UN DEVIS</a></li>
-       		<li><button class="openbtn" onclick="openNav2()">NOUS CONTACTER</button>
-    		<li class="active2"><a href="">FAQ / FORUM</a></li>
-    		<?php
-
-      if (isset($_SESSION['email'])){?>
-      <li><a href="index.php?action=see_choose_house_page">MES MAISONS</a></li>
-        
-        <?php }  else{?>
-        <li><button class="openbtn" onclick="openNav()">SE CONNECTER</button></li>
-
-<?php
-      }
-        
-
-      if (isset($_SESSION['email'])){?>
-       <li><a href="index.php?action=deconnexion">DECONNEXION</a></li>
-      
-    <?php 
-   }
-   ?>
-
-        
-        </ul>
-      </div>
-      <div id="myNav" class="overlay">
-              <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
-            <div class="overlay-content">
-            <h2>Nous envoyer un message</h2>
-            <div class="container">
-  <form method="post" action="index.php?action=add_message">
-    <label class="form"><br>Prénom<br></label>
-    <input type="text" name="name" placeholder="Votre Prénom">
-
-    <label class="form"><br>Nom<br></label>
-    <input type="text" name="last_name" placeholder="Votre Nom de famille">
-
-   <label class="form"><br>Email<br></label>
-    <input type="email" name="email" placeholder="Ex: jack.sparrow@sea.com" required>
-
-
-    <label class="form"><br>Que voulez-vous nous dire ?<br></label>
-    <textarea name="message" placeholder="Ce que vous voulez nous dire" style="height:200px"></textarea>
-
-    <input type="submit" value="Envoyer">
-  </form>
-</div>
-          </div>
-    </div>
-      <div id="mySidepanel" class="sidepanel">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <div class="identification">
-  <p>
-       <h2 class="sidetitle">Votre compte : </h2>
-      
-
-    <form method="post" action="index.php?action=connexion">
-
-    <label>
-        Email :<br>
-        <input type="email" name="email" placeholder="Email...." id="email" required>
-    </label><br>
-    
-    <label>
-        Mot de Passe :<br>
-        <input type="password" name="mdp" id="mdp" required>
-    </label><br>
-    
-    <input type="submit" value="Se Connecter" id="connexion">
-</form>
-
-    <a href="index.php?action=inscription"><p class="compte1" >Créer un Compte</p></a>
-    <a href=""><p class="compte1" >Mot de passe oublié</p></a>
-    </p>
-   </div>
-</div>
-    </header>
 
 
 
 
 
-     <div class="faq">
-         <h2>FAQ (Foire aux questions)</h2>
-         <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
-         <ul id="myMenu">
-             <?php  foreach ($faqs as $faq) { ?>
-             <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?>
-                     </button>
-                 <div class="panel">
-
-                     <p><?php  echo $faq["reponse"]  ;?></p>
-
-
-                 </div></li>
-
-
-             <?php }
-             ?>
-
-
-
-         </ul>
-
-<!--
-             <div class="faq">
+  <div class="faq">
     <h2>FAQ (Foire aux questions)</h2>
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
     <ul id="myMenu">
-      <li><button class="accordion" style="color: white;">Changer temperature</button>
+    <?php  foreach ($faqs as $faq) { ?>
+        <li><button class="accordion" style="color: white;"><?php echo  $faq["question"] ;?>
+         <a style="width: 45px; float: left; margin-right: 50px;" href="index.php?action=suppTopicFaq&amp;topicToSupp=<?php echo $faq["question"];?>"><img  style="width: 20px; height: 20px;" src="view/PageAccueil/image/bin.png" id="bin"></a></button>
 <div class="panel">
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat ecuoiiiecoewn iewosjfeowic ewiopsjfoiewnm fwiopwejmfoimcew weiopeimfcoew fweoijfciewomc weofmipoewmfk ewiofmpweofm ewoifmipewmf.</p>
-</div></li>
-      <li><button class="accordion"  style="color: white;">La climatisation</button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div></li>
-      <li><button class="accordion" style="color: white;">Jardin</button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div></li>
+  <p><?php  echo $faq["reponse"]  ;?></p>
 
+
+</div></li>
+   
+
+
+   <?php }
+    ?>
+      
+      
+      
     </ul>
+
+
+<!-- textContent avec un getelement byid sur element et unn size()    ou ElementsByTagName("textarea")[0]-->
+<!-- ici on voudra mettre le js qui nous dit que on est en dessous des 500 charactere limiter  -->
+<form style="color: white; margin-left: 22%; " method="post" action="index.php?action=add_faq"  id="inscription"  >
+    <label  class="elem">
+        Sujet :<br>
+        <input type="text" name="question" placeholder="topic...." required><br>
+    </label>
+    <label class="element">
+        Ecrivez :<br>
+        <textarea id="changeText" type="text" name="reponse" placeholder="Le contenu" required> </textarea><span id="pseudo_info"></span><br>
+        
+    </label >
+    
+    
+    
+    <input style="margin-left: 0px;" type="submit" value="Ajouter a la FAQ"  class="button" >
+</form>
+
+
   </div>
--->
+  
 
 
   <section id="bandeau">
@@ -150,8 +71,15 @@
         <section class="columfor">
         <p >
         Si vous avez d'autres questions qui ne sont pas présentes dans la faq, cliquez ici pour acceder au forum où vous pourrez posez vos propres questions. Certains utilisateurs et nous, administrateur pourront y répondre, alors n'hésitez pas.</p>
-        <a href="index.php?action=see_forum" class="button">Forum</a>
+
+
+        <a href="index.php?action=see_forum_admin" class="button">Forum</a>
+       
+
         </section>
+
+
+
       </div>
       <div>
       <img src="view/PageAccueil/image/forum1.png" alt="forum photo" title="forum photo">
@@ -159,8 +87,30 @@
     </section>
 
 
+     <script type="text/javascript"> 
+ const inputElt = document.getElementById("changeText");
+const spanInfoElt = document.getElementById("pseudo_info");
 
-	  <script>
+inputElt.addEventListener("keypress", keypressFunction);
+inputElt.addEventListener("blur", blurInputFunction);
+
+function keypressFunction(event) {
+    if(( inputElt.value.length)<=200){
+    spanInfoElt.textContent = "Il faut moins de 200 charaère ! ";
+    spanInfoElt.style.color = "white"
+
+    }else{
+     spanInfoElt.textContent = "Vous avez dépassé le nombre de charactère autorisé";
+    spanInfoElt.style.color = "red"
+    } 
+}
+
+function blurInputFunction(event) {
+    
+    spanInfoElt.textContent = "";
+}
+</script>
+      <script>
 function openNav() {
     document.getElementById("mySidepanel").style.width = "350px";
 }
@@ -210,6 +160,9 @@ for (i = 0; i < acc.length; i++) {
         }
     });
 }
+
+
+
 
 </script>
 </body>
