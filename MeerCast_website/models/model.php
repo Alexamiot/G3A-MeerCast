@@ -14,7 +14,13 @@ function dbConnect()
     }
 }
 
+function getMeesage(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM message");
+        return $req;
 
+
+}
 
 
 function insertMessage($name, $last_name, $email, $message)

@@ -171,6 +171,9 @@ if (isset($_GET["action"])) {
     case 'addCapteur':
         addCapteur();
     break;
+     case 'see_admin_messages':
+        lesmessages();
+    break;
     
    
 

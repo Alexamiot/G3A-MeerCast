@@ -954,3 +954,10 @@ function seeScenarioPage() {
 function seeCapteurPage() {
     require "view/PageMaison/HTML_Page_CapteurActionneur.php";
 }
+
+function lesmessages(){
+  $messages= getMeesage();    
+      
+
+  require "view/PageAccueil/admisnistration/adminmessage.php";
+}
