@@ -961,3 +961,8 @@ function lesmessages(){
 
   require "view/PageAccueil/admisnistration/adminmessage.php";
 }
+function lesdevis(){
+  $devis= devis();    
+  
+    require "view/PageAccueil/admisnistration/adminlesdevis.php";
+}
