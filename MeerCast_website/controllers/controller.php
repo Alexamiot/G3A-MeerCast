@@ -18,20 +18,20 @@ function suppadminservice(){
 
 
 function addCapteurToPiece(){
-if (isset($_GET['propertyName'])) {
-        $_SESSION['propertyName'] = htmlspecialchars($_GET['propertyName']);
-    }
-    if(isset($_POST["chambre"]) && isset($_POST["capteur"]) ){
+    if (isset($_GET['propertyName'])) {
+            $_SESSION['propertyName'] = htmlspecialchars($_GET['propertyName']);
+        }
+        if(isset($_POST["chambre"]) && isset($_POST["capteur"]) ){
 
-    $room=htmlspecialchars($_POST["chambre"]);
-    $capteur=htmlspecialchars($_POST["capteur"]);
-    $valeur="null";
-    $houses=getIdHouseByName($_SESSION['propertyName']);
-    foreach ($houses as $house ) {
-    houseroomsensors($house["id"],$room, $capteur,$valeur);
-    }
-    }
-    see_adminmaison();
+        $room=htmlspecialchars($_POST["chambre"]);
+        $capteur=htmlspecialchars($_POST["capteur"]);
+        $valeur="null";
+        $houses=getIdHouseByName($_SESSION['propertyName']);
+            foreach ($houses as $house ) {
+            houseroomsensors($house["id"],$room, $capteur,$valeur);
+            }
+        }
+        see_adminmaison();
 }
 
 
@@ -901,10 +901,13 @@ function seeInfoHousePage() {
         $_SESSION['propertyName'] = $_GET['propertyName'];
     }
     $rooms = getRooms();
+    $rooms2 = getRooms();
+    $sensores=lescapteur();
+    $sensorAdd=lescapteur();
 
     // on crée ici des tableaux et grâce aux deux whiles on rajoute les éléments dans les tableaux dont j'ai besoin dans la view
     $roomsArray = array(array());
-    $itR = 0; 
+    $itR = 0;
     $sensorsArray = array(array(array()));
     $itS1 = 0;
     $itS2 = 0;
@@ -919,7 +922,7 @@ function seeInfoHousePage() {
         $roomsArray[$itR][0] = $roomname;
         // $roomsArray[$itR][1] = $pictureName;
         $roomsArray[$itR][2] = $picturePath;
-        $roomsArray[$itR][1] = $roomId; 
+        $roomsArray[$itR][1] = $roomId;
 
         $sensors = getSensors();
 
