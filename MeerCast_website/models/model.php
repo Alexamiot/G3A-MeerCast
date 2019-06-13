@@ -504,4 +504,11 @@ function suppadminservices($service) {
     return $req;
 
 }
+
+
+function devis(){
+    $db = dbConnect();
+    $req = $db->query("SELECT * FROM devis");
+    return $req;
+}
 ?>

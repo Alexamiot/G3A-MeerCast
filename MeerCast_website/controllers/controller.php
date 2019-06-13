@@ -6,7 +6,7 @@ function seeViewAccueil() {
 }
 
 function suppadminservice(){
-  if ($_POST["suppservice"]) {
+  if (isset($_POST["suppservice"])) {
     $service=htmlspecialchars($_POST["suppservice"]);
 
     suppadminservices($service);
@@ -283,16 +283,50 @@ require "view/PageAccueil/admisnistration/adminmaison.php";
 
 function addtoadminservice(){
 
+  if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
+{
+  echo "debug1";
+ 
+    if ($_FILES['monfichier']['size'] <= 1000000)
+        {
+          echo "debug2";
+ 
+                            // Testons si l'extension est autorisée
+                $infosfichier = pathinfo($_FILES['monfichier']['name']);
+                $extension_upload = $infosfichier['extension'];
+                $extensions_autorisees = array('png');
+                if (in_array($extension_upload, $extensions_autorisees))
+
+                {
+                  echo "debug3";
+                
+                   move_uploaded_file($_FILES['monfichier']['tmp_name'], 'view/PageAccueil/Image/' . basename($_FILES['monfichier']['name']));
+                        echo "L'envoi a bien été effectué !";
+
+
+                }else {
+            echo "Choisissez une image";
+        }
+ 
+
+
+
+    
+    }else {
+        echo "Fichier trop gros";
+
+        }
+}
 
 $service=htmlspecialchars($_POST["service"]);
 echo $service;
 $description=htmlspecialchars($_POST["description"]);
 echo $description;
-$image=htmlspecialchars($_POST["image"]);
+$image=htmlspecialchars(basename($_FILES['monfichier']['name'], ".png"));
 echo $image;
 addadminservice($service,$description,$image);
 
-
+$services2= getadminservice();
 $services= getadminservice();
 require "view/PageAccueil/admisnistration/adminservice.php";
 
@@ -967,4 +1001,9 @@ function lesmessages(){
       
 
   require "view/PageAccueil/admisnistration/adminmessage.php";
+}
+function lesdevis(){
+  $devis= devis();    
+  
+    require "view/PageAccueil/admisnistration/adminlesdevis.php";
 }

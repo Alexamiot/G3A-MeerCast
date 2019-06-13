@@ -174,6 +174,9 @@ if (isset($_GET["action"])) {
      case 'see_admin_messages':
         lesmessages();
     break;
+    case 'see_devis': 
+        lesdevis();
+    break;    
     
    
 
