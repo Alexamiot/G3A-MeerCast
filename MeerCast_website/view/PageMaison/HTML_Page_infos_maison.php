@@ -52,12 +52,14 @@
     	</div>
 
 		<h1><?php echo htmlspecialchars($_SESSION['propertyName']); ?></h1>
+
+
 	</header>
 
 <section id="allrooms">
 
 	<!-- Partie de la page avec les pièces -->
-	<?php foreach ($roomsArray as $room) { ?>
+	<?php if($roomsArray!=[[]]){ foreach ($roomsArray as $room) { ?>
 
         <div id=<?php echo $room[1]; ?> class="roomInformation" onclick="clickOnRoom(this.id)">
 
@@ -76,7 +78,9 @@
 				<img src=<?php echo $room[2]; ?>>
 			</div>
 		</div>
-	<?php } ?>
+	<?php }
+	}
+	/*catch(Exception $e){ echo 'Pas encore de pièce';}*/?>
 
 
     <br/>

@@ -202,7 +202,21 @@ if (isset($_GET['propertyName'])) {
         $itR+=1;
         $itS1+=1;
     }
-require "view/PageAccueil/admisnistration/adminmaison.php";
+
+    /*$admins=getAdmin();
+    $bool=true;
+    foreach ($admins as $admin) {
+        if ($_SESSION["id"] == $admin["id"]) {
+            $bool=false;
+
+        }
+    }
+if($bool==false) {*/
+    require "view/PageAccueil/admisnistration/adminmaison.php";/*
+}
+else {
+    require "view/PageMaison/HTML_Page_infos_maison.php";
+}*/
 
 
 
@@ -655,25 +669,15 @@ function inscription() {
         $mdp = htmlspecialchars($_POST["mdp"]);
         $mdp2 = htmlspecialchars($_POST["mdp2"]);
         $syntaxe = '#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
-        if ((strlen($pseudo)>4 AND strlen($pseudo)<20) AND preg_match($syntaxe, $email) AND (strlen($mdp)>4 AND strlen($mdp)<20) AND ($mdp==$mdp2)) {
+        if ((strlen($pseudo)>=4 AND strlen($pseudo)<20) AND preg_match($syntaxe, $email) AND (strlen($mdp)>4 AND strlen($mdp)<20) AND ($mdp==$mdp2)) {
             
 
             insertUser($pseudo, $email, $mdp, $mdp2);
-            echo 'Nouvelle utilisateur !'; 
             getUsers($email);
 
-             // $to=$email;
-             // $subject="Mail subject";
-             // $message="bravo vous etes membre meercast";
-             // $from="jb2debellescize@gmail.com";
-             // $headers="From: $from";
-             // if(mail($to,$subject,$message,$headers)){
-             //    echo "Mail Sent";
-             // }else{
-             //  echo "Failed";
-             // }
 
-           require "view/PageAccueil/forum/forum.php";
+
+           require "view/PageAccueil/PageAc.php";
         }
         else{
          if (!preg_match($syntaxe, $email)) {
@@ -682,7 +686,7 @@ function inscription() {
 
 
         if (!(strlen($pseudo)>4 AND strlen($pseudo)<20) ){
-            $erreur ="il faut un speudo de bonne taille ";
+            $erreur ="il faut un pseudo de bonne taille ";
          }
 
          if (!(strlen($mdp)>4 AND strlen($mdp)<20)) {
@@ -801,7 +805,7 @@ function connexion(){
             }
             if($bool){
            
-           require "view/PageAccueil/forum/forum.php";
+           require "view/PageAccueil/PageAc.php";
          }
         }
 
@@ -868,7 +872,7 @@ function addPropertyMethod() {
 
         insertProperty($property_name, $property_type);
 
-        require "view/PageMaison/HTML_Ajout_maison_succes.php";
+        displayUserProperties();
 
     } else {
         require "view/PageMaison/HTML_Ajout_maison_echec.php";

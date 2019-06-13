@@ -111,9 +111,10 @@ function getProperties()
 function insertProperty($property_name, $property_type)
 {
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO houses(property_name, property_type) VALUES(:property_name, :property_type)");
+    $req = $db->prepare("INSERT INTO houses(property_name, property_type, id_user) VALUES(:property_name, :property_type, :id_user)");
     $req->bindParam("property_name", $property_name);
     $req->bindParam("property_type", $property_type);
+    $req->bindParam("id_user", $_SESSION["id"]);
     $req->execute();
     $req->closeCursor();
 }
