@@ -84,7 +84,15 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 
                 <label class="elem">
                     Type d'image:<br><br/>
-                    <input style="width: 40%; height: 25px" type="text" name="image" placeholder="name...." ><br><br/>
+
+                    <select name="image">
+                        <option value="salon">salon</option>
+                        <option value="salle_a_manger">salle_a_manger</option>
+                        <option value="salle_de_bain">salle_de_bain</option>
+                        <option value="chambre">chambre</option>
+
+                    </select>
+                    <br><br/>
                 </label>
 
 
