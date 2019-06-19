@@ -26,7 +26,7 @@
                   ?>
                 <h3><?php echo $mail ?> :  <?php echo $nom ?></h3>
                   <br/>
-                  <h3><?php echo $messag ?></h3>
+                  <h3 style="text-align: center"><?php echo $messag ?></h3>
 
             </div>
             <br/><br/>

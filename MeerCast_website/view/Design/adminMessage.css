@@ -14,9 +14,8 @@
 }
 
 .messageBody{
-
+    width: 90%;
     padding: 10px;
-    text-align: center;
     border: solid 3px #0f2e60;
     border-radius: 5px;
 }
