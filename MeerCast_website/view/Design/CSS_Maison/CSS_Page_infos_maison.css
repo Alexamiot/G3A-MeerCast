@@ -419,30 +419,3 @@ input:checked + .slider:before {
     padding-left: 2%;
     padding-right: 2%;
 }
-.buttonAdd {
-    align-items: center;
-    background-color: darkorange;
-    color: white;
-    padding: 14px 20px;
-    margin: 10px;
-    border: none;
-    cursor: pointer;
-    width: 80%;
-    height: 80%;
-}
-.buttonAdd2 {
-    background-color: darkorange;
-    color: white;
-    padding: 14px 20px;
-    margin: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.cancelbtn {
-    width: auto;
-    border:none;
-    margin:5px;
-    padding: 10px 18px;
-    background-color: #f44336;
-}

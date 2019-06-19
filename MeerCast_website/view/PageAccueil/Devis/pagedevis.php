@@ -285,7 +285,7 @@ foreach($catalogue as $donnees){
               </div>
              </div>  
             <label id="conditions">Accepter les conditions générales d'utilisation
-                <input type="checkbox" name="condition" required style="width: 20px;"></label>
+                <input type="checkbox" name="condition" required style="width: 8%;"></label>
                    <div id="devissubmit">
                      <input type="submit" value="Envoyer" >
                    </div>

@@ -33,7 +33,7 @@ require "view/PageAccueil/admisnistration/templateadmin4.php";
 
 <div id="id01" class="modal">
   <div class="modal-content animate">
-  <form method="post" action="index.php?action=addtoadminservice"  id="inscription" enctype="multipart/form-data" style="display: flex; flex-direction: column;text-align: center; " >
+  <form method="post" action="index.php?action=addtoadminservice"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
     <label class="elem">
         Service : (titre)<br>
         <input type="text" name="service" placeholder="service" ><br>
@@ -48,8 +48,8 @@ require "view/PageAccueil/admisnistration/templateadmin4.php";
 </label> -->
     
     <label class="elem">
-        l'image (png):<br>
-        <input type="file" name="monfichier" ><br>
+        Nom de l'image (vérifier que c'est un png):<br>
+        <input type="text" name="image" placeholder="image"><br>
     </label>
 
     <button type="submit" style="width: 20%; margin-left: 40%;">Create new Flip Card</button>

@@ -2,15 +2,12 @@
     margin:auto;
     font-family: "Roboto", Helvetica, sans-serif;
 
+
 }
-/*
-#bodyMessage{
-    background-image:url(../Design/imagesMaison/fond3.jpg);
-}*/
 
 .allMessage{
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
 
@@ -19,7 +16,7 @@
 .messageBody{
 
     padding: 10px;
-    margin:5px;
+    text-align: center;
     border: solid 3px #0f2e60;
     border-radius: 5px;
 }

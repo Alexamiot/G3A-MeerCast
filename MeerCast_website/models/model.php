@@ -4,7 +4,7 @@ function dbConnect()
 {
     try
     {
-        $db = new PDO('mysql:host=localhost;dbname=meercast;charset=utf8', 'root', '');
+        $db = new PDO('mysql:host=localhost;dbname=meercast;charset=utf8', 'root', 'root');
         return $db;
     }
 
@@ -21,6 +21,19 @@ function getMeesage(){
 
 
 }
+
+/*function updateTemperature($temperature) {
+
+    $db = dbConnect();
+
+    //UPDATE houseroomsensors;
+    //SET "value" = $temperature;
+    //WHERE id = 1;
+
+    $req = $db->prepare('UPDATE houseroomssensors SET value = $temperature WHERE id = 1');
+    $req->execute(array($temperature));
+    return $req;
+}*/
 
 
 function insertMessage($name, $last_name, $email, $message)
@@ -111,10 +124,12 @@ function getProperties()
 function insertProperty($property_name, $property_type)
 {
     $db = dbConnect();
-    $req = $db->prepare("INSERT INTO houses(property_name, property_type, id_user) VALUES(:property_name, :property_type, :id_user)");
+
+    $req = $db->prepare("INSERT INTO houses(property_name, property_type) VALUES(:property_name, :property_type)");
+
     $req->bindParam("property_name", $property_name);
     $req->bindParam("property_type", $property_type);
-    $req->bindParam("id_user", $_SESSION["id"]);
+
     $req->execute();
     $req->closeCursor();
 }
@@ -503,12 +518,5 @@ function suppadminservices($service) {
     $req -> execute(array("service"=> $service));
     return $req;
 
-}
-
-
-function devis(){
-    $db = dbConnect();
-    $req = $db->query("SELECT * FROM devis");
-    return $req;
 }
 ?>

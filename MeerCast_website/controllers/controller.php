@@ -6,7 +6,7 @@ function seeViewAccueil() {
 }
 
 function suppadminservice(){
-  if (isset($_POST["suppservice"])) {
+  if ($_POST["suppservice"]) {
     $service=htmlspecialchars($_POST["suppservice"]);
 
     suppadminservices($service);
@@ -18,20 +18,20 @@ function suppadminservice(){
 
 
 function addCapteurToPiece(){
-    if (isset($_GET['propertyName'])) {
-            $_SESSION['propertyName'] = htmlspecialchars($_GET['propertyName']);
-        }
-        if(isset($_POST["chambre"]) && isset($_POST["capteur"]) ){
+  if (isset($_GET['propertyName'])) {
+          $_SESSION['propertyName'] = htmlspecialchars($_GET['propertyName']);
+  }
+  if(isset($_POST["chambre"]) && isset($_POST["capteur"]) ){
 
-        $room=htmlspecialchars($_POST["chambre"]);
-        $capteur=htmlspecialchars($_POST["capteur"]);
-        $valeur="null";
-        $houses=getIdHouseByName($_SESSION['propertyName']);
-            foreach ($houses as $house ) {
-            houseroomsensors($house["id"],$room, $capteur,$valeur);
-            }
-        }
-        see_adminmaison();
+    $room=htmlspecialchars($_POST["chambre"]);
+    $capteur=htmlspecialchars($_POST["capteur"]);
+    $valeur="null";
+    $houses=getIdHouseByName($_SESSION['propertyName']);
+    foreach ($houses as $house ) {
+      houseroomsensors($house["id"],$room, $capteur,$valeur);
+    }
+  }
+  see_adminmaison();
 }
 
 
@@ -202,21 +202,7 @@ if (isset($_GET['propertyName'])) {
         $itR+=1;
         $itS1+=1;
     }
-
-    /*$admins=getAdmin();
-    $bool=true;
-    foreach ($admins as $admin) {
-        if ($_SESSION["id"] == $admin["id"]) {
-            $bool=false;
-
-        }
-    }
-if($bool==false) {*/
-    require "view/PageAccueil/admisnistration/adminmaison.php";/*
-}
-else {
-    require "view/PageMaison/HTML_Page_infos_maison.php";
-}*/
+require "view/PageAccueil/admisnistration/adminmaison.php";
 
 
 
@@ -283,50 +269,16 @@ require "view/PageAccueil/admisnistration/adminmaison.php";
 
 function addtoadminservice(){
 
-  if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
-{
-  echo "debug1";
- 
-    if ($_FILES['monfichier']['size'] <= 1000000)
-        {
-          echo "debug2";
- 
-                            // Testons si l'extension est autorisée
-                $infosfichier = pathinfo($_FILES['monfichier']['name']);
-                $extension_upload = $infosfichier['extension'];
-                $extensions_autorisees = array('png');
-                if (in_array($extension_upload, $extensions_autorisees))
-
-                {
-                  echo "debug3";
-                
-                   move_uploaded_file($_FILES['monfichier']['tmp_name'], 'view/PageAccueil/Image/' . basename($_FILES['monfichier']['name']));
-                        echo "L'envoi a bien été effectué !";
-
-
-                }else {
-            echo "Choisissez une image";
-        }
- 
-
-
-
-    
-    }else {
-        echo "Fichier trop gros";
-
-        }
-}
 
 $service=htmlspecialchars($_POST["service"]);
 echo $service;
 $description=htmlspecialchars($_POST["description"]);
 echo $description;
-$image=htmlspecialchars(basename($_FILES['monfichier']['name'], ".png"));
+$image=htmlspecialchars($_POST["image"]);
 echo $image;
 addadminservice($service,$description,$image);
 
-$services2= getadminservice();
+
 $services= getadminservice();
 require "view/PageAccueil/admisnistration/adminservice.php";
 
@@ -703,15 +655,25 @@ function inscription() {
         $mdp = htmlspecialchars($_POST["mdp"]);
         $mdp2 = htmlspecialchars($_POST["mdp2"]);
         $syntaxe = '#^[\w.-]+@[\w.-]+\.[a-zA-Z]{2,6}$#';
-        if ((strlen($pseudo)>=4 AND strlen($pseudo)<20) AND preg_match($syntaxe, $email) AND (strlen($mdp)>4 AND strlen($mdp)<20) AND ($mdp==$mdp2)) {
+        if ((strlen($pseudo)>4 AND strlen($pseudo)<20) AND preg_match($syntaxe, $email) AND (strlen($mdp)>4 AND strlen($mdp)<20) AND ($mdp==$mdp2)) {
             
 
             insertUser($pseudo, $email, $mdp, $mdp2);
+            echo 'Nouvelle utilisateur !'; 
             getUsers($email);
 
+             // $to=$email;
+             // $subject="Mail subject";
+             // $message="bravo vous etes membre meercast";
+             // $from="jb2debellescize@gmail.com";
+             // $headers="From: $from";
+             // if(mail($to,$subject,$message,$headers)){
+             //    echo "Mail Sent";
+             // }else{
+             //  echo "Failed";
+             // }
 
-
-           require "view/PageAccueil/PageAc.php";
+           require "view/PageAccueil/forum/forum.php";
         }
         else{
          if (!preg_match($syntaxe, $email)) {
@@ -720,7 +682,7 @@ function inscription() {
 
 
         if (!(strlen($pseudo)>4 AND strlen($pseudo)<20) ){
-            $erreur ="il faut un pseudo de bonne taille ";
+            $erreur ="il faut un speudo de bonne taille ";
          }
 
          if (!(strlen($mdp)>4 AND strlen($mdp)<20)) {
@@ -839,7 +801,7 @@ function connexion(){
             }
             if($bool){
            
-           require "view/PageAccueil/PageAc.php";
+           require "view/PageAccueil/forum/forum.php";
          }
         }
 
@@ -906,7 +868,7 @@ function addPropertyMethod() {
 
         insertProperty($property_name, $property_type);
 
-        displayUserProperties();
+        require "view/PageMaison/HTML_Ajout_maison_succes.php";
 
     } else {
         require "view/PageMaison/HTML_Ajout_maison_echec.php";
@@ -939,13 +901,10 @@ function seeInfoHousePage() {
         $_SESSION['propertyName'] = $_GET['propertyName'];
     }
     $rooms = getRooms();
-    $rooms2 = getRooms();
-    $sensores=lescapteur();
-    $sensorAdd=lescapteur();
 
     // on crée ici des tableaux et grâce aux deux whiles on rajoute les éléments dans les tableaux dont j'ai besoin dans la view
     $roomsArray = array(array());
-    $itR = 0;
+    $itR = 0; 
     $sensorsArray = array(array(array()));
     $itS1 = 0;
     $itS2 = 0;
@@ -960,7 +919,7 @@ function seeInfoHousePage() {
         $roomsArray[$itR][0] = $roomname;
         // $roomsArray[$itR][1] = $pictureName;
         $roomsArray[$itR][2] = $picturePath;
-        $roomsArray[$itR][1] = $roomId;
+        $roomsArray[$itR][1] = $roomId; 
 
         $sensors = getSensors();
 
@@ -985,7 +944,13 @@ function seeInfoHousePage() {
         $itR+=1;
         $itS1+=1;
     }
+    //include "view/PageMaison/HTML_Page_Logs.php";
     require "view/PageMaison/HTML_Page_infos_maison.php";
+}
+
+// fonction appelée pour afficher la page des logs
+function logs() {
+  require "view/PageMaison/HTML_Page_Logs.php";
 }
 
 // Affichage de la page où l'on peut programmer un scénario
@@ -1001,9 +966,4 @@ function lesmessages(){
       
 
   require "view/PageAccueil/admisnistration/adminmessage.php";
-}
-function lesdevis(){
-  $devis= devis();    
-  
-    require "view/PageAccueil/admisnistration/adminlesdevis.php";
 }
