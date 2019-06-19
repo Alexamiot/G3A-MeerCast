@@ -13,8 +13,9 @@
 
 <body>
 
+    <h2 style="margin:15px;">Les messages reçues :</h2>
     <div class="allMessage">
-        <h2 style="margin:15px;">Les messages reçues :</h2>
+
             <?php  foreach ($messages as $message) {
         ?>
             <div class="messageBody">
