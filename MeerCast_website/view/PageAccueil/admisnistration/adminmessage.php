@@ -11,10 +11,10 @@
     <title>Gerer les messages</title>
 </head>
 
-<body>
-
+<body id="bodyMessage">
+<h2 style="margin:15px;">Les messages reçues :</h2>
     <div class="allMessage">
-        <h2 style="margin:15px;">Les messages reçues :</h2>
+
             <?php  foreach ($messages as $message) {
         ?>
             <div class="messageBody">
@@ -25,7 +25,7 @@
                   ?>
                 <h3><?php echo $mail ?> :  <?php echo $nom ?></h3>
                   <br/>
-                  <h3><?php echo $messag ?></h3>
+                  <h3 style="text-align: center"><?php echo $messag ?></h3>
 
             </div>
             <br/><br/>
