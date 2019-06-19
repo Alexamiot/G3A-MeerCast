@@ -7,7 +7,7 @@
 
 .allMessage{
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     flex-wrap: wrap;
     justify-content: space-around;
 
