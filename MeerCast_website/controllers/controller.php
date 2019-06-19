@@ -16,7 +16,6 @@ function suppadminservice(){
 
 
 
-
 function addCapteurToPiece(){
     if (isset($_GET['propertyName'])) {
             $_SESSION['propertyName'] = htmlspecialchars($_GET['propertyName']);
@@ -285,11 +284,11 @@ function addtoadminservice(){
 
   if (isset($_FILES['monfichier']) AND $_FILES['monfichier']['error'] == 0)
 {
-  echo "debug1";
+
  
     if ($_FILES['monfichier']['size'] <= 1000000)
         {
-          echo "debug2";
+
  
                             // Testons si l'extension est autorisée
                 $infosfichier = pathinfo($_FILES['monfichier']['name']);
@@ -298,7 +297,7 @@ function addtoadminservice(){
                 if (in_array($extension_upload, $extensions_autorisees))
 
                 {
-                  echo "debug3";
+
                 
                    move_uploaded_file($_FILES['monfichier']['tmp_name'], 'view/PageAccueil/Image/' . basename($_FILES['monfichier']['name']));
                         echo "L'envoi a bien été effectué !";
