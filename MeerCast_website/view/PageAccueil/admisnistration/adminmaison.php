@@ -69,138 +69,119 @@ require "view/PageAccueil/admisnistration/templateadmin3.php";
 
 
 
+    <br/>
 
-<button class="buttonAdd" onclick="document.getElementById('id01').style.display='block'">    Ajouter une Piece    </button>
+    <button class="buttonAdd" onclick="document.getElementById('id01').style.display='block'">    Ajouter une Piece    </button>
 
-<div id="id01" class="modal">
-  <div class="modal-content animate">
-  <form method="post" action="index.php?action=addapiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
-    <label class="elem">
-         Pieces:<br>
-        <input type="text" name="name" placeholder="name...." ><br>
-    </label>
-
-   
-    <label class="elem">
-         Type Image:<br>
-        <input type="text" name="image" placeholder="name...." ><br>
-    </label>
-    
-        
-        
-    
-    
+    <div id="id01" class="modal">
+        <div class="modal-content animate">
+            <form method="post" action="index.php?action=addapiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
+                <label class="elem">
+                    Pieces:<br><br/>
+                    <input style="width: 40%; height: 25px" type="text" name="name" placeholder="name...." ><br><br/>
+                </label>
 
 
-    <?php foreach ($sensores as $sensore) { ?>
-    
-        <input type="hidden" name="<?php echo $sensore['sensor_name']?>" value="non"/>
-       <label class="labelcheck"><?php echo $sensore['sensor_name']?><br/> <input type="checkbox" name="<?php echo $sensore['sensor_name']?>" value="<?php echo $sensore['id']?>" /> <span class="checkmark"></span> </label><br />
-        
-    
-    <?php } ?>
-   
+                <label class="elem">
+                    Type d'image:<br><br/>
+
+                    <select name="image">
+                        <option value="salon">salon</option>
+                        <option value="salle_a_manger">salle_a_manger</option>
+                        <option value="salle_de_bain">salle_de_bain</option>
+                        <option value="chambre">chambre</option>
+
+                    </select>
+                    <br><br/>
+                </label>
 
 
 
-    <button type="submit">Ajouter Piece</button>
-     
-</form>
 
-<div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
-      
+
+
+
+                <?php foreach ($sensores as $sensore) { ?>
+
+                    <input type="hidden" name="<?php echo $sensore['sensor_name']?>" value="non"/>
+                    <label class="labelcheck"><?php echo $sensore['sensor_name']?> <input style="width: 15px; height: 15px;" type="checkbox" name="<?php echo $sensore['sensor_name']?>" value="<?php echo $sensore['id']?>" /> <span class="checkmark"></span> </label><br />
+
+
+                <?php } ?>
+
+
+
+
+                <button class="buttonAdd2" type="submit">Ajouter la Piece</button>
+
+            </form>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button class="cancelbtn" type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Annuler</button>
+
+            </div>
+
+        </div>
     </div>
 
-</div>
-</div>
+
+
+
+    <button class="buttonAdd" onclick="document.getElementById('id02').style.display='block'" >  Ajouter un capteur   </button>
+
+    <div id="id02" class="modal">
+        <div class="modal-content animate">
+            <form method="post" action="index.php?action=addCapteurToPiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
+
+
+                <label>Dans quelle pièce souhaitez vous mettre un capteur ? <br/><br/>
+                    <select style="width: 40%; height: 25px" name="chambre">
+
+                        <?php
+
+                        foreach($rooms2 as $room){
+
+                            ?>
+                            <option value="<?php echo $room['id']?>"><?php echo $room['room_name']?></option>
+                        <?php }?>
+                    </select>
+                </label><br/>
+
+
+                <label>Quel capteur souhaitez-vous mettre dans cette pièce ? <br/><br/>
+                    <select style="width: 40%; height: 25px" name="capteur">
+
+                        <?php
+
+                        foreach($sensorAdd as $sensorA){
+
+                            ?>
+                            <option  value="<?php echo $sensorA['id']?>"><?php echo $sensorA['sensor_name']?></option>
+                        <?php }?>
+                    </select>
+                    <br/>
+                </label>
+                <br/>
 
 
 
 
-<button class="buttonAdd" onclick="document.getElementById('id02').style.display='block'" >  Ajouter un capteur   </button>
+                <button class="buttonAdd2" type="submit">Ajouter</button>
 
-<div id="id02" class="modal">
-  <div class="modal-content animate">
-<form method="post" action="index.php?action=addCapteurToPiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
+            </form>
 
 
- <label>Dans quelle pièce souhaitez vous mettre un capteur ? <br>
-        <select name="chambre">
-          
-            <?php  
+            <div class="container" style="background-color:#f1f1f1">
+                <button  type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
 
-foreach($rooms2 as $room){
-
-  ?>
-                <option value="<?php echo $room['id']?>"><?php echo $room['room_name']?></option>
-              <?php }?>  
-        </select>
-    </label>
-
-
-    <label>Quel capteur souhaitez-vous mettre dans cette pièce ? <br>
-        <select name="capteur">
-          
-            <?php  
-
-foreach($sensorAdd as $sensorA){
-
-  ?>
-                <option value="<?php echo $sensorA['id']?>"><?php echo $sensorA['sensor_name']?></option>
-              <?php }?>  
-        </select>
-    </label>
-
-
-   
-
-
-
-    <button class="buttonAdd" type="submit">Ajouter</button>
-     
-</form>
-
-
-<div class="container" style="background-color:#f1f1f1">
-      <button  type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      
+            </div>
+        </div>
     </div>
-</div>
-</div>
-
-
-
-
-<!-- <button onclick="document.getElementById('id03').style.display='block'" style="margin-top: 20%; width:auto;height:5%;">    Piece    </button>
-
-<div id="id03" class="modal">
-  <div class="modal-content animate">
-  <form method="post" action="index.php?action=addapiece&amp;propertyName=<?php echo $_GET['propertyName']; ?>"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; " >
-    <label class="elem">
-         Nom du Capteur:<br>
-        <input type="text" name="capteur" placeholder="name...." ><br>
-    </label>
-
-
-    <button type="submit">New Sensor</button>
-     
-</form>
-
-<div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
-      
-    </div>
-
-</div>
-</div> -->
-
-
-
 
 
 
 </section>
+
 
 
 

@@ -73,29 +73,58 @@ foreach($lesUsersetMaison2 as $donnees){
 
 <div id="id01" class="modal">
   <div class="modal-content animate">
-  <form method="post" action="index.php?action=ajoutAdmin"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; padding: 50px; " >
-    <label class="elem">
-        Pseudo:<br>
-        <input type="text" name="pseudo" placeholder="pseudo" ><br>
-    </label>
-   <label class="elem">
-        Email:<br>
-        <input type="email" name="email" placeholder="Email" ><br>
-    </label>
-    <label class="elem">
-        mot de passe:<br>
-        <input type="password" name="mdp" placeholder="mdp" ><br>
-    </label>
-    <label class="elem">
-        Vérification de mot de passe:<br>
-        <input type="password" name="mdp2" placeholder="mdp2" ><br>
-    </label>
+          <form method="post" action="index.php?action=ajoutAdmin"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; padding: 50px; " >
+            <label class="elem">
+                Pseudo:<br>
+                <input type="text" name="pseudo" placeholder="pseudo" ><br>
+            </label>
+           <label class="elem">
+                Email:<br>
+                <input type="email" name="email" placeholder="Email" ><br>
+            </label>
+            <label class="elem">
+                mot de passe:<br>
+                <input type="password" name="mdp" placeholder="mdp" ><br>
+            </label>
+            <label class="elem">
+                Vérification de mot de passe:<br>
+                <input type="password" name="mdp2" placeholder="mdp2" ><br>
+            </label>
 
-    
-    <input type="submit" value="Ajouter"  class="button" style="width: 20%; padding: 5px; margin-left: 40%">
-</form>
+
+            <input type="submit" value="Ajouter"  class="button" style="width: 20%; padding: 5px; margin-left: 40%">
+        </form>
+    </div>
 </div>
-</div>
+
+
+        <button onclick="document.getElementById('id03').style.display='block'" class="button" style="width: auto; margin-left: 15px;">New User</button>
+
+        <div id="id03" class="modal">
+            <div class="modal-content animate">
+                <form method="post" action="index.php?action=inscription"  id="inscription"  style="display: flex; flex-direction: column;text-align: center; padding:50px;" >
+                    <label class="elem" >
+                        Pseudo : (4 caractère min)<br>
+                        <input type="text" name="pseudo" placeholder="Pseudo...." required>
+                    </label>
+                    <label class="elem" >
+                        Email :<br>
+                        <input type="email" name="email"  placeholder="Adresse mail...." required>
+                    </label >
+                    <label class="elem">
+                        Mot de Passe :<br>
+                        <input type="password" name="mdp" required>
+                    </label>
+                    <label class="elem">
+                        Confirmation :<br>
+                        <input type="password" name="mdp2" required>
+                    </label>
+                    <input type="submit" value="Ajouter" class="button" >
+                </form>
+                <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn" style="width: 100px; border:none; color: white;">Annuler</button>
+            </div>
+
+        </div>
 
 
 
@@ -106,11 +135,15 @@ foreach($lesUsersetMaison2 as $donnees){
     <script>
 // Get the modal
 var modal = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+var modal3 = document.getElementById('id03');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
+    if (event.target == modal ||event.target == modal2 ||event.target == modal3) {
         modal.style.display = "none";
+        modal2.style.display = "none";
+        modal3.style.display = "none";
     }
 }
 </script>

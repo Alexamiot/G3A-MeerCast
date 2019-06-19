@@ -23,7 +23,7 @@
 
         <li   ><a href="index.php?action=see_pagedevis_admin">MODIFIER LE DEVIS</a></li>
 
-          
+          <li   ><a href="index.php?action=see_devis">LES DEVIS</a></li>
         <li  ><a href="index.php?action=see_faq_admin">FAQ / FORUM</a></li>
         <?php
         
