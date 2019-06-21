@@ -80,13 +80,10 @@
 
 	</section>
 
-	<!-- section d'affichage des trames -->
+	<!-- section d'affichage et traitement des trames -->
 	<section>
-		<!-- <a href="index.php?action=logs">Pour afficher les logs</a>  -->
-		
 		<?php 
-
-			//require_once("../../models/model.php");
+// code permettant d'afficher les trames sur la page d'info d'une maison ; problème, il faut recharger la page pour que les données s'affichent dans les rectangles des pièces
 
 			$ch = curl_init();
 			curl_setopt($ch,CURLOPT_URL,"http://projets-tomcat.isep.fr:8080/appService/?ACTION=GETLOG&TEAM=003A");
@@ -95,95 +92,58 @@
 			$data = curl_exec($ch);
 			curl_close($ch);
 			$data_tab = str_split($data, 33);
-			// echo "<table>
-			//   <tr>
-			//     <th>Trame</th>
-			//     <th>Objet</th> 
-			//     <th>Capteur</th>
-			//     <th>Numéro</th>
-			//     <th>Valeur</th>
-			//     <th>Date</th>
-			//   </tr>";
 
-			// affichage de toutes les trames
-			/*for($i=0;  $i<count($data_tab); $i++) {
+			for ($i = count($data_tab)-2; $i>count($data_tab)-4; $i--) {
+
+				// décodage avec sscanf
+				list($t, $o, $r, $c, $n, $bidon, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) = sscanf($data_tab[$i], "%1s%4s%1s%1s%2s%2s%2s%4s%2s%4s%2s%2s%2s%2s%2s");
+
 				$trame = $data_tab[$i];
 				echo "$trame<br />";
-			}*/
 
-			// affichage de la dernière trame
-			$i = count($data_tab)-2;
-			echo "$data_tab[$i]<br />";
+				// déclaration de l'ID et de la valeur à stocker
+				$id = 0;
+				$valeur = $v;
 
-			
-			// décodage avec sscanf
-			list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) = sscanf($data_tab[$i], "%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s");
+				// test du type de capteur
+				if ($c == 3 || $c == 5) {
 
-			// pour voir le type de la variable
-			//var_dump($v);
+					if ($c == 3) {
+						// on assigne l'ID à 1
+						$id = 1;
+						echo "Température : ".$valeur."<br />";
+					}
+					else if ($c == 5) {
+						// on assigne l'ID à 2
+						$id = 2;
 
-			// test du type de capteur
-			if ($c == 3) {
-				// il s'agit du capteur de température
-				$temperature = $v;
-				echo "Température : ".$v;
+						if ($valeur == "10") {
+							$valeur = "Très sombre";
+							echo "Luminosité : ".$valeur."<br />";
+						}
+						else if ($valeur == "11") {
+							$valeur = "Sombre";
+							echo "Luminosité : ".$valeur."<br />";
+						}
+						else if ($valeur == "12") {
+							$valeur = "Lumineux";
+							echo "Luminosité : ".$luminosvaleurite."<br />";
+						} 
+						else if ($valeur == "13") {
+							$valeur = "Très lumineux";
+							echo "Luminosité : ".$valeur."<br />";
+						}
+					}
+					// upload des données vers la DB
+			        $db = dbConnect();
+			    	$req = $db->prepare('UPDATE houseroomssensors SET value = :valeur WHERE id = :id');
+			    	$req->execute(array('valeur' => $valeur, 'id' => $id));
+					$req->closeCursor();
+				}
+				// sinon il ne s'agit pas d'une trame de température ou luminosité
+				// du coup on passe à 
 			}
 
-			// upload des données vers la DB
-			//$temperature = htmlspecialchars($temperature);
-	        
-	        $db = dbConnect();
-
-	    	//UPDATE houseroomsensors;
-	    	//SET "value" = $temperature;
-	    	//WHERE id = 1;
-	    
-	    	$req = $db->prepare('UPDATE houseroomssensors SET value = :temperature WHERE id = 1');
-	    	$req->execute(array('temperature' => $temperature));
-			$req->closeCursor();
-	    	
-
-	        //UPDATE houseroomsensors;
-	    	//SET "value" = $temperature;
-	    	//WHERE id = 1;
-			
-
-			// echo("
-			//   <tr>
-			//     <td>$i</td>
-			//     <td>$o</td> 
-			//     <td>$c</td>
-			//     <td>$n</td>
-			//     <td>$v</td>
-			//     <td>$day/$month/$year $hour:$min:$sec</td>
-			//   </tr>
-			// ");
-
-			// code de Lucas
-			/*
-			if ($c == 3) { //température
-				$val = round((hexdec($v)*3.3)/(4095*0.01));
-				getTempLog($val);
-			}
-			if ($c == 1) { //distance
-				$val = hexdec($v);
-				if ($val > 2000) {
-					$val = 1;
-				}
-				else {
-					$val = 0;
-				}
-			}
-			if ($c == 5) { //luminosite
-				$val = hexdec($v);
-				if ($val > 2000) {
-					$val = 1;
-				}
-				else {
-					$val = 0;
-				}
-			}*/
-			//echo "</table>";
 		?>
 	</section>
 

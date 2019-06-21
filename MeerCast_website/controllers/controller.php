@@ -1,6 +1,34 @@
 <?php
 require "models/model.php";
 
+function sensTrigo() {
+
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,"http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=003A&TRAME=1003A1a010001");
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $data = curl_exec($ch);
+    curl_close($ch);
+}
+function sensHoraire() {
+
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,"http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=003A&TRAME=1003A1a010002");
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $data = curl_exec($ch);
+    curl_close($ch);
+}
+function arret() {
+
+    $ch = curl_init();
+    curl_setopt($ch,CURLOPT_URL,"http://projets-tomcat.isep.fr:8080/appService/?ACTION=COMMAND&TEAM=003A&TRAME=1003A1a010003");
+    curl_setopt($ch, CURLOPT_HEADER, FALSE);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    $data = curl_exec($ch);
+    curl_close($ch);
+}
+
 function seeViewAccueil() {
     require "view/PageAccueil/PageAc.php";
 }

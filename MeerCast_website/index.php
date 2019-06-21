@@ -12,6 +12,16 @@ if (isset($_GET["action"])) {
         logs();
         break;
 
+    case 'rotationSensTrigo':
+        sensTrigo();
+        break;
+    case 'rotationSensHoraire':
+        sensHoraire();
+        break;
+    case 'arret':
+        arret();
+        break;
+
     case "see_PageAc":
         seeViewAccueil();
         break;
