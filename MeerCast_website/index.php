@@ -7,6 +7,7 @@ if (isset($_GET["action"])) {
     $action = htmlspecialchars($_GET["action"]); // Petite fonction de s�curit�
 
     switch($action) {
+<<<<<<< HEAD
         
     case "logs":
         logs();
@@ -22,6 +23,8 @@ if (isset($_GET["action"])) {
         arret();
         break;
 
+=======
+>>>>>>> 36ece5429b74c2406422ca984b557984497e7e5c
     case "see_PageAc":
         seeViewAccueil();
         break;
@@ -189,6 +192,9 @@ if (isset($_GET["action"])) {
      case 'see_admin_messages':
         lesmessages();
     break;
+    case 'see_devis': 
+        lesdevis();
+    break;    
     
    
 
